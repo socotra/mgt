@@ -1,6 +1,6 @@
 plugins {
     java
-    id("kernel-plugin-tasks")
+    id("socotra-ec-config-developer") version "v0.6.2"
 }
 
 `socotra-developer` {
