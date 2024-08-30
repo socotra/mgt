@@ -1,9 +1,9 @@
 plugins {
     java
-    id("kernel-plugin-tasks")
+    id("socotra-ec-config-developer") version "v0.6.3"
 }
 
-`socotra-developer` {
+`socotra-config-developer` {
     apiUrl.set(System.getenv("SOCOTRA_KERNEL_API_URL") ?: "http://hardcoded-fallback-tenant-url")
     tenantLocator.set(System.getenv("SOCOTRA_KERNEL_TENANT_LOCATOR") ?: "hardcoded-fallback-tenant-locator")
     personalAccessToken.set(System.getenv("SOCOTRA_KERNEL_ACCESS_TOKEN") ?: "hardcoded-fallback-access-token")
