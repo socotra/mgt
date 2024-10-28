@@ -4,9 +4,9 @@ plugins {
 }
 
 `socotra-config-developer` {
-    apiUrl.set(System.getenv("SOCOTRA_KERNEL_API_URL") ?: "http://hardcoded-fallback-tenant-url")
-    tenantLocator.set(System.getenv("SOCOTRA_KERNEL_TENANT_LOCATOR") ?: "hardcoded-fallback-tenant-locator")
-    personalAccessToken.set(System.getenv("SOCOTRA_KERNEL_ACCESS_TOKEN") ?: "hardcoded-fallback-access-token")
+    apiUrl.set("https://api-kernel-dev.socotra.com")
+    tenantLocator.set("a534f068-ec84-459c-a449-e407adb32881")
+    personalAccessToken.set("SOCP_01JBAA566F06Q4E17YWKSDECP0")
 }
 
 repositories {
