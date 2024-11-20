@@ -1,0 +1,70 @@
+{
+  "displayName" : "Building",
+  "data" : {
+    "buildingValue" : {
+      "displayName" : "Requested Building Value",
+      "type" : "int"
+    },
+    "contentValue" : {
+      "displayName" : "Requested Contents Value",
+      "type" : "int"
+    },
+    "coinsurancePercent" : {
+      "displayName" : "Property Coinsurance %",
+      "type" : "int"
+    },
+    "businessInterruptionValue" : {
+      "displayName" : "Requested Business Interuption Value",
+      "type" : "int"
+    },
+    "businessInterruptionCoinsuranceValue" : {
+      "displayName" : "Business Interruption Coinsurance",
+      "type" : "int"
+    },
+    "includeExtraExpenses" : {
+      "displayName" : "Do you want to Include Extra Expenses?",
+      "type" : "string",
+      "maxLength" : 20000,
+      "options" : [ "Yes", "No", "N/A" ]
+    },
+    "aopDeductible" : {
+      "displayName" : "Requested AOP Deductible",
+      "type" : "int"
+    },
+    "causeOfLossForm" : {
+      "displayName" : "What Cause of Loss Form is requested?",
+      "type" : "string",
+      "maxLength" : 20000,
+      "options" : [ "Broad", "Basic", "Special" ]
+    },
+    "requestedEndorsements" : {
+      "displayName" : "Do you want to include any of the following?",
+      "type" : "string",
+      "maxLength" : 20000,
+      "options" : [ "Ord Law", "TRIA" ]
+    },
+    "injuryAdvertisingLimit" : {
+      "displayName" : "Requested Personal Injury and Advertising Limit",
+      "type" : "int"
+    },
+    "perOccurrenceLimit" : {
+      "displayName" : "Requested Per Occ/Agg Limit",
+      "type" : "string",
+      "maxLength" : 20000,
+      "options" : [ "$1m/$2m", " $2m/$4m" ]
+    },
+    "medicalExpenseLimit" : {
+      "displayName" : "Requested Medical Expense Liability Limit",
+      "type" : "string",
+      "maxLength" : 20000,
+      "options" : [ "$5,000", " $10,000" ]
+    },
+    "windHailDeductible" : {
+      "displayName" : "Requested Wind/Hail Deductible",
+      "type" : "string",
+      "maxLength" : 20000,
+      "options" : [ "1%", "2%", "5%", "N/A" ]
+    }
+  },
+  "abstract" : false
+}

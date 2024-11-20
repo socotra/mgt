@@ -1,0 +1,81 @@
+{
+  "displayName" : "General Information",
+  "data" : {
+    "occupancyType" : {
+      "displayName" : "What type of occupancy is the applicant?",
+      "type" : "string",
+      "minLength" : 2,
+      "maxLength" : 20000,
+      "options" : [ "Apartment Buildings", "Apartment Buildings – Garden", "Bank or Office – Mercantile or Manufacturing (Lessor's Risk Only) – Other than Not-For-Profit", "Bank or Office – Mercantile or Manufacturing (Lessor's Risk Only) – Not-For-Profit Only", "Bank or Office – Mercantile or Manufacturing (Lessor's Risk Only) – Maintained by the Insured – Other than Not-For-Profit", "Bank or Office – Mercantile or Manufacturing (Lessor's Risk Only) – Maintained by the Insured – Not-For-Profit Only" ],
+      "tag" : [ "PropGL" ]
+    },
+    "productOffering" : {
+      "displayName" : "Select the offering your client needs:",
+      "type" : "string",
+      "maxLength" : 20000,
+      "options" : [ "Lessors Risk", "Contractors", "Habitational", "Vacant Buildings", "Garage Liability", "Hotels & Motels", "Manufacturing", "Bars & Restaurants" ]
+    },
+    "hasHistoricalClaims" : {
+      "displayName" : "Has the applicant had any claims in the last 5 years?",
+      "type" : "string",
+      "maxLength" : 20000,
+      "options" : [ "Yes", "No", "N/A" ]
+    },
+    "historicalClaimThresholds" : {
+      "displayName" : "Are there any individual claims that meet the following criteria?",
+      "type" : "string?",
+      "maxLength" : 20000,
+      "options" : [ "Greater than $50,000 non-cat", "Greater than $500,000 CAT", "Involving mold or asbestos", "N/A" ]
+    },
+    "locationsCount" : {
+      "displayName" : "How many locations does the applicant need to insure?",
+      "type" : "int"
+    },
+    "ownsAllProperties" : {
+      "displayName" : "Is the applicant the owner of all properties?",
+      "type" : "string",
+      "maxLength" : 20000,
+      "options" : [ "Yes", "No", "N/A" ]
+    },
+    "hasHistoricalCoverageGap" : {
+      "displayName" : "At any time over the past (5) five years, has the applicant experienced:",
+      "type" : "string",
+      "maxLength" : 20000,
+      "options" : [ "A gap in coverage", "Non-renewed, failure to comply with safety or inspection recommendations", "Non-renewed, carrier product no longer supported", "Non-renewed citing underwriting reasons", "No prior insurance", "Cancelled for non-pay" ]
+    },
+    "hasFinancialHistoryIssue" : {
+      "displayName" : "Has the applicant had a judgement/lien,unpaid taxes,suffered foreclosure,bankruptcy/filed for bankruptcy in past five (5) years?",
+      "type" : "string",
+      "maxLength" : 20000,
+      "options" : [ "Yes", "No" ]
+    },
+    "hasLegalLiabilityIssue" : {
+      "displayName" : "In the past 5 years, has applicant been liable for a wrongful eviction, discriminatory rental practices, invasion of privacy?",
+      "type" : "string",
+      "maxLength" : 20000,
+      "options" : [ "Yes", "No" ]
+    },
+    "compliesNfPA" : {
+      "displayName" : "Do all locations comply with all required NFPA life Safety Code guideline?",
+      "type" : "string",
+      "maxLength" : 20000,
+      "options" : [ "Yes", "No" ]
+    },
+    "priorCodeViolation" : {
+      "displayName" : "Have any properties been in breach of State or Federal building codes within the last 5 years?",
+      "type" : "string",
+      "maxLength" : 20000,
+      "options" : [ "Yes", "No", "N/A" ]
+    },
+    "locationAddress_1" : {
+      "displayName" : "For each location, provide the address",
+      "type" : "string",
+      "maxLength" : 20000
+    },
+    "claimHistory" : {
+      "displayName" : "Claim History",
+      "type" : "ClaimHistory"
+    }
+  },
+  "abstract" : false
+}

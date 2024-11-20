@@ -7,7 +7,6 @@ build
 # Other files
 .DS_Store
 .vscode/
-socotra-config/
 
 config/
 .idea

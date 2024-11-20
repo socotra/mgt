@@ -4,9 +4,9 @@ plugins {
 }
 
 `socotra-config-developer` {
-    apiUrl.set("https://api-ec-sandbox.socotra.com")
-    tenantLocator.set("f901fb1d-27eb-4e7d-a2a4-62eba696765c")
-    personalAccessToken.set("SOCP_01JCGX79G7PNFBKEA6HSYRGBNT")
+    apiUrl.set(System.getenv("SOCOTRA_KERNEL_API_URL") ?: "http://hardcoded-fallback-tenant-url")
+    tenantLocator.set(System.getenv("SOCOTRA_KERNEL_TENANT_LOCATOR") ?: "hardcoded-fallback-tenant-locator")
+    personalAccessToken.set(System.getenv("SOCOTRA_KERNEL_ACCESS_TOKEN") ?: "hardcoded-fallback-access-token")
 }
 
 repositories {

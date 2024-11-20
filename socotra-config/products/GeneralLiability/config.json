@@ -1,0 +1,16 @@
+{
+  "defaultTermDuration" : 0,
+  "displayName" : "General Liability",
+  "contents" : [ "GLLocation?" ],
+  "data" : {
+    "packageQuestions" : {
+      "displayName" : "General Information",
+      "type" : "PackageProductQuestions"
+    },
+    "glQuestions" : {
+      "displayName" : "General Liability Information ",
+      "type" : "GLQuestions"
+    }
+  },
+  "abstract" : false
+}

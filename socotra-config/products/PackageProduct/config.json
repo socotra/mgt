@@ -1,0 +1,22 @@
+{
+  "defaultTermDuration" : 6,
+  "displayName" : "Package",
+  "eligibleAccountTypes" : [ "Applicant" ],
+  "contents" : [ "PackageLocation?" ],
+  "documents" : [ "SampleDocument" ],
+  "data" : {
+    "packageQuestions" : {
+      "displayName" : "General Information",
+      "type" : "PackageProductQuestions"
+    },
+    "propertyQuestions" : {
+      "displayName" : "Property Information",
+      "type" : "PropertyQuestions"
+    },
+    "glQuestions" : {
+      "displayName" : "General Liability Information",
+      "type" : "GLQuestions"
+    }
+  },
+  "abstract" : false
+}

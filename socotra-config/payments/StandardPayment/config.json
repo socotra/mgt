@@ -1,0 +1,11 @@
+{
+  "displayName" : "Standard",
+  "data" : {
+    "note" : {
+      "displayName" : "Note",
+      "type" : "string",
+      "maxLength" : 20000
+    }
+  },
+  "abstract" : false
+}

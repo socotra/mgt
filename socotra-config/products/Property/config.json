@@ -1,0 +1,16 @@
+{
+  "defaultTermDuration" : 0,
+  "displayName" : "Property",
+  "contents" : [ "GLLocation?", "PropertyLocation?" ],
+  "data" : {
+    "packageQuestions" : {
+      "displayName" : "General Information",
+      "type" : "PackageProductQuestions"
+    },
+    "propertyQuestions" : {
+      "displayName" : "Property Information",
+      "type" : "PropertyQuestions"
+    }
+  },
+  "abstract" : false
+}

@@ -1,0 +1,28 @@
+{
+  "displayName" : "Claim History",
+  "data" : {
+    "lossRuns" : {
+      "displayName" : "Please upload 3 years currently valued carrier loss runs or complete the below:",
+      "type" : "string",
+      "maxLength" : 20000
+    },
+    "claimLineOfBusiness" : {
+      "displayName" : "What line of business or coverage was the claim? (select all that apply)",
+      "type" : "string?",
+      "maxLength" : 20000,
+      "options" : [ "Property (water loss)", "Property (not water loss)", "Property (NON-CAT weather related)", "Property (CAT weather related)", "Property (vandalism, theft, crime related)", "Property (all other)", "Liability (med pay)", "Liability (bodily injury)", "Liability (property damage)", "Liability (allegation of a wrongful act)", "Liability (other)" ]
+    },
+    "totalLossPayment" : {
+      "displayName" : "How much was the total loss payment (expense + indemnity + reserve) of the claim?",
+      "type" : "string",
+      "maxLength" : 20000
+    },
+    "claimStatus" : {
+      "displayName" : "Is the status of the claim open or closed?",
+      "type" : "string",
+      "maxLength" : 20000,
+      "options" : [ "Yes", "No", "N/A" ]
+    }
+  },
+  "abstract" : false
+}
