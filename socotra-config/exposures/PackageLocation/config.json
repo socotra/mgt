@@ -197,8 +197,7 @@
     },
     "locationAddress" : {
       "displayName" : "Location Address",
-      "type" : "string",
-      "maxLength" : 20000
+      "type" : "Address*"
     },
     "hasElevatorMaintenanceAgreement" : {
       "displayName" : "Is there an elevator maintenance agreement in effect, naming the applicant as an additional insured with hold harmless?",
@@ -212,20 +211,9 @@
       "maxLength" : 20000,
       "options" : [ "Yes", "No", "N/A" ]
     },
-    "mortgageeName" : {
-      "displayName" : "Mortgage Holder Name",
-      "type" : "string",
-      "maxLength" : 20000
-    },
-    "mortgageeAddress" : {
-      "displayName" : "Mortgage Holder Street Address",
-      "type" : "string",
-      "maxLength" : 20000
-    },
-    "mortgageeZip" : {
-      "displayName" : "Mortgage Holder City, State Zip",
-      "type" : "string",
-      "maxLength" : 20000
+    "mortgageeHolder" : {
+      "displayName" : "Mortgage Holder",
+      "type" : "MortgageeHolder"
     },
     "hasCommercialCondo" : {
       "displayName" : "Is this a commercial condo unit?",

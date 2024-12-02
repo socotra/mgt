@@ -1,0 +1,33 @@
+{
+  "columns" : {
+    "classCode" : {
+      "dataType" : "int",
+      "isKey" : true
+    },
+    "ratePremOps" : {
+      "dataType" : "decimal",
+      "isKey" : false
+    },
+    "rateProdCops": {
+      "dataType" : "decimal",
+      "isKey" : false
+    },
+    "hrPremOp": {
+      "dataType" : "int",
+      "isKey" : false
+    },
+    "hrProdCOps": {
+    "dataType" : "int",
+    "isKey" : false
+    },
+    "code": {
+      "dataType" : "string",
+      "isKey" : false
+    },
+    "premiumBase": {
+      "dataType" : "int",
+      "isKey" : false
+    }
+  },
+  "selectionTimeBasis" : "currentTime"
+}

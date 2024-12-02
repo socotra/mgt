@@ -1,0 +1,25 @@
+{
+  "columns" : {
+    "zipCode" : {
+      "dataType" : "int",
+      "isKey" : true
+    },
+    "city": {
+      "dataType" : "string",
+      "isKey" : false
+    },
+    "county": {
+      "dataType" : "string",
+      "isKey" : false
+    },
+    "state": {
+      "dataType" : "string",
+      "isKey" : false
+    },
+    "territory" : {
+      "dataType" : "int",
+      "isKey" : false
+    }
+  },
+  "selectionTimeBasis" : "policyStartTime"
+}

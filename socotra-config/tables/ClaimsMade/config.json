@@ -1,0 +1,21 @@
+{
+  "columns" : {
+    "year" : {
+      "dataType" : "string",
+      "isKey" : true
+    },
+    "codeGroup": {
+      "dataType" : "int",
+      "isKey" : true
+    },
+    "ratePremOpsFactor" : {
+      "dataType" : "decimal",
+      "isKey" : false
+    },
+    "prodCOpsFactor": {
+      "dataType" : "decimal",
+      "isKey" : false
+    }
+  },
+"selectionTimeBasis" : "currentTime"
+}

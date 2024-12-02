@@ -1,0 +1,61 @@
+{
+  "type": "deductible",
+  "options": {
+    "ded_250": {
+      "displayName": "$250",
+      "value": 250
+    },
+    "ded_500": {
+      "displayName": "$500",
+      "value": 500
+    },
+    "ded_1000": {
+      "displayName": "$1,000",
+      "value": 1000
+    },
+    "ded_2000": {
+      "displayName": "$2,000",
+      "value": 2000
+    },
+    "ded_3000": {
+      "displayName": "$3,000",
+      "value": 3000
+    },
+    "ded_4000": {
+      "displayName": "$4,000",
+      "value": 4000
+    },
+    "ded_5000": {
+      "displayName": "$5,000",
+      "value": 5000
+    },
+    "ded_10000": {
+      "displayName": "$10,000",
+      "value": 10000
+    },
+    "ded_15000": {
+      "displayName": "$15,000",
+      "value": 15000
+    },
+    "ded_20000": {
+      "displayName": "$20,000",
+      "value": 20000
+    },
+    "ded_25000": {
+      "displayName": "$25,000",
+      "value": 25000
+    },
+    "ded_50000": {
+      "displayName": "$50,000",
+      "value": 50000
+    },
+    "ded_75000": {
+      "displayName": "$75,000",
+      "value": 75000
+    },
+    "ded_100000": {
+      "displayName": "$100,000",
+      "value": 100000
+    }
+  }
+}

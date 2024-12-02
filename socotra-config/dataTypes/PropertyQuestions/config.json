@@ -3,42 +3,42 @@
   "data" : {
     "hasCommercialCooking" : {
       "displayName" : "Does any location include commercial cooking or a restaurant exposure?",
-      "type" : "string",
+      "type" : "string?",
       "maxLength" : 20000,
       "options" : [ "Yes", "No" ]
     },
     "businessCreditScore" : {
       "displayName" : "What is the Business Credit score?",
-      "type" : "int",
+      "type" : "int?",
       "tag" : [ "Prop" ]
     },
     "requiresProtectiveSafeguard" : {
       "displayName" : "Does lease agreement require protective safeguard systems (e.g., ansul, dust collection, spray booth) be maintained by tenants?",
-      "type" : "string",
+      "type" : "string?",
       "maxLength" : 20000,
       "options" : [ "Yes", "No" ]
     },
     "buildingWiringPlumbing" : {
       "displayName" : "Does any location have:",
-      "type" : "string",
+      "type" : "string?",
       "maxLength" : 20000,
       "options" : [ "Knob-and-tube or aluminum wiring present", "Fuses present", "Federal Pacific circuit breakers", "More than 20% EIFS (Exterior Insulation Finishing System) exposure", "Pig-tailed wiring", "Steel, iron or polybutylene plumbing" ]
     },
     "ineligibleOccupants" : {
       "displayName" : "Select all of the following industries, operations or products any tenant has operations involving or related to:",
-      "type" : "string",
+      "type" : "string?",
       "maxLength" : 20000,
       "options" : [ "Hunting", "Archery", "Trapping", "Skeet Shooting", "Gun Range", "Snow Skiing", "Water Skiing", "Lounge ", "Bar", "Adult Entertainment Venue", "Gas or Fuel Delivery/Sales", "Food Manufacturing", "Cannabis Processing" ]
     },
     "buildingHazards" : {
       "displayName" : "Select all of the following that apply to any building:",
-      "type" : "string",
+      "type" : "string?",
       "maxLength" : 20000,
       "options" : [ "Over 4 Stories in Height", "Less than 70% Occupied", "Have an elevator", "Any ongoing or planned structural renovations during the policy term", "Renovations exceeding 20% of the building value during the policy term" ]
     },
     "building_1" : {
       "displayName" : "Select Building Number",
-      "type" : "string",
+      "type" : "string?",
       "maxLength" : 20000
     }
   },

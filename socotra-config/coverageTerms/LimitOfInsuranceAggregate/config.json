@@ -1,0 +1,66 @@
+{
+  "type" : "limit",
+  "displayName": "Limit of Insurance - Aggregate",
+  "options" : {
+    "agg_50000" : {
+      "displayName": "$50,000",
+      "value" : 50000
+    },
+    "agg_100000" : {
+      "displayName": "$100,000",
+      "value" : 100000
+    },
+    "agg_200000" : {
+      "displayName": "$200,000",
+      "value" : 200000
+    },
+    "agg_300000" : {
+      "displayName": "$300,000",
+      "value" : 300000
+    },
+    "agg_500000" : {
+      "displayName": "$500,000",
+      "value" : 500000
+    },
+    "agg_600000" : {
+      "displayName": "$600,000",
+      "value" : 600000
+    },
+    "agg_1000000" : {
+      "displayName": "$1,000,000",
+      "value" : 1000000
+    },
+    "agg_1500000" : {
+      "displayName": "$1,500,000",
+      "value" : 1500000
+    },
+    "agg_2000000" : {
+      "displayName": "$2,000,000",
+      "value" : 2000000
+    },
+    "agg_2500000" : {
+      "displayName": "$2,500,000",
+      "value" : 2500000
+    },
+    "agg_3000000" : {
+      "displayName": "$3,000,000",
+      "value" : 3000000
+    },
+    "agg_4000000" : {
+      "displayName": "$4,000,000",
+      "value" : 4000000
+    },
+    "agg_5000000" : {
+      "displayName": "$5,000,000",
+      "value" : 5000000
+    },
+    "agg_10000000" : {
+      "displayName": "$10,000,000",
+      "value" : 10000000
+    },
+    "agg_20000000" : {
+      "displayName": "$20,000,000",
+      "value" : 20000000
+    }
+  }
+}

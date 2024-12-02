@@ -1,0 +1,14 @@
+{
+  "displayName": "Mortgage Holder",
+  "data": {
+    "mortgageeName" : {
+      "displayName" : "Mortgage Holder Name",
+      "type" : "string",
+      "maxLength" : 20000
+    },
+    "mortgageeAddress" : {
+      "displayName" : "Mortgage Holder Address",
+      "type" : "Address?"
+    }
+  }
+}

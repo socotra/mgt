@@ -1,0 +1,17 @@
+{
+  "columns" : {
+    "code" : {
+      "dataType" : "int",
+      "isKey" : true
+    },
+    "premOps" : {
+      "dataType" : "int",
+      "isKey" : true
+    },
+    "prodCOpsFactor" : {
+      "dataType" : "int",
+      "isKey" : false
+    }
+  },
+  "selectionTimeBasis" : "policyStartTime"
+}

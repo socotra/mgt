@@ -1,0 +1,16 @@
+{
+  "columns": {
+    "claimCount":  {
+      "dataType" : "int",
+      "isKey" : true
+    },
+    "premOpsFctr": {
+      "dataType" : "decimal",
+      "isKey" : false
+    },
+    "prodCOpsFctr": {
+      "dataType" : "decimal",
+      "isKey" : false
+    }
+  }
+}

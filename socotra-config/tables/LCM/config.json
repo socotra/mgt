@@ -1,0 +1,21 @@
+{
+  "columns" : {
+    "state" : {
+      "dataType" : "string",
+      "isKey" : true
+    },
+    "premOpsLCM" : {
+      "dataType" : "decimal",
+      "isKey" : false
+    },
+    "prodCOpsLCM": {
+      "dataType" : "decimal",
+      "isKey" : false
+    },
+    "effectiveDate": {
+      "dataType" : "string",
+      "isKey" : false
+    }
+  },
+  "selectionTimeBasis" : "policyStartTime"
+}

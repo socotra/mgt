@@ -9,8 +9,7 @@
     },
     "locationAddress" : {
       "displayName" : "Location Address",
-      "type" : "string",
-      "maxLength" : 20000
+      "type" : "Address*"
     },
     "hasOccupancyPartialTenantOwnership" : {
       "displayName" : "Does the applicant occupy and operate out of the building or do they have partial ownership of a tenant's operations?",

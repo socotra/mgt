@@ -3,54 +3,54 @@
   "data" : {
     "hasMulticlassRisk" : {
       "displayName" : "Does your clients business entail operations or services outside of what is listed above?",
-      "type" : "string",
+      "type" : "string?",
       "maxLength" : 20000,
       "options" : [ "Yes", "No" ],
       "tag" : [ "GL" ]
     },
     "hasMulticlassRiskDesc" : {
       "displayName" : "If yes, please explain",
-      "type" : "string",
+      "type" : "string?",
       "maxLength" : 20000,
       "tag" : [ "GL" ]
     },
     "years_in_business" : {
       "displayName" : "What year did the applicant start the business of owning/renting properties?",
-      "type" : "date"
+      "type" : "date?"
     },
     "leasesHoldHarmless" : {
       "displayName" : "Does the applicant have a lease in place with all occupants, containing harmless wording in favor of the applicant?",
-      "type" : "string",
+      "type" : "string?",
       "maxLength" : 20000,
       "options" : [ "Yes", "No" ]
     },
     "requiresTenantGenLiab" : {
       "displayName" : "Does the lease require tenants to maintain general liability insurance with the applicant named as an additional insured?",
-      "type" : "string",
+      "type" : "string?",
       "maxLength" : 20000,
       "options" : [ "Yes", "No" ]
     },
     "collectsTenantCoi" : {
       "displayName" : "Does the applicant collect current Certificates of Insurance from each commercial tenant?",
-      "type" : "string",
+      "type" : "string?",
       "maxLength" : 20000,
       "options" : [ "Yes", "No" ]
     },
     "compliesADA" : {
       "displayName" : "Are all locations up to code on accessibility requirements (ADA compliance)?",
-      "type" : "string",
+      "type" : "string?",
       "maxLength" : 20000,
       "options" : [ "Yes", "No" ]
     },
     "locationHazardsTenants" : {
       "displayName" : "Do any locations have:",
-      "type" : "string",
+      "type" : "string?",
       "maxLength" : 20000,
       "options" : [ "Tenant open past midnight", "Tenant working with or storing toxic, hazardous, highly-flammable or explosive chemicals or substances" ]
     },
     "locationHazardsOperations" : {
       "displayName" : "Select all of the following that apply to any location:",
-      "type" : "string",
+      "type" : "string?",
       "maxLength" : 20000,
       "options" : [ "Rentals on short-term or seasonal basis (less than 6 months)", "Tenant evicted in the past six (6) months or in the process of being evicted", "Tenant subleases a location to another tenant", "Timeshare agreements/operations" ]
     }

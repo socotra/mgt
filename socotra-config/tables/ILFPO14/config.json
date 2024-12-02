@@ -1,0 +1,61 @@
+{
+  "columns" : {
+    "aggregate" : {
+      "dataType" : "int",
+      "isKey" : true
+    },
+    "po_25000" : {
+      "dataType" : "decimal",
+      "isKey" : false
+    },
+    "po_50000" : {
+      "dataType" : "decimal",
+      "isKey" : false
+    },
+    "po_100000": {
+      "dataType" : "decimal",
+      "isKey" : false
+    },
+    "po_200000": {
+      "dataType" : "decimal",
+      "isKey" : false
+    },
+    "po_300000": {
+      "dataType" : "decimal",
+      "isKey" : false
+    },
+    "po_500000": {
+      "dataType" : "decimal",
+      "isKey" : false
+    },
+    "po_1000000": {
+      "dataType" : "decimal",
+      "isKey" : false
+    },
+    "po_1500000": {
+      "dataType" : "decimal",
+      "isKey" : false
+    },
+    "po_2000000": {
+      "dataType" : "decimal",
+      "isKey" : false
+    },
+    "po_3000000": {
+      "dataType" : "decimal",
+      "isKey" : false
+    },
+    "po_4000000": {
+      "dataType" : "decimal",
+      "isKey" : false
+    },
+    "po_5000000": {
+      "dataType" : "decimal",
+      "isKey" : false
+    },
+    "po_10000000": {
+      "dataType" : "decimal",
+      "isKey" : false
+    }
+  },
+  "selectionTimeBasis" : "policyStartTime"
+}

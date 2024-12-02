@@ -2,6 +2,7 @@
   "defaultTermDuration" : 0,
   "displayName" : "General Liability",
   "contents" : [ "GLLocation?" ],
+  "charges" : [ "Premium" ],
   "data" : {
     "packageQuestions" : {
       "displayName" : "General Information",

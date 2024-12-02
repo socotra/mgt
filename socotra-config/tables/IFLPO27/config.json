@@ -1,0 +1,21 @@
+{
+  "columns" : {
+    "classCode" : {
+      "dataType" : "int",
+      "isKey" : true
+    },
+    "bi" : {
+      "dataType" : "decimal",
+      "isKey" : false
+    },
+    "pd" : {
+      "dataType" : "decimal",
+      "isKey" : false
+    },
+    "constant": {
+      "dataType" : "decimal",
+      "isKey" : false
+    }
+  },
+  "selectionTimeBasis" : "policyStartTime"
+}

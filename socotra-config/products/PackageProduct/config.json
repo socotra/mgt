@@ -4,6 +4,7 @@
   "eligibleAccountTypes" : [ "Applicant" ],
   "contents" : [ "PackageLocation?" ],
   "documents" : [ "SampleDocument" ],
+  "charges" : [ "Premium" ],
   "data" : {
     "packageQuestions" : {
       "displayName" : "General Information",

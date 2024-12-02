@@ -1,0 +1,21 @@
+{
+  "columns" : {
+    "form" : {
+      "dataType" : "string",
+      "isKey" : true
+    },
+    "hazard" : {
+      "dataType" : "int",
+      "isKey" : true
+    },
+    "premOps" : {
+      "dataType" : "decimal",
+      "isKey" : false
+    },
+    "prodCOps": {
+      "dataType" : "decimal",
+      "isKey" : false
+    }
+  },
+  "selectionTimeBasis" : "policyStartTime"
+}

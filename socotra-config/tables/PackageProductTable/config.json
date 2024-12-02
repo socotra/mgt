@@ -1,0 +1,13 @@
+{
+  "columns" : {
+    "packageGrp" : {
+      "dataType" : "string",
+      "isKey" : true
+    },
+    "packageFctr" : {
+      "dataType" : "decimal",
+      "isKey" : false
+    }
+  },
+  "selectionTimeBasis" : "policyStartTime"
+}

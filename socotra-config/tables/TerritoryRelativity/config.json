@@ -1,0 +1,21 @@
+{
+  "columns" : {
+    "state" : {
+      "dataType" : "string",
+      "isKey" : true
+    },
+    "territory" : {
+      "dataType" : "int",
+      "isKey" : true
+    },
+    "premOpsFactors": {
+      "dataType" : "decimal",
+      "isKey" : false
+    },
+    "premCopsFactors": {
+      "dataType" : "decimal",
+      "isKey" : false
+    }
+  },
+  "selectionTimeBasis" : "policyStartTime"
+}

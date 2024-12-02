@@ -1,10 +1,10 @@
 {
   "columns" : {
-    "sampleColumn1" : {
-      "dataType" : "string",
+    "limit" : {
+      "dataType" : "int",
       "isKey" : true
     },
-    "sampleColumn2" : {
+    "factor" : {
       "dataType" : "decimal",
       "isKey" : false
     }

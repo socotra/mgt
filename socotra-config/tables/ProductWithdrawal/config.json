@@ -1,0 +1,17 @@
+
+{
+  "columns": {
+    "limit": {
+      "dataType": "string",
+      "isKey": true
+    },
+    "expense": {
+      "dataType": "decimal",
+      "isKey": false
+    },
+    "liability": {
+      "dataType": "decimal",
+      "isKey": false
+    }
+  }
+}
