@@ -1,36 +1,35 @@
 {
-  "displayName": "Address",
-  "data": {
-    "line1": {
-      "displayName": "Line 1",
-      "type": "string",
-      "scope": "P",
-      "maxLength": 20000
+  "displayName" : "Address",
+  "data" : {
+    "line1" : {
+      "displayName" : "Line 1",
+      "type" : "string",
+      "scope" : "P",
+      "maxLength" : 20000
     },
-    "line2": {
-      "displayName": "Line 2",
-      "type": "string?",
-      "scope": "P",
-      "maxLength": 20000
+    "line2" : {
+      "displayName" : "Line 2",
+      "type" : "string?",
+      "scope" : "P",
+      "maxLength" : 20000
     },
-    "city": {
-      "displayName": "City",
-      "type": "string",
-      "scope": "P",
-      "maxLength": 20000
+    "city" : {
+      "displayName" : "City",
+      "type" : "string",
+      "scope" : "P",
+      "maxLength" : 20000
     },
-    "state": {
-      "displayName": "State",
-      "type": "string",
-      "scope": "P",
-      "maxLength": 20000
+    "state" : {
+      "displayName" : "State",
+      "type" : "string",
+      "scope" : "P",
+      "maxLength" : 20000
     },
-    "zipCode": {
-      "displayName": "Zip Code",
-      "type": "string",
-      "scope": "P",
-      "maxLength": 20000
+    "zipCode" : {
+      "displayName" : "Zip Code",
+      "type" : "int",
+      "scope" : "P"
     }
   },
-  "abstract": false
+  "abstract" : false
 }

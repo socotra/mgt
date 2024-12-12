@@ -8,11 +8,11 @@
       "dataType" : "int",
       "isKey" : true
     },
-    "premOpsFactors": {
+    "premOpsFactors" : {
       "dataType" : "decimal",
       "isKey" : false
     },
-    "premCopsFactors": {
+    "premCopsFactors" : {
       "dataType" : "decimal",
       "isKey" : false
     }

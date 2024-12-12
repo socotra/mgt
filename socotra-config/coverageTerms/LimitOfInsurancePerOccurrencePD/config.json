@@ -1,58 +1,58 @@
 {
   "type" : "limit",
-  "displayName": "Limit of Insurance - Per Occurrence - PD",
+  "displayName" : "Limit of Insurance - Per Occurrence - PD",
   "options" : {
-    "pd_25000" : {
-      "displayName": "$25,000",
-      "value" : 25000
+    "pd_2000000" : {
+      "displayName" : "$2,000,000",
+      "value" : 2000000
     },
-    "pd_50000" : {
-      "displayName": "$50,000",
-      "value" : 50000
+    "pd_10000000" : {
+      "displayName" : "$10,000,000",
+      "value" : 10000000
     },
     "pd_100000" : {
-      "displayName": "$100,000",
+      "displayName" : "$100,000",
       "value" : 100000
     },
+    "pd_3000000" : {
+      "displayName" : "$3,000,000",
+      "value" : 3000000
+    },
+    "pd_500000" : {
+      "displayName" : "$500,000",
+      "value" : 500000
+    },
+    "pd_1000000" : {
+      "displayName" : "$1,000,000",
+      "value" : 1000000
+    },
+    "pd_1500000" : {
+      "displayName" : "$1,500,000",
+      "value" : 1500000
+    },
+    "pd_25000" : {
+      "displayName" : "$25,000",
+      "value" : 25000
+    },
     "pd_200000" : {
-      "displayName": "$200,000",
+      "displayName" : "$200,000",
       "value" : 200000
     },
     "pd_300000" : {
-      "displayName": "$300,000",
+      "displayName" : "$300,000",
       "value" : 300000
     },
-    "pd_500000" : {
-      "displayName": "$500,000",
-      "value" : 500000
-    },
-    "pd_1000000": {
-      "displayName": "$1,000,000",
-      "value" : 1000000
-    },
-    "pd_1500000": {
-      "displayName": "$1,500,000",
-      "value" : 1500000
-    },
-    "pd_2000000": {
-      "displayName": "$2,000,000",
-      "value" : 2000000
-    },
-    "pd_3000000": {
-      "displayName": "$3,000,000",
-      "value" : 3000000
-    },
-    "pd_4000000": {
-      "displayName": "$4,000,000",
-      "value" : 4000000
-    },
-    "pd_5000000": {
-      "displayName": "$5,000,000",
+    "pd_5000000" : {
+      "displayName" : "$5,000,000",
       "value" : 5000000
     },
-    "pd_10000000": {
-      "displayName": "$10,000,000",
-      "value" : 10000000
+    "pd_50000" : {
+      "displayName" : "$50,000",
+      "value" : 50000
+    },
+    "pd_4000000" : {
+      "displayName" : "$4,000,000",
+      "value" : 4000000
     }
   }
 }

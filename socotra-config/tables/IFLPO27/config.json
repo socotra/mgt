@@ -12,7 +12,7 @@
       "dataType" : "decimal",
       "isKey" : false
     },
-    "constant": {
+    "constant" : {
       "dataType" : "decimal",
       "isKey" : false
     }

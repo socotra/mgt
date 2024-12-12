@@ -4,7 +4,7 @@
       "dataType" : "string",
       "isKey" : true
     },
-    "codeGroup": {
+    "codeGroup" : {
       "dataType" : "int",
       "isKey" : true
     },
@@ -12,10 +12,10 @@
       "dataType" : "decimal",
       "isKey" : false
     },
-    "prodCOpsFactor": {
+    "prodCOpsFactor" : {
       "dataType" : "decimal",
       "isKey" : false
     }
   },
-"selectionTimeBasis" : "currentTime"
+  "selectionTimeBasis" : "currentTime"
 }

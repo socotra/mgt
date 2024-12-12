@@ -27,65 +27,85 @@ public class GLRatingPlugin implements RatePlugin {
 
         List<RatingItem> ratingItems = new ArrayList<>();
 
-//        const limitOfInsuranceBI = 100000;
-//        const limitOfInsurancePD = 100000;
-//        const zipCode = 49202;
-//        const state = 'MI';
-        int classCode = 60010;
-        int territory = 705;
-        int exposure = 8;
-        String state = "TX";
+        ResourceSelector tableRecordFetcher = ResourceSelectorFactory.getInstance().getSelector(quote);
+
+        int zipCode = quote.data().packageQuestions().locationAddress_1().zipCode();
+        log.info("zip-code");
+        log.info(Integer.toString(zipCode));
+
+        String state = quote.data().packageQuestions().locationAddress_1().state();
+        log.info("state");
+        log.info(state);
+
+        int territory = tableRecordFetcher.getTable(Territory.class).getRecord(Territory.makeKey(zipCode)).orElseThrow().territory();
+        log.info("territory");
+        log.info(Integer.toString(territory));
+
+        int classCode = quote.data().packageQuestions().classCode();
+        log.info("class-code");
+        log.info(Integer.toString(classCode));
+
+        int exposure = quote.data().glQuestions().exposureCount();
+        log.info("exposure");
+        log.info(Integer.toString(exposure));
+
         int limitOfInsuranceBI =   100000;
         int limitOfInsurancePD =  100000;
 
-        ResourceSelector tableRecordFetcher = ResourceSelectorFactory.getInstance().getSelector(quote);
-
         // retrieve value, cell L17
         int premiumBase = tableRecordFetcher.getTable(ClassCodes.class).getRecord(ClassCodes.makeKey(classCode)).orElseThrow().premiumBase();
-        log.info(premiumBase.toString());
+        log.info(Integer.toString(premiumBase));
 
         // retrieve prem-ops factor
         BigDecimal premOpsFactor = tableRecordFetcher.getTable(ClassCodes.class).getRecord(ClassCodes.makeKey(classCode)).orElseThrow().ratePremOps();
         // calculate base-rate, cell I18
-        BigDecimal baseRate = premOpsFactor.multiply(BigDecimal.valueOf(exposure))/premiumBase;
-//        log.info(baseRate.toString());
+        BigDecimal baseRate = (premOpsFactor.multiply(BigDecimal.valueOf(exposure))).divide(BigDecimal.valueOf(premiumBase));
+        log.info(baseRate.toString());
 
         // retrieve lcm factor, cell I19
         BigDecimal baseRateLCM = tableRecordFetcher.getTable(LCM.class).getRecord(LCM.makeKey(state)).orElseThrow().premOpsLCM();
-//        log.info(baseRateLCM.toString());
+        log.info(baseRateLCM.toString());
 
-        // TODO: needs to sum these values
+        // TODO: potentially need to sum these values
         BigDecimal baseRateTerritory = tableRecordFetcher.getTable(TerritoryRelativity.class).getRecord(TerritoryRelativity.makeKey(state, territory)).orElseThrow().premOpsFactors();
-
         // TODO: limit of liability SUMIFS
         // TODO: deductible SUMIFS
         // TODO: discount factors
         // TODO: affinity discount
 
-        BigDecimal testDiscountFactor = 0.970;
+        BigDecimal testDiscountFactor=new BigDecimal(".970");
 
+        // will always be single as this is the GL rater
         String packageGrp = "Single";
         BigDecimal packageRate = tableRecordFetcher.getTable(PackageProductTable.class).getRecord(PackageProductTable.makeKey(packageGrp)).orElseThrow().packageFctr();
 
-        String claims = "None";
-        BigDecimal claimsRate = tableRecordFetcher.getTable(PriorClaims.class).getRecord(PriorClaims.makeKey(claims)).orElseThrow().premOpsFctr();
+        int claimCount = quote.data().packageQuestions().claimHistory().size();
+        log.info("claim count");
+        log.info(Integer.toString(claimCount));
+        BigDecimal claimsRate = tableRecordFetcher.getTable(PriorClaims.class).getRecord(PriorClaims.makeKey(claimCount)).orElseThrow().premOpsFctr();
 
+        // TODO: see where this goes into the product
         String terrorism = "Yes";
         BigDecimal terrorismRate = tableRecordFetcher.getTable(Terrorism.class).getRecord(Terrorism.makeKey(terrorism)).orElseThrow().factor();
 
-        BigDecimal finalRate = terrorismRate*claimsRate*packageRate*baseRateTerritory*baseRateLCM*baseRate*testDiscountFactor;
+        BigDecimal finalRate = terrorismRate.multiply(claimsRate).multiply(packageRate).multiply(baseRateTerritory).multiply(baseRateLCM).multiply(baseRate).multiply(baseRateLCM).multiply(testDiscountFactor);
+        log.info("finalRate");
+        log.info(finalRate.toString());
 
-        if (finalRate <= 500) {
+        BigDecimal minimumPremium = new BigDecimal("500.0");
+        if (finalRate.compareTo(minimumPremium) <= 0) {
             ratingItems.add(RatingItem.builder()
                     .elementLocator(quote.locator())
                     .chargeType(ChargeType.premium)
                     .rate(BigDecimal.valueOf(41.67))
                     .build());
         } else {
+            BigDecimal months =new BigDecimal("12.0");
+            BigDecimal monthlyAmount = finalRate.divide(months);
             ratingItems.add(RatingItem.builder()
                     .elementLocator(quote.locator())
                     .chargeType(ChargeType.premium)
-                    .rate(BigDecimal.valueOf(finalRate/12))
+                    .rate(monthlyAmount)
                     .build());
         }
 

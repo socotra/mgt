@@ -1,0 +1,12 @@
+{
+  "columns": {
+    "affinity": {
+      "dataType": "string",
+      "isKey": true
+    },
+    "factor": {
+      "dataType": "decimal",
+      "isKey": false
+    }
+  }
+}

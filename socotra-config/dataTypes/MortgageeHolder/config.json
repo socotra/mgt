@@ -1,6 +1,6 @@
 {
-  "displayName": "Mortgage Holder",
-  "data": {
+  "displayName" : "Mortgage Holder",
+  "data" : {
     "mortgageeName" : {
       "displayName" : "Mortgage Holder Name",
       "type" : "string",
@@ -10,5 +10,6 @@
       "displayName" : "Mortgage Holder Address",
       "type" : "Address?"
     }
-  }
+  },
+  "abstract" : false
 }

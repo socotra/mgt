@@ -8,11 +8,11 @@
       "dataType" : "decimal",
       "isKey" : false
     },
-    "prodCOpsLCM": {
+    "prodCOpsLCM" : {
       "dataType" : "decimal",
       "isKey" : false
     },
-    "effectiveDate": {
+    "effectiveDate" : {
       "dataType" : "string",
       "isKey" : false
     }

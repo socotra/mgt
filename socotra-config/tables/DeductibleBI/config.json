@@ -1,14 +1,14 @@
 {
   "columns" : {
-    "hazard" : {
+    "classBI" : {
+      "dataType" : "int",
+      "isKey" : false
+    },
+    "deductibleBI" : {
       "dataType" : "int",
       "isKey" : true
     },
-    "premOps" : {
-      "dataType" : "decimal",
-      "isKey" : false
-    },
-    "prodCOps" : {
+    "factorBI" : {
       "dataType" : "decimal",
       "isKey" : false
     }

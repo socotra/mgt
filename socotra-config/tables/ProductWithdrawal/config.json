@@ -1,17 +1,17 @@
-
 {
-  "columns": {
-    "limit": {
-      "dataType": "string",
-      "isKey": true
+  "columns" : {
+    "limit" : {
+      "dataType" : "string",
+      "isKey" : true
     },
-    "expense": {
-      "dataType": "decimal",
-      "isKey": false
+    "expense" : {
+      "dataType" : "decimal",
+      "isKey" : false
     },
-    "liability": {
-      "dataType": "decimal",
-      "isKey": false
+    "liability" : {
+      "dataType" : "decimal",
+      "isKey" : false
     }
-  }
+  },
+  "selectionTimeBasis" : "termStartTime"
 }

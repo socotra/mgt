@@ -1,16 +1,17 @@
 {
-  "columns": {
-    "claimCount":  {
+  "columns" : {
+    "claimCount" : {
       "dataType" : "int",
       "isKey" : true
     },
-    "premOpsFctr": {
+    "premOpsFctr" : {
       "dataType" : "decimal",
       "isKey" : false
     },
-    "prodCOpsFctr": {
+    "prodCOpsFctr" : {
       "dataType" : "decimal",
       "isKey" : false
     }
-  }
+  },
+  "selectionTimeBasis" : "termStartTime"
 }

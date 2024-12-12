@@ -1,0 +1,20 @@
+{
+  "columns": {
+    "classIFL": {
+      "dataType": "int",
+      "isKey": false
+    },
+    "occIFL": {
+      "dataType": "string",
+      "isKey": true
+    },
+    "aggIFL": {
+      "dataType": "string",
+      "isKey": true
+    },
+    "factorIFL": {
+      "dataType": "decimal",
+      "isKey": false
+    }
+  }
+}

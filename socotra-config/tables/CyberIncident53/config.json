@@ -12,7 +12,7 @@
       "dataType" : "decimal",
       "isKey" : false
     },
-    "prodCOps": {
+    "prodCOps" : {
       "dataType" : "decimal",
       "isKey" : false
     }

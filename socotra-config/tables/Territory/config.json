@@ -4,15 +4,15 @@
       "dataType" : "int",
       "isKey" : true
     },
-    "city": {
+    "city" : {
       "dataType" : "string",
       "isKey" : false
     },
-    "county": {
+    "county" : {
       "dataType" : "string",
       "isKey" : false
     },
-    "state": {
+    "state" : {
       "dataType" : "string",
       "isKey" : false
     },

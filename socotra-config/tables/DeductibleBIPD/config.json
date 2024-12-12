@@ -1,14 +1,14 @@
 {
   "columns" : {
-    "hazard" : {
+    "classBIPD" : {
+      "dataType" : "int",
+      "isKey" : false
+    },
+    "deductibleBIPD" : {
       "dataType" : "int",
       "isKey" : true
     },
-    "premOps" : {
-      "dataType" : "decimal",
-      "isKey" : false
-    },
-    "prodCOps" : {
+    "factorBIPD" : {
       "dataType" : "decimal",
       "isKey" : false
     }

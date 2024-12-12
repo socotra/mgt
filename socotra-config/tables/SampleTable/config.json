@@ -1,14 +1,10 @@
 {
   "columns" : {
-    "hazard" : {
-      "dataType" : "int",
+    "sampleColumn1" : {
+      "dataType" : "string",
       "isKey" : true
     },
-    "premOps" : {
-      "dataType" : "decimal",
-      "isKey" : false
-    },
-    "prodCOps" : {
+    "sampleColumn2" : {
       "dataType" : "decimal",
       "isKey" : false
     }

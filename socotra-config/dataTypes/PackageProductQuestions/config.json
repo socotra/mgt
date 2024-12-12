@@ -69,11 +69,15 @@
     },
     "locationAddress_1" : {
       "displayName" : "For each location, provide the address",
-      "type" : "Address*"
+      "type" : "Address?"
     },
     "claimHistory" : {
       "displayName" : "Claim History",
-      "type" : "ClaimHistory"
+      "type" : "ClaimHistory*"
+    },
+    "classCode" : {
+      "displayName" : "Location Class Code",
+      "type" : "int"
     }
   },
   "abstract" : false

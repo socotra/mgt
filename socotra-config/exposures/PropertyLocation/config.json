@@ -9,7 +9,8 @@
     },
     "locationAddress" : {
       "displayName" : "Location Address",
-      "type" : "string"
+      "type" : "string",
+      "maxLength" : 20000
     },
     "hasElevatorMaintenanceAgreement" : {
       "displayName" : "Is there an elevator maintenance agreement in effect, naming the applicant as an additional insured with hold harmless?",

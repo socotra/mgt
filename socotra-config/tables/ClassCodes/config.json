@@ -8,23 +8,23 @@
       "dataType" : "decimal",
       "isKey" : false
     },
-    "rateProdCops": {
+    "rateProdCops" : {
       "dataType" : "decimal",
       "isKey" : false
     },
-    "hrPremOp": {
+    "hrPremOp" : {
       "dataType" : "int",
       "isKey" : false
     },
-    "hrProdCOps": {
-    "dataType" : "int",
-    "isKey" : false
+    "hrProdCOps" : {
+      "dataType" : "int",
+      "isKey" : false
     },
-    "code": {
+    "code" : {
       "dataType" : "string",
       "isKey" : false
     },
-    "premiumBase": {
+    "premiumBase" : {
       "dataType" : "int",
       "isKey" : false
     }

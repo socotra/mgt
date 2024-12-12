@@ -1,10 +1,11 @@
 {
   "displayName" : "Location",
-  "contents" : [ "CyberIncident", "LossOfElectronicDataCoverage", "ProductWithdrawalCoverage", "OwnersContractorsProtectiveLiabilityInsurance" ],
+  "contents" : [ "CyberIncident?", "LossOfElectronicDataCoverage?", "ProductWithdrawalCoverage?", "OwnersContractorsProtectiveLiabilityInsurance?" ],
+  "coverageTerms": [ "LimitOfInsuranceAggregate", "LimitOfInsuranceMedical", "LimitOfInsurancePerOccurrenceBI", "LimitOfInsurancePerOccurrencePD" ],
   "data" : {
     "locationNumber" : {
       "displayName" : "Location Number",
-      "type" : "string",
+      "type" : "string?",
       "maxLength" : 20000
     },
     "locationAddress" : {
@@ -13,35 +14,35 @@
     },
     "hasOccupancyPartialTenantOwnership" : {
       "displayName" : "Does the applicant occupy and operate out of the building or do they have partial ownership of a tenant's operations?",
-      "type" : "string",
+      "type" : "string?",
       "maxLength" : 20000,
       "options" : [ "Yes", "No", "N/A" ]
     },
     "hasPublicParking" : {
       "displayName" : "Are the parking facilities open to use by the public?",
-      "type" : "string",
+      "type" : "string?",
       "maxLength" : 20000,
       "options" : [ "Yes", "No", "N/A" ]
     },
     "hasPublicParkingFee" : {
       "displayName" : "If yes, is there a fee charged?",
-      "type" : "string",
+      "type" : "string?",
       "maxLength" : 20000,
       "options" : [ "Yes", "No", "N/A" ]
     },
     "publicParkingAnnualSales" : {
       "displayName" : "Please input annual gross receipts for parking",
-      "type" : "int"
+      "type" : "int?"
     },
     "isNamedAdditionalInsuredOnParking" : {
       "displayName" : "Is the applicant named as an additional insured on the parking facility owners policy?",
-      "type" : "string",
+      "type" : "string?",
       "maxLength" : 20000,
       "options" : [ "Yes", "No", "N/A" ]
     },
     "premisesFeatures" : {
       "displayName" : "Are any of the following on the premises:",
-      "type" : "string",
+      "type" : "string?",
       "maxLength" : 20000,
       "options" : [ "Baseball Fields", "Basketball Courts", "Racquetball/Tennis/Volleyball/Pickle Ball Courts", "Bathing Beaches", "Bike/Horse Trails", "Boat Docks/Slips", "Clubhouse", "Convenience Store", "Exercise Facilities", "Lakes", "Marinas", "Parks", "Playground", "Restaurants", "Saunas/Spas", "Laundry Room", "Special Events Space", "Streets/Roads" ]
     },
@@ -51,25 +52,25 @@
     },
     "lifeguardEmploymentType" : {
       "displayName" : "Are lifeguards employed by you or subcontracted?",
-      "type" : "string",
+      "type" : "string?",
       "maxLength" : 20000,
       "options" : [ "Yes", "No", "N/A" ]
     },
     "isPoolFenced" : {
       "displayName" : "Are pools fenced from all units?",
-      "type" : "string",
+      "type" : "string?",
       "maxLength" : 20000,
       "options" : [ "Yes", "No", "N/A" ]
     },
     "hasDivingBoardOrSlide" : {
       "displayName" : "Is there a diving board or slide?",
-      "type" : "string",
+      "type" : "string?",
       "maxLength" : 20000,
       "options" : [ "Yes", "No", "N/A" ]
     },
     "hasDepthMarkers" : {
       "displayName" : "Are there depth markers?",
-      "type" : "string",
+      "type" : "string?",
       "maxLength" : 20000,
       "options" : [ "Yes", "No", "N/A" ]
     },
@@ -81,121 +82,121 @@
     },
     "hasSelfClosingGate" : {
       "displayName" : "Is there a self-closing gate?",
-      "type" : "string",
+      "type" : "string?",
       "maxLength" : 20000,
       "options" : [ "Yes", "No", "N/A" ]
     },
     "hasStructuresNearPool" : {
       "displayName" : "Are any structures within 10 feet of edge of pool?",
-      "type" : "string",
+      "type" : "string?",
       "maxLength" : 20000,
       "options" : [ "Yes", "No", "N/A" ]
     },
     "hasWarningSigns" : {
       "displayName" : "Are warning signs and rules posted in clearly visible areas?",
-      "type" : "string",
+      "type" : "string?",
       "maxLength" : 20000,
       "options" : [ "Yes", "No", "N/A" ]
     },
     "hasSlidingGlassLocks" : {
       "displayName" : "Are sliding glass doors equipped with additional locks?",
-      "type" : "string",
+      "type" : "string?",
       "maxLength" : 20000,
       "options" : [ "Yes", "No", "N/A" ]
     },
     "hasPeepholesOrDeadbolts" : {
       "displayName" : "Do entry doors have peepholes and deadbolts or keyless deadbolts?",
-      "type" : "string",
+      "type" : "string?",
       "maxLength" : 20000,
       "options" : [ "Yes", "No", "N/A" ]
     },
     "doesBackgroundChecksEmployee" : {
       "displayName" : "Are criminal background checks done on employees?",
-      "type" : "string",
+      "type" : "string?",
       "maxLength" : 20000,
       "options" : [ "Yes", "No" ]
     },
     "doesBackgroundChecksTenant" : {
       "displayName" : "Are criminal background checks done on prospective tenants?",
-      "type" : "string",
+      "type" : "string?",
       "maxLength" : 20000,
       "options" : [ "Yes", "No", "N/A" ]
     },
     "disclaimsSecurity" : {
       "displayName" : "Does the lease/rental agreement makes no warranties with regard to security and that leasing agents/employees",
-      "type" : "string",
+      "type" : "string?",
       "maxLength" : 20000,
       "options" : [ "Yes", "No", "N/A" ]
     },
     "maintenanceProvider" : {
       "displayName" : "Who is responsible for the maintenance of the premises,including snow and ice removal from sidewalks and parking lots?",
-      "type" : "string",
+      "type" : "string?",
       "maxLength" : 20000,
       "options" : [ "Applicant or its employee(s)", "Contractor/Subcontractor", "Tenant" ]
     },
     "isApplicantAdditionalInsured" : {
       "displayName" : "Is the applicant named as an additional insured on the contractor/subcontractors policy?",
-      "type" : "string",
+      "type" : "string?",
       "maxLength" : 20000,
       "options" : [ "Yes", "No", "N/A" ]
     },
     "contractorRequiredEqualGreaterLimits" : {
       "displayName" : "Is the contractor required to carry limits greater than or equal to the applicant?",
-      "type" : "string",
+      "type" : "string?",
       "maxLength" : 20000,
       "options" : [ "Yes", "No", "N/A" ]
     },
     "hasTenantMaintenanceRequirements" : {
       "displayName" : "Does the lease require tenants to maintain and repair the premises, including snow and ice removal?",
-      "type" : "string",
+      "type" : "string?",
       "maxLength" : 20000,
       "options" : [ "Yes", "No", "N/A" ]
     },
     "hasWrittenInspectionProcedures" : {
       "displayName" : "Do you have written procedures for inspecting and maintaining the premises and parking areas?",
-      "type" : "string",
+      "type" : "string?",
       "maxLength" : 20000,
       "options" : [ "Yes", "No", "N/A" ]
     },
     "providesSecurity" : {
       "displayName" : "Is security provided by the applicant?",
-      "type" : "string",
+      "type" : "string?",
       "maxLength" : 20000,
       "options" : [ "Yes", "No", "N/A" ]
     },
     "securityArmed" : {
       "displayName" : "Is the security provided by the applicant armed?",
-      "type" : "string",
+      "type" : "string?",
       "maxLength" : 20000,
       "options" : [ "Armed", "Unarmed", "N/A" ]
     },
     "isNamedAdditionalInsuredOnSecurityFirm" : {
       "displayName" : "Is the applicant named as an additional insured on the security firm's policy?",
-      "type" : "string",
+      "type" : "string?",
       "maxLength" : 20000,
       "options" : [ "Yes", "No", "N/A" ]
     },
     "securityFirmRequiredEqualGreaterLimits" : {
       "displayName" : "Is the security firm required to carry limits greater than or equal to the applicant?",
-      "type" : "string",
+      "type" : "string?",
       "maxLength" : 20000,
       "options" : [ "Yes", "No" ]
     },
     "hasWrittenComplaintProcess" : {
       "displayName" : "Does the applicant have written procedures for handling tenant complaints?",
-      "type" : "string",
+      "type" : "string?",
       "maxLength" : 20000,
       "options" : [ "Yes", "No", "N/A" ]
     },
     "vacancyProcedures" : {
       "displayName" : "What procedures do the applicants conduct when a tenant vacates a unit?",
-      "type" : "string",
+      "type" : "string?",
       "maxLength" : 20000,
       "options" : [ "Change locks/Collect keys", "Property inspection", "Handle security deposit according to state and local laws", "Make necessary repairs", "Terminate lease agreement", "None of the above" ]
     },
     "permitsBalconyCooking" : {
       "displayName" : "Is any balcony cooking permitted?",
-      "type" : "string",
+      "type" : "string?",
       "maxLength" : 20000,
       "options" : [ "Yes", "No", "N/A" ]
     }

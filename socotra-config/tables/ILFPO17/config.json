@@ -2,19 +2,19 @@
   "columns" : {
     "classCode" : {
       "dataType" : "int",
-      "isKey": true
+      "isKey" : true
     },
     "occ" : {
       "dataType" : "string",
-      "isKey": true
+      "isKey" : true
     },
     "agg" : {
       "dataType" : "string",
-      "isKey": true
+      "isKey" : true
     },
-    "factor": {
+    "factor" : {
       "dataType" : "decimal",
-      "isKey": false
+      "isKey" : false
     }
   },
   "selectionTimeBasis" : "policyStartTime"

@@ -53,6 +53,10 @@
       "type" : "string?",
       "maxLength" : 20000,
       "options" : [ "Rentals on short-term or seasonal basis (less than 6 months)", "Tenant evicted in the past six (6) months or in the process of being evicted", "Tenant subleases a location to another tenant", "Timeshare agreements/operations" ]
+    },
+    "exposureCount": {
+      "displayName": "Enter the Applicants Exposure(s)",
+      "type": "int?"
     }
   },
   "abstract" : false

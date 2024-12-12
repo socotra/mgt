@@ -1,0 +1,12 @@
+{
+  "columns": {
+    "tenure": {
+      "dataType": "int",
+      "isKey": true
+    },
+    "factor": {
+      "dataType": "decimal",
+      "isKey": false
+    }
+  }
+}

@@ -1,14 +1,14 @@
 {
   "columns" : {
-    "hazard" : {
+    "classPD" : {
+      "dataType" : "int",
+      "isKey" : false
+    },
+    "deductiblePD" : {
       "dataType" : "int",
       "isKey" : true
     },
-    "premOps" : {
-      "dataType" : "decimal",
-      "isKey" : false
-    },
-    "prodCOps" : {
+    "factorPD" : {
       "dataType" : "decimal",
       "isKey" : false
     }
