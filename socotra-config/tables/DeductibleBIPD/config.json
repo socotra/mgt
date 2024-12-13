@@ -1,16 +1,16 @@
 {
   "columns" : {
-    "classBIPD" : {
-      "dataType" : "int",
-      "isKey" : false
-    },
     "deductibleBIPD" : {
-      "dataType" : "int",
+      "dataType" : "decimal",
       "isKey" : true
     },
     "factorBIPD" : {
       "dataType" : "decimal",
       "isKey" : false
+    },
+    "classBIPD" : {
+      "dataType": "int",
+      "isKey": false
     }
   },
   "selectionTimeBasis" : "policyStartTime"

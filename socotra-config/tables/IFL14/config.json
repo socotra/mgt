@@ -1,19 +1,19 @@
 {
   "columns": {
-    "classIFL": {
-      "dataType": "int",
-      "isKey": false
-    },
     "occIFL": {
-      "dataType": "string",
+      "dataType": "decimal",
       "isKey": true
     },
     "aggIFL": {
-      "dataType": "string",
+      "dataType": "decimal",
       "isKey": true
     },
     "factorIFL": {
       "dataType": "decimal",
+      "isKey": false
+    },
+    "classIFL": {
+      "dataType": "int",
       "isKey": false
     }
   }

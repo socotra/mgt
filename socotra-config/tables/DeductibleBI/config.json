@@ -1,17 +1,18 @@
 {
   "columns" : {
-    "classBI" : {
-      "dataType" : "int",
-      "isKey" : false
-    },
     "deductibleBI" : {
-      "dataType" : "int",
+      "dataType" : "decimal",
       "isKey" : true
     },
     "factorBI" : {
       "dataType" : "decimal",
       "isKey" : false
+    },
+    "classBI" : {
+      "dataType" : "int",
+      "isKey" : false
     }
+
   },
   "selectionTimeBasis" : "policyStartTime"
 }

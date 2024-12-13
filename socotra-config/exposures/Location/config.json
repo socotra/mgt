@@ -1,7 +1,7 @@
 {
   "displayName" : "Location",
   "contents" : [ "CyberIncident?", "LossOfElectronicDataCoverage?", "ProductWithdrawalCoverage?", "OwnersContractorsProtectiveLiabilityInsurance?" ],
-  "coverageTerms": [ "LimitOfInsuranceAggregate", "LimitOfInsuranceMedical", "LimitOfInsurancePerOccurrenceBI", "LimitOfInsurancePerOccurrencePD" ],
+  "coverageTerms": [ "LimitOfInsuranceAggregate", "LimitOfInsuranceMedical", "LimitOfInsurancePerOccurrenceBI", "LimitOfInsurancePerOccurrencePD", "Deductible_BI", "Deductible_BIPD", "Deductible_PD" ],
   "data" : {
     "locationNumber" : {
       "displayName" : "Location Number",

@@ -57,6 +57,11 @@
     "exposureCount": {
       "displayName": "Enter the Applicants Exposure(s)",
       "type": "int?"
+    },
+    "affinityDiscount": {
+      "displayName": "Apply affinity discount?",
+      "type" : "string?",
+      "options": ["A", "B", "C", "D", "None"]
     }
   },
   "abstract" : false

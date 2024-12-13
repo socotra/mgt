@@ -1,15 +1,15 @@
 {
   "columns" : {
-    "classPD" : {
-      "dataType" : "int",
-      "isKey" : false
-    },
     "deductiblePD" : {
-      "dataType" : "int",
+      "dataType" : "decimal",
       "isKey" : true
     },
     "factorPD" : {
       "dataType" : "decimal",
+      "isKey" : false
+    },
+    "classPD" : {
+      "dataType" : "int",
       "isKey" : false
     }
   },
