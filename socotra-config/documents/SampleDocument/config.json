@@ -1,6 +1,0 @@
-{
-  "scope" : "policy",
-  "format" : "html",
-  "rendering" : "prerendered",
-  "trigger" : "priced"
-}

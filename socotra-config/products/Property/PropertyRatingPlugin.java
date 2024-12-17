@@ -18,8 +18,8 @@ import com.socotra.deployment.ResourceSelector;
 import com.socotra.deployment.ResourceSelectorFactory;
 
 
-public class GLRatingPlugin implements RatePlugin {
-    private static final Logger log = LoggerFactory.getLogger(GLRatingPlugin.class);
+public class PropertyRatingPlugin implements RatePlugin {
+    private static final Logger log = LoggerFactory.getLogger(PropertyRatingPlugin.class);
 
     @Override
     public RatingSet rate(GeneralLiabilityQuoteRequest generalLiabilityQuoteRequest) {
@@ -46,7 +46,7 @@ public class GLRatingPlugin implements RatePlugin {
         log.info("class-code");
         log.info(Integer.toString(classCode));
 
-        int exposure = quote.data().glQuestions().exposureCount();
+        int exposure = quote.data().propertyQuestions().exposureCount();
         log.info("exposure");
         log.info(Integer.toString(exposure));
 
@@ -116,10 +116,10 @@ public class GLRatingPlugin implements RatePlugin {
         // TODO: discount factors, tenure is for renewals only
 
         // affinity discount
-        String affinityDiscount = quote.data().glQuestions().affinityDiscount();
+        String affinityDiscount = quote.data().propertyQuestions().affinityDiscount();
         BigDecimal affinityRate = tableRecordFetcher.getTable(DiscountFactorsAffinity.class).getRecord(DiscountFactorsAffinity.makeKey(affinityDiscount)).orElseThrow().factor();
 
-        // will always be single as this is the GL rater
+        // will always be single as this is the property rater
         String packageGrp = "Single";
         BigDecimal packageRate = tableRecordFetcher.getTable(PackageProductTable.class).getRecord(PackageProductTable.makeKey(packageGrp)).orElseThrow().packageFctr();
 

@@ -1,0 +1,8 @@
+{
+  "scope": "policy",
+  "format":"pdf",
+  "rendering": "dynamic",
+  "trigger": "priced",
+  "pageSize": "letter",
+  "portrait" : true
+}

@@ -3,6 +3,7 @@
   "displayName" : "General Liability",
   "contents" : [ "Location?" ],
   "charges" : [ "Premium" ],
+  "documents" : [ "BPPPropertyCoverage", "GeneralLiabilityCoverage" ],
   "data" : {
     "packageQuestions" : {
       "displayName" : "General Information",

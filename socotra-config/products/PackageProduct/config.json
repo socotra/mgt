@@ -3,7 +3,7 @@
   "displayName" : "Package",
   "eligibleAccountTypes" : [ "Applicant" ],
   "contents" : [ "PackageLocation?" ],
-  "documents" : [ "SampleDocument" ],
+  "documents" : [ "BPPPropertyCoverage" ],
   "charges" : [ "Premium" ],
   "data" : {
     "packageQuestions" : {
