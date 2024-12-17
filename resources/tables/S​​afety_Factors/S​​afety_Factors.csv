@@ -1,0 +1,6 @@
+ProtectiveDevice,BuildingGroup1,BuildingGroup2,ContentsGroup1,ContentsGroup2,ABCGroup1,ABCGroup2
+Sprinkler System,0.980,0.980,1.000,1.000,0.980,0.980
+Fire Alarm System,0.950,0.950,1.000,1.000,0.950,0.950
+Burglary Protective Safeguards,0.950,0.950,1.000,1.000,0.950,0.950
+2 of 3 Systems,0.930,0.930,1.000,1.000,0.930,0.930
+3 Systems,0.920,0.920,1.000,1.000,0.920,0.920

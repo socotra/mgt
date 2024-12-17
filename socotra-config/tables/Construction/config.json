@@ -1,0 +1,16 @@
+{
+  "columns" : {
+    "construction" : {
+      "dataType" : "string",
+      "isKey" : true
+    },
+    "group": {
+      "dataType" : "string"
+    },
+    "cc_code" : {
+      "dataType" : "int",
+      "isKey" : false
+    }
+  },
+"selectionTimeBasis" : "currentTime"
+}

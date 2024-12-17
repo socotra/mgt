@@ -1,0 +1,17 @@
+{
+    "columns" : {
+      "State" : {
+        "dataType" : "string",
+        "isKey" : true
+      },
+      "Territory" : {
+        "dataType" : "string",
+        "isKey" : true
+      },
+      "Factor" : {
+        "dataType" : "decimal",
+        "isKey" : false
+      }
+    },
+    "selectionTimeBasis" : "policyStartTime"
+  }

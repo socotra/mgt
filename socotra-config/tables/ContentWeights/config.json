@@ -1,0 +1,21 @@
+{
+    "columns" : {
+      "state" : {
+        "dataType" : "strng",
+        "isKey" : true
+      },
+      "group1" : {
+        "dataType" : "int",
+        "isKey" : false
+      },
+      "group2": {
+        "dataType" : "int",
+        "isKey" : false
+      },
+      "contents_Check": {
+        "dataType" : "int",
+        "isKey" : false
+      }
+    },
+    "selectionTimeBasis" : "currentTime"
+  }

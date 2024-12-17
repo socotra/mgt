@@ -1,0 +1,44 @@
+State,Territory,Factor
+,1,0.1
+,2,0.1
+,3,0.1
+,4,0.1
+,5,0.1
+TX,Austin (Central),0.1
+TX,Balance Central,0.1
+TX,Balance Northern,0.1
+TX,Balance Seacoast 1,0.1
+TX,Balance Seacoast 2,0.1
+TX,Dallas (Central),0.1
+TX,Houston (Seacoast 2),0.1
+TX,San Antonio (Central),0.1
+OH,Akron,0.1
+OH,Balance of State - OH,0.1
+OH,Cincinnati,0.1
+OH,Cleveland,0.1
+OH,Columbus,0.1
+OH,Dayton,0.1
+OH,Toledo,0.1
+IL,Chicago - Cook County,0.1
+IL,Balance of State - Cook County,0.1
+IL,Balance of State - IL,0.1
+NC,Balance of State - Terr I,0.1
+NC,Balance of State - Terr II,0.1
+NC,Balance of State - Terr III,0.1
+NC,Charlotte,0.1
+GA,Balance of State - Inland,0.1
+GA,Balance of State - Seacoast,0.1
+GA,Balance of State - Beach,0.1
+GA,Atlanta,0.1
+GA,Dekalb County,0.1
+MI,Michigan 1,0.1
+MI,Michigan 2,0.1
+CO,Balance of State - West,0.1
+CO,Balance of State - East,0.1
+CO,Denver - East,0.1
+AL,Balance of State - Inland - AL,
+AL,Balance of State - Seacoast,
+AL,Balance of State - Beach,
+AL,Birmingham - Inland,
+AL,City of Mobile - Seacoast,
+AL,City of Mobile - Beach,

@@ -1,0 +1,41 @@
+{
+    "columns" : {
+      "Cov_Amt_Group" : {
+        "dataType" : "string",
+        "isKey" : true
+      },
+      "Deductible" : {
+        "dataType" : "decimal",
+        "isKey" : false
+      },
+      "Group" : {
+        "dataType" : "string",
+        "isKey" : false
+      },
+      "BuildingGroup1": {
+        "dataType" : "decimal",
+        "isKey" : false
+      },
+      "BuildingGroup2": {
+        "dataType" : "decimal",
+        "isKey" : false
+      },
+      "ContentsGroup1": {
+        "dataType" : "decimal",
+        "isKey" : false
+      },
+      "ContentsGroup2": {
+        "dataType" : "decimal",
+        "isKey" : false
+      },
+      "ABCGroup1": {
+        "dataType" : "decimal",
+        "isKey" : false
+      },
+      "ABCGroup2": {
+        "dataType" : "decimal",
+        "isKey" : false
+      }
+    },
+    "selectionTimeBasis" : "policyStartTime"
+  }

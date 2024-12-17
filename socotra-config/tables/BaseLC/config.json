@@ -1,0 +1,71 @@
+{
+    "columns" : {
+      "classCode" : {
+        "dataType" : "int",
+        "isKey" : true
+      },
+      "BFrame" : {
+        "dataType" : "decimal",
+        "isKey" : false
+      },
+      "BJoistedMasonry": {
+        "dataType" : "decimal",
+        "isKey" : false
+      },
+      "BnonComb": {
+        "dataType" : "decimal",
+        "isKey" : false
+      },
+      "BmasNonComb": {
+        "dataType" : "decimal",
+        "isKey" : false
+      },
+      "BfireRes": {
+        "dataType" : "decimal",
+        "isKey" : false
+      },
+      "CFrame": {
+        "dataType" : "decimal",
+        "isKey" : false
+      },
+      "CjoistedMasonry": {
+        "dataType" : "decimal",
+        "isKey" : false
+      },
+      "CnonComb": {
+        "dataType" : "decimal",
+        "isKey" : false
+      },
+      "CmasNonComb": {
+        "dataType" : "decimal",
+        "isKey" : false
+      },
+      "CfireRes": {
+        "dataType" : "decimal",
+        "isKey" : false
+      },
+      "ABCFrame": {
+        "dataType" : "decimal",
+        "isKey" : false
+      },
+      "ABCJoistedMasonry": {
+        "dataType" : "decimal",
+        "isKey" : false
+      },
+      "ABCNonComb": {
+        "dataType" : "decimal",
+        "isKey" : false
+      },
+      "ABCMasNonComb": {
+        "dataType" : "decimal",
+        "isKey" : false
+      },
+      "ABCFireRes": {
+        "dataType" : "decimal",
+        "isKey" : false
+      }
+     
+    },
+    "selectionTimeBasis" : "currentTime"
+  }
+						
