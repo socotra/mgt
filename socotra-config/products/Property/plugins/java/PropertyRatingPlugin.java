@@ -30,7 +30,31 @@ public class PropertyRatingPlugin implements RatePlugin {
 
         List<RatingItem> ratingItems = new ArrayList<>();
 
-        ResourceSelector tableRecordFetcher = ResourceSelectorFactory.getInstance().getSelector(quote);
+//        ResourceSelector tableRecordFetcher = ResourceSelectorFactory.getInstance().getSelector(quote);
+//
+//        int zipCode = quote.data().packageQuestions().locationAddress_1().zipCode();
+//        log.info("zip-code");
+//        log.info(Integer.toString(zipCode));
+//
+//        String state = quote.data().packageQuestions().locationAddress_1().state();
+//        log.info("state");
+//        log.info(state);
+
+//        coinsurancePercent
+        // Loop through all buildings
+        for (PropertyLocation loc : quote.propertyLocations()) {
+            // Rating Location
+            log.info("Rating the location: {}", loc.data());
+
+//            for (PropertyBuilding building : loc.propertyBuildings()) {
+//                log.info("Rating the building: {}", building.data().coinsurancePercent());
+//                // Rating Building Coverage
+////                rateBuilding(building);
+//            }
+        }
+        // TODO        retrieve territory
+        String territory = "Balance of State - Inland - AL";
+
 
         BigDecimal finalRate = new BigDecimal("700.0");
         log.info("finalRate");

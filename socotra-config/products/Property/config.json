@@ -1,7 +1,7 @@
 {
   "defaultTermDuration" : 0,
   "displayName" : "Property",
-  "contents" : [ "Location?", "PropertyLocation?" ],
+  "contents" : [ "PropertyLocation+" ],
   "data" : {
     "packageQuestions" : {
       "displayName" : "General Information",
