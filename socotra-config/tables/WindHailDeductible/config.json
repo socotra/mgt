@@ -1,0 +1,37 @@
+{
+    "columns" : {
+      "deductible" : {
+        "dataType" : "decimal",
+        "isKey" : true
+      },
+      "amount" : {
+        "dataType" : "decimal",
+        "isKey" : true
+      },
+      "building1" : {
+        "dataType" : "decimal",
+        "isKey" : false
+      },
+      "building2" : {
+        "dataType" : "decimal",
+        "isKey" : false
+      },
+      "contents1": {
+        "dataType" : "decimal",
+        "isKey" : false
+      },
+      "contents2": {
+        "dataType" : "decimal",
+        "isKey" : false
+      },
+      "abc1": {
+        "dataType" : "decimal",
+        "isKey" : false
+      },
+      "abc2": {
+        "dataType" : "decimal",
+        "isKey" : false
+      }
+    },
+    "selectionTimeBasis" : "policyStartTime"
+  }

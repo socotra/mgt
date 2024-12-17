@@ -1,0 +1,41 @@
+{
+    "columns" : {
+      "ScoreFrom" : {
+        "dataType" : "string",
+        "isKey" : false
+      },
+      "To" : {
+        "dataType" : "decimal",
+        "isKey" : false
+      },
+      "Tier" : {
+        "dataType" : "string",
+        "isKey" : true
+      },
+      "BuildingGroup1": {
+        "dataType" : "decimal",
+        "isKey" : false
+      },
+      "BuildingGroup2": {
+        "dataType" : "decimal",
+        "isKey" : false
+      },
+      "ContentsGroup1": {
+        "dataType" : "decimal",
+        "isKey" : false
+      },
+      "ContentsGroup2": {
+        "dataType" : "decimal",
+        "isKey" : false
+      },
+      "ABCGroup1": {
+        "dataType" : "decimal",
+        "isKey" : false
+      },
+      "ABCGroup2": {
+        "dataType" : "decimal",
+        "isKey" : false
+      }
+    },
+    "selectionTimeBasis" : "policyStartTime"
+  }
