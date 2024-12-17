@@ -15,8 +15,7 @@
     },
     "applicantMailingAddress" : {
       "displayName" : "What is the mailing address of the applicant?",
-      "type" : "string?",
-      "maxLength" : 20000,
+      "type" : "Address?",
       "tag" : [ "PropGL" ]
     },
     "applicantEmail" : {
