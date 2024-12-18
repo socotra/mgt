@@ -1,33 +1,47 @@
 {
     "columns" : {
-      "ProtectiveDevice" : {
+      "limit" : {
         "dataType" : "string",
         "isKey" : true
       },
-      "BuildingGroup1": {
+      "form" : {
         "dataType" : "decimal",
         "isKey" : false
       },
-      "BuildingGroup2": {
+      "coverage" : {
+        "dataType" : "string",
+        "isKey" : true
+      },
+      "constructionClass" : {
         "dataType" : "decimal",
         "isKey" : false
       },
-      "ContentsGroup1": {
+      "buildingGroup1" : {
         "dataType" : "decimal",
         "isKey" : false
       },
-      "ContentsGroup2": {
+      "buildingGroup2" : {
         "dataType" : "decimal",
         "isKey" : false
       },
-      "ABCGroup1": {
+      "contentsGroup1" : {
         "dataType" : "decimal",
         "isKey" : false
       },
-      "ABCGroup2": {
+      "contentsGroup2" : {
+        "dataType" : "decimal",
+        "isKey" : false
+      },
+      "aBCGroup1" : {
+        "dataType" : "decimal",
+        "isKey" : false
+      },
+      "aBCGroup2" : {
         "dataType" : "decimal",
         "isKey" : false
       }
     },
     "selectionTimeBasis" : "policyStartTime"
   }
+
+ 						

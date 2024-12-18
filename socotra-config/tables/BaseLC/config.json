@@ -4,63 +4,63 @@
         "dataType" : "int",
         "isKey" : true
       },
-      "BFrame" : {
+      "bFrame" : {
         "dataType" : "decimal",
         "isKey" : false
       },
-      "BJoistedMasonry": {
+      "bJoistedMasonry": {
         "dataType" : "decimal",
         "isKey" : false
       },
-      "BnonComb": {
+      "bnonComb": {
         "dataType" : "decimal",
         "isKey" : false
       },
-      "BmasNonComb": {
+      "bmasNonComb": {
         "dataType" : "decimal",
         "isKey" : false
       },
-      "BfireRes": {
+      "bfireRes": {
         "dataType" : "decimal",
         "isKey" : false
       },
-      "CFrame": {
+      "cFrame": {
         "dataType" : "decimal",
         "isKey" : false
       },
-      "CjoistedMasonry": {
+      "cjoistedMasonry": {
         "dataType" : "decimal",
         "isKey" : false
       },
-      "CnonComb": {
+      "cnonComb": {
         "dataType" : "decimal",
         "isKey" : false
       },
-      "CmasNonComb": {
+      "cmasNonComb": {
         "dataType" : "decimal",
         "isKey" : false
       },
-      "CfireRes": {
+      "cfireRes": {
         "dataType" : "decimal",
         "isKey" : false
       },
-      "ABCFrame": {
+      "aBCFrame": {
         "dataType" : "decimal",
         "isKey" : false
       },
-      "ABCJoistedMasonry": {
+      "aBCJoistedMasonry": {
         "dataType" : "decimal",
         "isKey" : false
       },
-      "ABCNonComb": {
+      "aBCNonComb": {
         "dataType" : "decimal",
         "isKey" : false
       },
-      "ABCMasNonComb": {
+      "aBCMasNonComb": {
         "dataType" : "decimal",
         "isKey" : false
       },
-      "ABCFireRes": {
+      "aBCFireRes": {
         "dataType" : "decimal",
         "isKey" : false
       }

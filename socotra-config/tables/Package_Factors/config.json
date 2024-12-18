@@ -1,30 +1,30 @@
 {
     "columns" : {
-      "Package" : {
+      "packagee" : {
         "dataType" : "string",
         "isKey" : true
       },
-      "BuildingGroup1": {
+      "buildingGroup1": {
         "dataType" : "decimal",
         "isKey" : false
       },
-      "BuildingGroup2": {
+      "buildingGroup2": {
         "dataType" : "decimal",
         "isKey" : false
       },
-      "ContentsGroup1": {
+      "contentsGroup1": {
         "dataType" : "decimal",
         "isKey" : false
       },
-      "ContentsGroup2": {
+      "contentsGroup2": {
         "dataType" : "decimal",
         "isKey" : false
       },
-      "ABCGroup1": {
+      "aBCGroup1": {
         "dataType" : "decimal",
         "isKey" : false
       },
-      "ABCGroup2": {
+      "aBCGroup2": {
         "dataType" : "decimal",
         "isKey" : false
       }

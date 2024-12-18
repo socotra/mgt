@@ -1,14 +1,14 @@
 {
     "columns" : {
-      "State" : {
+      "state" : {
         "dataType" : "string",
         "isKey" : true
       },
-      "Territory" : {
+      "territory" : {
         "dataType" : "string",
         "isKey" : true
       },
-      "Factor" : {
+      "factor" : {
         "dataType" : "decimal",
         "isKey" : false
       }
