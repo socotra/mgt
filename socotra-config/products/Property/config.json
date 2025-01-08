@@ -2,6 +2,7 @@
   "defaultTermDuration" : 0,
   "displayName" : "Property",
   "contents" : [ "PropertyLocation+" ],
+  "charges" : [ "Premium" ],
   "data" : {
     "packageQuestions" : {
       "displayName" : "General Information",

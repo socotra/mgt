@@ -1,0 +1,21 @@
+{
+  "columns" : {
+    "low" : {
+      "dataType" : "string",
+      "isKey" : true
+    },
+    "high" : {
+      "dataType" : "string",
+      "isKey" : true
+    },
+    "limit" : {
+      "dataType" : "string",
+      "isKey" : true
+    },
+    "factor" : {
+      "dataType" : "decimal",
+      "isKey" : false
+    }
+  },
+  "selectionTimeBasis" : "policyStartTime"
+}

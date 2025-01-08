@@ -1,0 +1,17 @@
+{
+  "columns" : {
+    "symbol" : {
+      "dataType" : "string",
+      "isKey" : true
+    },
+    "pc" : {
+      "dataType" : "int",
+      "isKey" : true
+    },
+    "factor" : {
+      "dataType" : "decimal",
+      "isKey" : false
+    }
+  },
+  "selectionTimeBasis" : "policyStartTime"
+}

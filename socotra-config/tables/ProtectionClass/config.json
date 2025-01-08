@@ -1,0 +1,37 @@
+{
+  "columns" : {
+    "pcGroup" : {
+      "dataType" : "string",
+      "isKey" : true
+    },
+    "construction" : {
+      "dataType" : "string",
+      "isKey" : true
+    },
+    "buildingGroup1" : {
+      "dataType" : "decimal",
+      "isKey" : false
+    },
+    "buildingGroup2" : {
+      "dataType" : "decimal",
+      "isKey" : false
+    },
+    "contentsGroup1" : {
+      "dataType" : "decimal",
+      "isKey" : false
+    },
+    "contentsGroup2" : {
+      "dataType" : "decimal",
+      "isKey" : false
+    },
+    "abcGroup1" : {
+      "dataType" : "decimal",
+      "isKey" : false
+    },
+    "abcGroup2" : {
+      "dataType" : "decimal",
+      "isKey" : false
+    }
+  },
+  "selectionTimeBasis" : "termStartTime"
+}

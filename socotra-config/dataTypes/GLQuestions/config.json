@@ -20,7 +20,7 @@
     },
     "leasesHoldHarmless" : {
       "displayName" : "Does the applicant have a lease in place with all occupants, containing harmless wording in favor of the applicant?",
-      "type" : "string?",
+      "type" : "string",
       "maxLength" : 20000,
       "options" : [ "Yes", "No" ]
     },
@@ -44,19 +44,15 @@
     },
     "locationHazardsTenants" : {
       "displayName" : "Do any locations have:",
-      "type" : "string?",
+      "type" : "string",
       "maxLength" : 20000,
-      "options" : [ "Tenant open past midnight", "Tenant working with or storing toxic, hazardous, highly-flammable or explosive chemicals or substances" ]
+      "options" : [ "Tenant open past midnight", "Tenant working with or storing toxic, hazardous, highly-flammable or explosive chemicals or substances", "N/A" ]
     },
     "locationHazardsOperations" : {
       "displayName" : "Select all of the following that apply to any location:",
       "type" : "string?",
       "maxLength" : 20000,
-      "options" : [ "Rentals on short-term or seasonal basis (less than 6 months)", "Tenant evicted in the past six (6) months or in the process of being evicted", "Tenant subleases a location to another tenant", "Timeshare agreements/operations" ]
-    },
-    "exposureCount": {
-      "displayName": "Enter the Applicants Exposure(s)",
-      "type": "int?"
+      "options" : [ "Rentals on short-term or seasonal basis (less than 6 months)", "Tenant evicted in the past six (6) months or in the process of being evicted", "Tenant subleases a location to another tenant", "Timeshare agreements/operations", "N/A" ]
     },
     "affinityDiscount": {
       "displayName": "Apply affinity discount?",

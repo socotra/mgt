@@ -9,8 +9,11 @@
     },
     "locationAddress" : {
       "displayName" : "Location Address",
-      "type" : "string",
-      "maxLength" : 20000
+      "type" : "Address"
+    },
+    "classCode" : {
+      "displayName" : "Location Class Code",
+      "type" : "int"
     },
     "hasElevatorMaintenanceAgreement" : {
       "displayName" : "Is there an elevator maintenance agreement in effect, naming the applicant as an additional insured with hold harmless?",
@@ -31,13 +34,7 @@
     },
     "mortgageeAddress" : {
       "displayName" : "Mortgage Holder Street Address",
-      "type" : "string",
-      "maxLength" : 20000
-    },
-    "mortgageeZip" : {
-      "displayName" : "Mortgage Holder City, State Zip",
-      "type" : "string",
-      "maxLength" : 20000
+      "type" : "Address?"
     },
     "hasCommercialCondo" : {
       "displayName" : "Is this a commercial condo unit?",
@@ -177,7 +174,7 @@
     "tenantsOccupants" : {
       "displayName" : "What tenants are in the building? (select all that apply)",
       "type" : "string",
-      "maxLength" : 20000
+      "options": ["H", "I"]
     },
     "permitsSpaceHeaters" : {
       "displayName" : "Are tenants permitted to utilize space heaters?",
@@ -200,6 +197,15 @@
       "displayName" : "What is the vacancy percentage (square footage or number of units)?",
       "type" : "string?",
       "maxLength" : 20000
+    },
+    "protectiveDevicesCount" : {
+      "displayName" : "How many protective devices are on the location?",
+      "type" : "int?"
+    }, 
+    "protectiveDevices": {
+      "displayName" : "What are the safety devices at this lcation?",
+      "type" : "string?",
+      "options": ["SprinklerSystem", "FireAlarmSystem", "BurglaryProtectiveSafeguards", "2of3Systems", "3Systems"]
     }
   },
   "abstract" : false

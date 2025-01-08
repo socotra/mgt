@@ -1,4 +1,5 @@
 {
   "displayName" : "Owners & Contractors Protective Liability Insurance",
-  "abstract" : false
+  "abstract" : false,
+  "coverageTerms": ["LimitOfInsurancePerOccurrencePD", "Deductible_PD"]
 }

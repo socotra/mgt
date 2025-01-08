@@ -2,7 +2,7 @@
   "defaultTermDuration" : 6,
   "displayName" : "Package",
   "eligibleAccountTypes" : [ "Applicant" ],
-  "contents" : [ "PackageLocation?" ],
+  "contents" : [ "PackageLocation+" ],
   "documents" : [ "BPPPropertyCoverage" ],
   "charges" : [ "Premium" ],
   "data" : {

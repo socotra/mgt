@@ -1,0 +1,21 @@
+{
+  "columns" : {
+    "extraExpense" : {
+      "dataType" : "string",
+      "isKey" : true
+    },
+    "coinsurance" : {
+      "dataType" : "string",
+      "isKey" : true
+    },
+    "riskType" : {
+      "dataType" : "string",
+      "isKey" : true
+    },
+    "factor" : {
+      "dataType" : "decimal",
+      "isKey" : false
+    }
+  },
+  "selectionTimeBasis" : "policyStartTime"
+}

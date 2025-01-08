@@ -1,0 +1,21 @@
+{
+  "columns" : {
+    "floodGroup" : {
+      "dataType" : "string",
+      "isKey" : true
+    },
+    "zone" : {
+      "dataType" : "string",
+      "isKey" : true
+    },
+    "coverage" : {
+      "dataType" : "string",
+      "isKey" : true
+    },
+    "factor" : {
+      "dataType" : "decimal",
+      "isKey" : false
+    }
+  },
+  "selectionTimeBasis" : "policyStartTime"
+}

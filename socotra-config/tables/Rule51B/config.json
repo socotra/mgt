@@ -1,0 +1,13 @@
+{
+  "columns" : {
+    "rule51B" : {
+      "dataType" : "string",
+      "isKey" : true
+    },
+    "factor": {
+      "dataType" : "decimal",
+      "isKey" : false
+    }
+  },
+  "selectionTimeBasis" : "policyStartTime"
+}

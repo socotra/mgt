@@ -1,7 +1,7 @@
 {
     "columns" : {
       "state" : {
-        "dataType" : "strng",
+        "dataType" : "string",
         "isKey" : true
       },
       "group1" : {

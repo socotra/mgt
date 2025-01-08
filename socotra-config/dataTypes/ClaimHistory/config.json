@@ -14,14 +14,14 @@
     },
     "totalLossPayment" : {
       "displayName" : "How much was the total loss payment (expense + indemnity + reserve) of the claim?",
-      "type" : "string",
+      "type" : "string?",
       "maxLength" : 20000
     },
     "claimStatus" : {
       "displayName" : "Is the status of the claim open or closed?",
       "type" : "string",
       "maxLength" : 20000,
-      "options" : [ "Yes", "No", "N/A" ]
+      "options" : [ "Open", "Closed", "N/A" ]
     }
   },
   "abstract" : false

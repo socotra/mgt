@@ -1,4 +1,5 @@
 {
   "displayName" : "Product Withdrawal Coverage",
-  "abstract" : false
+  "abstract" : false,
+  "coverageTerms": ["LimitOfInsurancePerOccurrencePD", "Deductible_PD"]
 }

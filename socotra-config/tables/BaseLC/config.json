@@ -4,67 +4,38 @@
         "dataType" : "int",
         "isKey" : true
       },
-      "BFrame" : {
+      "coverage" : {
+        "dataType" : "string",
+        "isKey" : true
+      },
+      "construction" : {
+        "dataType" : "string",
+        "isKey" : true
+      },
+      "buildingGroup1" : {
         "dataType" : "decimal",
         "isKey" : false
       },
-      "BJoistedMasonry": {
+      "buildingGroup2" : {
         "dataType" : "decimal",
         "isKey" : false
       },
-      "BnonComb": {
+      "contentsGroup1" : {
         "dataType" : "decimal",
         "isKey" : false
       },
-      "BmasNonComb": {
+      "contentsGroup2" : {
         "dataType" : "decimal",
         "isKey" : false
       },
-      "BfireRes": {
+      "abcGroup1" : {
         "dataType" : "decimal",
         "isKey" : false
       },
-      "CFrame": {
-        "dataType" : "decimal",
-        "isKey" : false
-      },
-      "CjoistedMasonry": {
-        "dataType" : "decimal",
-        "isKey" : false
-      },
-      "CnonComb": {
-        "dataType" : "decimal",
-        "isKey" : false
-      },
-      "CmasNonComb": {
-        "dataType" : "decimal",
-        "isKey" : false
-      },
-      "CfireRes": {
-        "dataType" : "decimal",
-        "isKey" : false
-      },
-      "ABCFrame": {
-        "dataType" : "decimal",
-        "isKey" : false
-      },
-      "ABCJoistedMasonry": {
-        "dataType" : "decimal",
-        "isKey" : false
-      },
-      "ABCNonComb": {
-        "dataType" : "decimal",
-        "isKey" : false
-      },
-      "ABCMasNonComb": {
-        "dataType" : "decimal",
-        "isKey" : false
-      },
-      "ABCFireRes": {
+      "abcGroup2" : {
         "dataType" : "decimal",
         "isKey" : false
       }
-     
     },
     "selectionTimeBasis" : "currentTime"
   }

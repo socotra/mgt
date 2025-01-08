@@ -16,6 +16,7 @@ public class GLDocSnapshotPlugin implements DocumentDataSnapshotPlugin {
 
     @Override
     public DocumentDataSnapshot dataSnapshot(GeneralLiabilityQuoteRequest generalLiabilityQuoteRequest) {
+        log.info("In dataSnapshot plugin, quote: {}", generalLiabilityQuoteRequest.quote());
 
         var account = DataFetcherFactory.get().getAccount(generalLiabilityQuoteRequest.quote().accountLocator());
         log.info("In dataSnapshot plugin, account is: {}", account);
@@ -24,8 +25,12 @@ public class GLDocSnapshotPlugin implements DocumentDataSnapshotPlugin {
         combinedData.put("policy", generalLiabilityQuoteRequest.quote());
         combinedData.put("account", account);
 
+        var myMeta = new HashMap<String, String>();
+        myMeta.put("specialKey", "specialValue");
+
         log.info("In dataSnapshot plugin, combined data is: {}", combinedData);
         return DocumentDataSnapshot.builder()
+                .metadata(myMeta)
                 .renderingData(combinedData)
                 .build();
     }

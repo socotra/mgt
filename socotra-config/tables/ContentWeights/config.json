@@ -1,7 +1,7 @@
 {
     "columns" : {
       "state" : {
-        "dataType" : "strng",
+        "dataType" : "string",
         "isKey" : true
       },
       "group1" : {
@@ -12,7 +12,7 @@
         "dataType" : "int",
         "isKey" : false
       },
-      "contents_Check": {
+      "contentsCheck": {
         "dataType" : "int",
         "isKey" : false
       }

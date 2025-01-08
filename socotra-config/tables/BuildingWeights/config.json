@@ -1,19 +1,19 @@
 {
     "columns" : {
       "state" : {
-        "dataType" : "strng",
+        "dataType" : "string",
         "isKey" : true
       },
       "group1" : {
-        "dataType" : "int",
+        "dataType" : "string",
         "isKey" : false
       },
       "group2": {
-        "dataType" : "int",
+        "dataType" : "string",
         "isKey" : false
       },
-      "building_Check": {
-        "dataType" : "int",
+      "buildingCheck": {
+        "dataType" : "string",
         "isKey" : false
       }
     },

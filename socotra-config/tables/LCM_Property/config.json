@@ -1,0 +1,37 @@
+{
+  "columns" : {
+    "state" : {
+      "dataType" : "string",
+      "isKey" : true
+    },
+    "effectiveDate" : {
+      "dataType" : "string",
+      "isKey" : false
+    },
+    "buildingGroup1" : {
+      "dataType" : "decimal",
+      "isKey" : false
+    },
+    "buildingGroup2" : {
+      "dataType" : "decimal",
+      "isKey" : false
+    },
+    "contentsGroup1" : {
+      "dataType" : "decimal",
+      "isKey" : false
+    },
+    "contentsGroup2" : {
+      "dataType" : "decimal",
+      "isKey" : false
+    },
+    "abcGroup1" : {
+      "dataType" : "decimal",
+      "isKey" : false
+    },
+    "abcGroup2" : {
+      "dataType" : "decimal",
+      "isKey" : false
+    }
+  },
+  "selectionTimeBasis" : "policyStartTime"
+}

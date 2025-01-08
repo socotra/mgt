@@ -1,38 +1,38 @@
 {
     "columns" : {
-      "ScoreFrom" : {
-        "dataType" : "string",
-        "isKey" : false
-      },
-      "To" : {
-        "dataType" : "decimal",
-        "isKey" : false
-      },
-      "Tier" : {
-        "dataType" : "string",
+      "tier" : {
+        "dataType" : "int",
         "isKey" : true
       },
-      "BuildingGroup1": {
+      "scoreFrom" : {
+        "dataType" : "string",
+        "isKey" : false
+      },
+      "to" : {
         "dataType" : "decimal",
         "isKey" : false
       },
-      "BuildingGroup2": {
+      "buildingGroup1": {
         "dataType" : "decimal",
         "isKey" : false
       },
-      "ContentsGroup1": {
+      "buildingGroup2": {
         "dataType" : "decimal",
         "isKey" : false
       },
-      "ContentsGroup2": {
+      "contentsGroup1": {
         "dataType" : "decimal",
         "isKey" : false
       },
-      "ABCGroup1": {
+      "contentsGroup2": {
         "dataType" : "decimal",
         "isKey" : false
       },
-      "ABCGroup2": {
+      "abcGroup1": {
+        "dataType" : "decimal",
+        "isKey" : false
+      },
+      "abcGroup2": {
         "dataType" : "decimal",
         "isKey" : false
       }

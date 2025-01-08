@@ -10,7 +10,7 @@
     },
     "locationAddress" : {
       "displayName" : "Location Address",
-      "type" : "Address*"
+      "type" : "Address"
     },
     "hasOccupancyPartialTenantOwnership" : {
       "displayName" : "Does the applicant occupy and operate out of the building or do they have partial ownership of a tenant's operations?",
@@ -36,7 +36,7 @@
     },
     "isNamedAdditionalInsuredOnParking" : {
       "displayName" : "Is the applicant named as an additional insured on the parking facility owners policy?",
-      "type" : "string?",
+      "type" : "string",
       "maxLength" : 20000,
       "options" : [ "Yes", "No", "N/A" ]
     },
@@ -76,7 +76,7 @@
     },
     "hasShepherdsCrookRing" : {
       "displayName" : "Is there a shepherd's crook/ring nearby?",
-      "type" : "string",
+      "type" : "string?",
       "maxLength" : 20000,
       "options" : [ "Yes", "No", "N/A" ]
     },
@@ -166,7 +166,7 @@
     },
     "securityArmed" : {
       "displayName" : "Is the security provided by the applicant armed?",
-      "type" : "string?",
+      "type" : "string",
       "maxLength" : 20000,
       "options" : [ "Armed", "Unarmed", "N/A" ]
     },
@@ -199,6 +199,10 @@
       "type" : "string?",
       "maxLength" : 20000,
       "options" : [ "Yes", "No", "N/A" ]
+    },
+    "classCode" : {
+      "displayName" : "Location Class Code",
+      "type" : "int"
     }
   },
   "abstract" : false

@@ -1,7 +1,7 @@
 {
   "defaultTermDuration" : 0,
   "displayName" : "General Liability",
-  "contents" : [ "Location?" ],
+  "contents" : [ "Location+" ],
   "charges" : [ "Premium" ],
   "documents" : [ "BPPPropertyCoverage", "GeneralLiabilityCoverage" ],
   "data" : {

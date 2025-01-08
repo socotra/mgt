@@ -1,0 +1,13 @@
+{
+  "columns" : {
+    "postOrdinance" : {
+      "dataType" : "string",
+      "isKey" : true
+    },
+    "factor" : {
+      "dataType" : "string",
+      "isKey" : true
+    }
+  },
+  "selectionTimeBasis" : "policyStartTime"
+}

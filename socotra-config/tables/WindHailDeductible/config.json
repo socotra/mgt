@@ -1,11 +1,11 @@
 {
     "columns" : {
       "deductible" : {
-        "dataType" : "decimal",
+        "dataType" : "string",
         "isKey" : true
       },
       "amount" : {
-        "dataType" : "decimal",
+        "dataType" : "string",
         "isKey" : true
       },
       "building1" : {

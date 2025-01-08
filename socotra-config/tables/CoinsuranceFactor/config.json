@@ -1,7 +1,7 @@
 {
     "columns" : {
       "coinsurance" : {
-        "dataType" : "int",
+        "dataType" : "string",
         "isKey" : true
       },
       "building1" : {

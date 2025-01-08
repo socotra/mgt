@@ -1,0 +1,41 @@
+{
+  "columns" : {
+    "zipCode" : {
+      "dataType" : "int",
+      "isKey" : true
+    },
+    "city": {
+      "dataType" : "string",
+      "isKey" : false
+    },
+    "county": {
+      "dataType" : "string",
+      "isKey" : false
+    },
+    "state": {
+      "dataType" : "string",
+      "isKey" : false
+    },
+    "group1": {
+      "dataType" : "string",
+      "isKey" : false
+    },
+    "group2": {
+      "dataType" : "string",
+      "isKey" : false
+    },
+    "windstormHailExclusion": {
+      "dataType" : "string",
+      "isKey" : false
+    },
+    "group1Factor": {
+      "dataType" : "decimal",
+      "isKey" : false
+    },
+    "group2Factor": {
+      "dataType" : "decimal",
+      "isKey" : false
+    }
+  },
+  "selectionTimeBasis" : "policyStartTime"
+}

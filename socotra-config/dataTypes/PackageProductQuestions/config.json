@@ -27,10 +27,6 @@
       "maxLength" : 20000,
       "options" : [ "Greater than $50,000 non-cat", "Greater than $500,000 CAT", "Involving mold or asbestos", "N/A" ]
     },
-    "locationsCount" : {
-      "displayName" : "How many locations does the applicant need to insure?",
-      "type" : "int?"
-    },
     "ownsAllProperties" : {
       "displayName" : "Is the applicant the owner of all properties?",
       "type" : "string?",
@@ -39,13 +35,13 @@
     },
     "hasHistoricalCoverageGap" : {
       "displayName" : "At any time over the past (5) five years, has the applicant experienced:",
-      "type" : "string?",
+      "type" : "string",
       "maxLength" : 20000,
-      "options" : [ "A gap in coverage", "Non-renewed, failure to comply with safety or inspection recommendations", "Non-renewed, carrier product no longer supported", "Non-renewed citing underwriting reasons", "No prior insurance", "Cancelled for non-pay" ]
+      "options" : [ "A gap in coverage", "Non-renewed, failure to comply with safety or inspection recommendations", "Non-renewed, carrier product no longer supported", "Non-renewed citing underwriting reasons", "No prior insurance", "Cancelled for non-pay", "N/A"]
     },
     "hasFinancialHistoryIssue" : {
       "displayName" : "Has the applicant had a judgement/lien,unpaid taxes,suffered foreclosure,bankruptcy/filed for bankruptcy in past five (5) years?",
-      "type" : "string?",
+      "type" : "string",
       "maxLength" : 20000,
       "options" : [ "Yes", "No" ]
     },
@@ -57,7 +53,7 @@
     },
     "compliesNfPA" : {
       "displayName" : "Do all locations comply with all required NFPA life Safety Code guideline?",
-      "type" : "string?",
+      "type" : "string",
       "maxLength" : 20000,
       "options" : [ "Yes", "No" ]
     },
@@ -67,17 +63,14 @@
       "maxLength" : 20000,
       "options" : [ "Yes", "No", "N/A" ]
     },
-    "locationAddress_1" : {
-      "displayName" : "For each location, provide the address",
-      "type" : "Address?"
-    },
     "claimHistory" : {
       "displayName" : "Claim History",
       "type" : "ClaimHistory*"
     },
-    "classCode" : {
-      "displayName" : "Location Class Code",
-      "type" : "int"
+    "terrorismCoverage": {
+      "displayName" : "Terrorism Coverage",
+      "type": "string",
+      "options": ["Yes", "No"]
     }
   },
   "abstract" : false

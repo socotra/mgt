@@ -1,0 +1,21 @@
+{
+  "columns" : {
+    "eqClass" : {
+      "dataType" : "string",
+      "isKey" : true
+    },
+    "type" : {
+      "dataType" : "string",
+      "isKey" : true
+    },
+    "ppGrade" : {
+      "dataType" : "int",
+      "isKey" : true
+    },
+    "baseRate" : {
+      "dataType" : "decimal",
+      "isKey" : false
+    }
+  },
+  "selectionTimeBasis" : "policyStartTime"
+}

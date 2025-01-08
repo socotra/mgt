@@ -13,11 +13,11 @@
       "isKey" : false
     },
     "hrPremOp" : {
-      "dataType" : "int",
+      "dataType" : "string",
       "isKey" : false
     },
     "hrProdCOps" : {
-      "dataType" : "int",
+      "dataType" : "string",
       "isKey" : false
     },
     "code" : {

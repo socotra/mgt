@@ -1,9 +1,9 @@
 {
-  "defaultTimeZone" : "America/New_York",
+  "defaultTimeZone" : "America/Los_Angeles",
   "defaultCurrency" : "USD",
-  "defaultTermDuration" : 12,
+  "defaultTermDuration" : 1,
   "defaultInstallmentPlan" : "SampleInstallmentPlan",
-  "defaultDurationBasis" : "months",
+  "defaultDurationBasis" : "years",
   "defaultBillingTrigger" : "issue",
   "defaultBackdatedInstallmentsBilling" : "deferDueDate",
   "defaultDelinquencyPlan" : "Standard",

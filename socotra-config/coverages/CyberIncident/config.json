@@ -1,4 +1,5 @@
 {
   "displayName" : "Cyber Incident",
-  "abstract" : false
+  "abstract" : false,
+  "coverageTerms": ["LimitOfInsurancePerOccurrencePD", "Deductible_PD"]
 }

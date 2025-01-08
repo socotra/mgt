@@ -34,12 +34,17 @@
       "displayName" : "Select all of the following that apply to any building:",
       "type" : "string?",
       "maxLength" : 20000,
-      "options" : [ "Over 4 Stories in Height", "Less than 70% Occupied", "Have an elevator", "Any ongoing or planned structural renovations during the policy term", "Renovations exceeding 20% of the building value during the policy term" ]
+      "options" : [ "Over 4 Stories in Height", "Less than 70% Occupied", "Have an elevator", "Any ongoing or planned structural renovations during the policy term", "Renovations exceeding 20% of the building value during the policy term", "N/A" ]
     },
     "building_1" : {
       "displayName" : "Select Building Number",
       "type" : "string?",
       "maxLength" : 20000
+    },
+    "affinityDiscount": {
+      "displayName": "Apply affinity discount?",
+      "type" : "string?",
+      "options": ["A", "B", "C", "D", "None"]
     }
   },
   "abstract" : false

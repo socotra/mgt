@@ -1,0 +1,13 @@
+{
+  "columns" : {
+    "agreedValue" : {
+      "dataType" : "string",
+      "isKey" : true
+    },
+    "factor": {
+      "dataType" : "decimal",
+      "isKey" : false
+    }
+  },
+  "selectionTimeBasis" : "policyStartTime"
+}
