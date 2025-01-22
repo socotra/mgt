@@ -1,0 +1,35 @@
+{
+  "data": {
+    "optionalForms": {
+      "displayName": "Form to Add:",
+      "type": "string",
+      "options": [
+        "CG_04_35_12_07",
+        "CG_04_41_12_19",
+        "CG_20_05_12_19",
+        "CG 20 11_12_19",
+        "CG_20_13_12_19",
+        "CG_20_23_12_19",
+        "CG_20_24_12_19",
+        "CG_20_26_12_19",
+        "CG_20_27_12_19",
+        "CG_21_35_10_01",
+        "CG_21_38_11_85",
+        "CG_21_66_12_19",
+        "CG_24_04_12_19",
+        "CG_26_85_06_03",
+        "IL_00_03_09_08",
+        "IL_09_17_11_85",
+        "IL_12_06_04_03",
+        "IL_12_04_12_98",
+        "IL_12_01_11_85"
+      ]
+    },
+    "addToPolicy": {
+      "displayName": "Should this form be attached to the policy?",
+      "type": "string",
+      "options": ["Yes", "No"]
+    }
+  },
+  "abstract" : false
+}

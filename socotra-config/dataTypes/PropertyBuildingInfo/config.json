@@ -1,0 +1,24 @@
+{
+    "displayName" : "Building Info",
+    "data" : {
+        "hasMortgage" : {
+            "displayName" : "Is there a Mortgage Holder on the Building?",
+            "type" : "string",
+            "maxLength" : 20000,
+            "options" : [ "Yes", "No", "N/A" ]
+        },
+        "mortgageeHolder" : {
+            "displayName" : "Mortgage Holder",
+            "type" : "MortgageeHolder"
+        },
+        "stories" : {
+            "displayName" : "How many stories is the building?",
+            "type" : "int"
+        },
+        "area" : {
+            "displayName" : "What is the total building area?",
+            "type" : "int"
+        }
+    },
+    "abstract" : false
+  }

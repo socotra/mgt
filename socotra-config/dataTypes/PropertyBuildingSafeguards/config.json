@@ -1,0 +1,30 @@
+{
+    "displayName" : "Safeguards",
+    "data" : {
+      "burglarSafeguards" : {
+        "displayName" : "Select from the following burglary safeguards that apply to this location:",
+        "type" : "string",
+        "maxLength" : 20000,
+        "options" : [ "Central Burglar Alarm", "Local Burglar Alarm", "Security Service", "None" ]
+      },
+      "fireSafeguards" : {
+        "displayName" : "Select from the following fire safeguards that apply to this location:",
+        "type" : "string",
+        "maxLength" : 20000,
+        "options" : [ "Central Alarm", "Local Alarm", "Security Service", "Private Fire Department Service", "Fire Extinguishers", "None" ]
+      },
+      "hasSprinklers" : {
+        "displayName" : "Is the premises fully sprinklered?",
+        "type" : "string",
+        "maxLength" : 20000,
+        "options" : [ "Yes", "No", "N/A" ]
+      },
+      "hasSprinklerService" : {
+        "displayName" : "Is there a current sprinkler system service contract in place?",
+        "type" : "string",
+        "maxLength" : 20000,
+        "options" : [ "Yes", "No", "N/A" ]
+      }
+    },
+    "abstract" : false
+  }

@@ -1,0 +1,23 @@
+{
+  "displayName" : "Class of Business",
+  "data" : {
+    "occupancyType" : {
+      "displayName" : "What type of occupancy is the applicant?",
+      "type" : "string*",
+      "options" : [ "Apartment Buildings", "Apartment Buildings – Garden", "Bank or Office – Mercantile or Manufacturing (Lessor's Risk Only) – Other than Not-For-Profit", "Bank or Office – Mercantile or Manufacturing (Lessor's Risk Only) – Not-For-Profit Only", "Bank or Office – Mercantile or Manufacturing (Lessor's Risk Only) – Maintained by the Insured – Other than Not-For-Profit", "Bank or Office – Mercantile or Manufacturing (Lessor's Risk Only) – Maintained by the Insured – Not-For-Profit Only", "Vacation Rentals (Lessor's Risk Only)", "Dwellings – One-Family (Lessor's Risk Only)",
+        "Dwellings – Two-Family (Lessor's Risk Only)", "Dwellings – Three-Family (Lessor's Risk Only)", "Dwellings – Four-Family (Lessor's Risk Only)", "Indoor Malls – Buildings, or Premises Not Occupied by the Insured (Lessor's Risk Only)", "Buildings, or Premises Not Occupied by the Insured (Lessor's Risk Only)", "Warehouses – Occupied by Multiple Interests (Lessor's Risk Only)", "Warehouses – Occupied by Single Interest (Lessor's Risk Only)", "Parking – Public – Not Open Air", "Parking – Public – Open Air", "Parking – Public – Shopping Centers – Maintained by Lessee (Lessor's Risk Only)", "Parking – Public – Shopping Centers – Maintained by the Insured (Lessor's Risk Only)", "Parking – Private"]
+    },
+    "hasMulticlassRisk" : {
+      "displayName" : "Does your clients business entail operations or services outside of what is listed above?",
+      "type" : "string?",
+      "maxLength" : 20000,
+      "options" : [ "Yes", "No" ]
+    },
+    "hasMulticlassRiskDesc" : {
+      "displayName" : "If yes, please explain",
+      "type" : "string?",
+      "maxLength" : 20000
+    }
+  },
+  "abstract" : false
+}

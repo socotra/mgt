@@ -2,210 +2,22 @@
   "displayName" : "Location",
   "contents" : [ "PropertyBuilding+", "OrdinanceLawCoverageBBuildingDemolitionCost", "OrdinanceLawCoverageCIncreasedCostConstructionCoverage", "EarthquakeVolcanicEruptionCoverage", "FloodBackupSewerCoverageEndorsement", "DebrisRemovalAdditionalInsurance", "TreesShrubsPlants", "DischargeFromSewerDrainSump", "LegalLiabilityCoverage", "ExtraExpenseCoverage", "BusinessIncomeCoverageOptionsLandlordAsAdditionalInsured", "BuildersRiskCoverage", "BusinessIncomeCoverage", "BusinessIncomeCoverageOptionsBusinessIncomeFromDependentProperties", "BusinessIncomeCoverageOptionsSeasonalLeasesMonthlyLimitsOnLossPayment", "BusinessIncomeCoverageOptionsFoodContamination", "CommonTimeElementOptions", "MortgageholdersErrorsOmissionsCoverage", "TobaccoSalesWarehouses", "EquipmentBreakdown", "LeaseholdInterestCoverage", "LeaseholdInterestCoverageBonusPaymentImprovementsBettermentsPrepaidRent" ],
   "data" : {
-    "locationNumber" : {
-      "displayName" : "Location Number",
-      "type" : "string",
-      "maxLength" : 20000
+    "packageProductBasicInfo" : {
+      "displayName" : "Basic Info",
+      "type" : "PackageBasicInfo"
     },
-    "locationAddress" : {
-      "displayName" : "Location Address",
-      "type" : "Address"
+    "packageOccupancyInfo": {
+      "displayName": "Occupancy", 
+      "type": "PackageOccupancy"
     },
-    "classCode" : {
-      "displayName" : "Location Class Code",
-      "type" : "int"
-    },
-    "hasElevatorMaintenanceAgreement" : {
-      "displayName" : "Is there an elevator maintenance agreement in effect, naming the applicant as an additional insured with hold harmless?",
-      "type" : "string",
-      "maxLength" : 20000,
-      "options" : [ "Yes", "No", "N/A" ]
-    },
-    "hasMortgage" : {
-      "displayName" : "Is there a Mortgage Holder on the Building?",
-      "type" : "string",
-      "maxLength" : 20000,
-      "options" : [ "Yes", "No", "N/A" ]
-    },
-    "mortgageeName" : {
-      "displayName" : "Mortgage Holder Name",
-      "type" : "string",
-      "maxLength" : 20000
-    },
-    "mortgageeAddress" : {
-      "displayName" : "Mortgage Holder Street Address",
-      "type" : "Address?"
-    },
-    "hasCommercialCondo" : {
-      "displayName" : "Is this a commercial condo unit?",
-      "type" : "string",
-      "maxLength" : 20000,
-      "options" : [ "Yes", "No", "N/A" ]
-    },
-    "yearBuilt" : {
-      "displayName" : "When was the building built?",
-      "type" : "string",
-      "maxLength" : 20000
-    },
-    "constructionType" : {
-      "displayName" : "What is the building's construction type (Frame, MNC, JM, MFR, NC, FR)?",
-      "type" : "string",
-      "maxLength" : 20000,
-      "options" : [ "Frame", "MNC", "JM", "MFR", "NC", "FR" ]
-    },
-    "ppcFireClass" : {
-      "displayName" : "What is the building's Public Protection (Fire Classification)?",
-      "type" : "string",
-      "maxLength" : 20000
-    },
-    "stories" : {
-      "displayName" : "How many stories is the building?",
-      "type" : "int"
-    },
-    "area" : {
-      "displayName" : "What is the total building area?",
-      "type" : "int"
-    },
-    "parkingSquareFootage" : {
-      "displayName" : "What is the parking square footage?",
-      "type" : "int"
-    },
-    "roofCovering" : {
-      "displayName" : "What is the primary roof covering?",
-      "type" : "string",
-      "maxLength" : 20000,
-      "options" : [ "Asphalt", "Concrete", "Glass", "Gravel", "Metal", "Wood", "Slate", "Other" ]
-    },
-    "roofShape" : {
-      "displayName" : "What is the shape of the roof?",
-      "type" : "string",
-      "maxLength" : 20000,
-      "options" : [ "Flat Roof", "Gable Roof", "Hip Roof", "Mansard Roof", "Gambrel Roof", "Shed Roof", "Butterfly Roof", "Sawtooth Roof", "Domed Roof", "Other" ]
-    },
-    "hasPriorGutRehab" : {
-      "displayName" : "Has the building ever had a full gut rehab?",
-      "type" : "string",
-      "maxLength" : 20000,
-      "options" : [ "Yes", "No", "N/A" ]
-    },
-    "hvacLastUpdated" : {
-      "displayName" : "When was Heating/HVAC last updated?",
-      "type" : "string",
-      "maxLength" : 20000
-    },
-    "electricalLastUpdated" : {
-      "displayName" : "When was Electrical/Wiring last updated?",
-      "type" : "string",
-      "maxLength" : 20000
-    },
-    "plumbingLastUpdated" : {
-      "displayName" : "When was Plumbing last updated?",
-      "type" : "string",
-      "maxLength" : 20000
-    },
-    "parkingLastUpdated" : {
-      "displayName" : "When were the parking areas last updated?",
-      "type" : "string",
-      "maxLength" : 20000
-    },
-    "hasElectricVehicleCharging" : {
-      "displayName" : "Are there electric vehicle charging stations in the parking lot?",
-      "type" : "string",
-      "maxLength" : 20000,
-      "options" : [ "Yes", "No", "N/A" ]
-    },
-    "roofLastUpdated" : {
-      "displayName" : "When was the roof last updated?",
-      "type" : "string",
-      "maxLength" : 20000
-    },
-    "burglarSafeguards" : {
-      "displayName" : "Select from the following burglary safeguards that apply to this location:",
-      "type" : "string",
-      "maxLength" : 20000,
-      "options" : [ "Central Burglar Alarm", "Local Burglar Alarm", "Security Service", "None" ]
-    },
-    "fireSafeguards" : {
-      "displayName" : "Select from the following fire safeguards that apply to this location:",
-      "type" : "string",
-      "maxLength" : 20000,
-      "options" : [ "Central Alarm", "Local Alarm", "Security Service", "Private Fire Department Service", "Fire Extinguishers", "None" ]
-    },
-    "hasSprinklers" : {
-      "displayName" : "Is the premises fully sprinklered?",
-      "type" : "string",
-      "maxLength" : 20000,
-      "options" : [ "Yes", "No", "N/A" ]
-    },
-    "hasSprinklerService" : {
-      "displayName" : "Is there a current sprinkler system service contract in place?",
-      "type" : "string",
-      "maxLength" : 20000,
-      "options" : [ "Yes", "No", "N/A" ]
-    },
-    "isHistorical" : {
-      "displayName" : "Is the building a historical building or is the building on the historical registry?",
-      "type" : "string",
-      "maxLength" : 20000,
-      "options" : [ "Yes", "No", "N/A" ]
-    },
-    "undergroundHazards" : {
-      "displayName" : "Does the location have any of the following underground hazards?",
-      "type" : "string",
-      "maxLength" : 20000,
-      "options" : [ "Storage Tank", "Previous Mine", "Previous Landfill" ]
-    },
-    "buildingCodeGrade" : {
-      "displayName" : "What is the Building Code Effectiveness Grading?",
-      "type" : "string",
-      "maxLength" : 20000
-    },
-    "buildingWindRating" : {
-      "displayName" : "What is the Building Wind Resistance rating (AA, A, AB, B)?",
-      "type" : "string",
-      "maxLength" : 20000
-    },
-    "premisesFeatures" : {
-      "displayName" : "Are any of the following on the premises:",
-      "type" : "string",
-      "maxLength" : 20000,
-      "options" : [ "Baseball Fields", "Basketball Courts", "Racquetball/Tennis/Volleyball/Pickle Ball Courts", "Bathing Beaches", "Bike/Horse Trails", "Boat Docks/Slips", "Clubhouse", "Convenience Store", "Exercise Facilities", "Lakes", "Marinas", "Parks", "Playground", "Restaurants", "Saunas/Spas", "Laundry Room", "Special Events Space", "Streets/Roads" ]
-    },
-    "tenantsOccupants" : {
-      "displayName" : "What tenants are in the building? (select all that apply)",
-      "type" : "string",
-      "options": ["H", "I"]
-    },
-    "permitsSpaceHeaters" : {
-      "displayName" : "Are tenants permitted to utilize space heaters?",
-      "type" : "string",
-      "maxLength" : 20000,
-      "options" : [ "Yes", "No", "N/A" ]
-    },
-    "highestSquareFootTenant" : {
-      "displayName" : "Which Tenant type has the highest square footage",
-      "type" : "string",
-      "maxLength" : 20000
-    },
-    "hasVacantUnits" : {
-      "displayName" : "Are any units vacant?",
-      "type" : "string",
-      "maxLength" : 20000,
-      "options" : [ "Yes", "No", "N/A" ]
-    },
-    "vacantSquareFootage" : {
-      "displayName" : "What is the vacancy percentage (square footage or number of units)?",
-      "type" : "string?",
-      "maxLength" : 20000
-    },
-    "protectiveDevicesCount" : {
-      "displayName" : "How many protective devices are on the location?",
-      "type" : "int?"
+    "packageLocationCoverageTerms": {
+      "displayName": "Coverage Terms", 
+      "type": "PropertyCoverageTerms"
     }, 
-    "protectiveDevices": {
-      "displayName" : "What are the safety devices at this lcation?",
-      "type" : "string?",
-      "options": ["SprinklerSystem", "FireAlarmSystem", "BurglaryProtectiveSafeguards", "2of3Systems", "3Systems"]
+    "ordLawTria": {
+      "displayName" : "Would you like to add any of the following?",
+      "type" : "string+",
+      "options" : [ "Ord Law", "TRIA" ]
     }
   },
   "abstract" : false

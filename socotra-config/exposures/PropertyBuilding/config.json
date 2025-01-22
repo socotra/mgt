@@ -1,80 +1,29 @@
 {
   "displayName" : "Building",
   "data" : {
-    "buildingType" : {
-      "displayName" : "Building Type",
-      "type" : "string", 
-      "options": ["Contents", "Building", "ABC"]
+    "propertyBuildingInfo": {
+      "displayName": "Building Info",
+      "type": "PropertyBuildingInfo"
     },
-    "buildingValue" : {
-      "displayName" : "Requested Building Value",
-      "type" : "int"
+    "propertyConstructionUpdates": {
+      "displayName": "Construction & Updates",
+      "type": "PropertyBuildingConstructionUpdates"
     },
-    "contentValue" : {
-      "displayName" : "Requested Contents Value",
-      "type" : "int"
+    "propertySafeguards": {
+      "displayName": "Safeguards",
+      "type": "PropertyBuildingSafeguards"
     },
-    "coinsurancePercent" : {
-      "displayName" : "Property Coinsurance %",
-      "type" : "string",
-      "options": ["70%", "80%", "90%", "100%"]
+    "propertyBuildingDetails": {
+      "displayName": "Building Details",
+      "type": "PropertyBuildingDetails"
     },
-    "deductible" : {
-      "displayName" : "Deductible",
-      "type" : "string",
-      "options": ["1,000", "2,500", "50,000", "100,000", "250,000", "500,000", "750,000"]
+    "propertyBuildingOperationDetails": {
+      "displayName": "Operational Details",
+      "type": "PropertyBuildingOperationDetails"
     },
-    "businessInterruptionValue" : {
-      "displayName" : "Requested Business Interuption Value",
-      "type" : "int"
-    },
-    "businessInterruptionCoinsuranceValue" : {
-      "displayName" : "Business Interruption Coinsurance",
-      "type" : "int"
-    },
-    "includeExtraExpenses" : {
-      "displayName" : "Do you want to Include Extra Expenses?",
-      "type" : "string",
-      "maxLength" : 20000,
-      "options" : [ "Yes", "No", "N/A" ]
-    },
-    "aopDeductible" : {
-      "displayName" : "Requested AOP Deductible",
-      "type" : "int"
-    },
-    "causeOfLossForm" : {
-      "displayName" : "What Cause of Loss Form is requested?",
-      "type" : "string",
-      "maxLength" : 20000,
-      "options" : [ "Broad", "Basic", "Special" ]
-    },
-    "requestedEndorsements" : {
-      "displayName" : "Do you want to include any of the following?",
-      "type" : "string",
-      "maxLength" : 20000,
-      "options" : [ "Ord Law", "TRIA" ]
-    },
-    "injuryAdvertisingLimit" : {
-      "displayName" : "Requested Personal Injury and Advertising Limit",
-      "type" : "int"
-    },
-    "perOccurrenceLimit" : {
-      "displayName" : "Requested Per Occ/Agg Limit",
-      "type" : "string",
-      "maxLength" : 20000,
-      "options" : [ "$1m/$2m", " $2m/$4m" ]
-    },
-    "medicalExpenseLimit" : {
-      "displayName" : "Requested Medical Expense Liability Limit",
-      "type" : "string",
-      "maxLength" : 20000,
-      "options" : [ "$5,000", " $10,000" ]
-    },
-    "windHailDeductible" : {
-      "displayName" : "Requested Wind/Hail Deductiblen(%)",
-      "type" : "string",
-      "maxLength" : 20000,
-      "options" : [ "1", "2", "5", "N/A" ]
+    "buildingCoverageTerms": {
+      "displayName": "Coverage Terms", 
+      "type": "PropertyBuildingCoverageTerms"
     },
     "classCode": {
       "displayName" : "What is the building's class code?",
@@ -100,9 +49,14 @@
       "type": "string",
       "options": ["50,001", "100,001", "250,001", "500,001", "1,000,001", "3,500,001", "5,000,001", "5,500,001", "10,000,001"]
     },
-    "occupancyCount": {
-      "displayName": "Coverage Amount for Building",
-      "type": "int"
+    "protectiveDevicesCount" : {
+      "displayName" : "How many protective devices are on the location?",
+      "type" : "int?"
+    },
+    "protectiveDevices": {
+      "displayName" : "What are the safety devices at this lcation?",
+      "type" : "string?",
+      "options": ["SprinklerSystem", "FireAlarmSystem", "BurglaryProtectiveSafeguards", "2of3Systems", "3Systems"]
     }
   },
   "abstract" : false

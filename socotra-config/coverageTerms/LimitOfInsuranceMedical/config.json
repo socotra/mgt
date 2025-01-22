@@ -1,6 +1,6 @@
 {
   "type" : "limit",
-  "displayName" : "Limit of Insurance - Medical",
+  "displayName" : "Requested Medical Expense Liability Limit",
   "options" : {
     "med_10000" : {
       "displayName" : "$10,000",

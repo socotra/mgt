@@ -4,38 +4,32 @@
     "applicantName" : {
       "displayName" : "What is the name of the applicant?",
       "type" : "string?",
-      "maxLength" : 20000,
-      "tag" : [ "PropGL" ]
+      "maxLength" : 20000
     },
     "applicantDBA" : {
       "displayName" : "Applicants DBA (if applicable)",
       "type" : "string?",
-      "maxLength" : 20000,
-      "tag" : [ "PropGL" ]
+      "maxLength" : 20000
     },
     "applicantMailingAddress" : {
       "displayName" : "What is the mailing address of the applicant?",
-      "type" : "Address?",
-      "tag" : [ "PropGL" ]
+      "type" : "Address?"
     },
     "applicantEmail" : {
       "displayName" : "What is your email address?",
       "type" : "string?",
-      "maxLength" : 20000,
-      "tag" : [ "PropGL" ]
+      "maxLength" : 20000
     },
     "applicantPhoneNumber" : {
       "displayName" : "What is your phone number?",
       "type" : "string?",
-      "maxLength" : 20000,
-      "tag" : [ "PropGL" ]
+      "maxLength" : 20000
     },
     "applicantLegalEntity" : {
       "displayName" : "What is the applicant's entity type?",
       "type" : "string?",
       "maxLength" : 20000,
-      "options" : [ "Individual", "Partnership", "Corporation", "Joint Venture", "Not For Profit", "LLC" ],
-      "tag" : [ "PropGL" ]
+      "options" : [ "Individual", "Partnership", "Corporation", "Joint Venture", "Not For Profit", "LLC" ]
     }
   },
   "abstract" : false

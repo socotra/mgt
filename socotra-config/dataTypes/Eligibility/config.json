@@ -1,0 +1,71 @@
+{
+  "displayName" : "Eligibility",
+  "data" : {
+    "hasCommercialCooking" : {
+      "displayName" : "Does any location include commercial cooking or a restaurant exposure?",
+      "type" : "string",
+      "maxLength" : 20000,
+      "options" : [ "Yes", "No" ]
+    },
+    "compliesNFPA" : {
+      "displayName" : "Do all locations comply with all required NFPA life Safety Code guideline?",
+      "type" : "string",
+      "options" : [ "Yes", "No" ]
+    },
+    "buildingWiringPlumbing" : {
+      "displayName" : "Does any location have:",
+      "type" : "string+",
+      "options" : [ "Knob-and-tube or aluminum wiring present", "Fuses present", "Federal Pacific circuit breakers", "More than 20% EIFS (Exterior Insulation Finishing System) exposure", "Pig-tailed wiring", "Steel, iron or polybutylene plumbing", "N/A" ]
+    },
+    "locationHazardsTenants" : {
+      "displayName" : "Do any locations have:",
+      "type" : "string",
+      "maxLength" : 20000,
+      "options" : [ "Tenant open past midnight", "Tenant working with or storing toxic, hazardous, highly-flammable or explosive chemicals or substances", "N/A" ]
+    },
+    "priorCodeViolation" : {
+      "displayName" : "Have any properties been in breach of State or Federal building codes within the last 5 years?",
+      "type" : "string",
+      "options" : [ "Yes", "No" ]
+    },
+    "ineligibleOccupants" : {
+      "displayName" : "Select all of the following industries, operations or products any tenant has operations involving or related to:",
+      "type" : "string+",
+      "options" : [ "Hunting", "Archery", "Trapping", "Skeet Shooting", "Gun Range", "Snow Skiing", "Water Skiing", "Lounge ", "Bar", "Adult Entertainment Venue", "Gas or Fuel Delivery/Sales", "Food Manufacturing", "Cannabis Processing", "None" ]
+    },
+    "locationHazardsOperations" : {
+      "displayName" : "Select all of the following that apply to any location:",
+      "type" : "string*",
+      "maxLength" : 20000,
+      "options" : [ "Rentals on short-term or seasonal basis (less than 6 months)", "Tenant evicted in the past six (6) months or in the process of being evicted", "Tenant subleases a location to another tenant", "Timeshare agreements/operations" ]
+    },
+    "buildingHazards" : {
+      "displayName" : "Select all of the following that apply to any building:",
+      "type" : "string+",
+      "options" : [ "Over 4 Stories in Height", "Less than 70% Occupied", "Have an elevator", "Any ongoing or planned structural renovations during the policy term", "Renovations exceeding 20% of the building value during the policy term", "None" ]
+    },
+    "hasElevatorMaintenanceAgreement" : {
+      "displayName" : "Is there an elevator maintenance agreement in effect, naming the applicant as an additional insured with hold harmless?",
+      "type" : "string",
+      "maxLength" : 20000,
+      "options" : [ "Yes", "No", "N/A" ]
+    },
+    "hasOccupancyPartialTenantOwnership" : {
+      "displayName" : "Does the applicant occupy and operate out of the building or do they have partial ownership of a tenant's operations?",
+      "type" : "string",
+      "options" : [ "Yes", "No", "N/A" ]
+    },
+    "compliesADA" : {
+      "displayName" : "Are all locations up to code on accessibility requirements (ADA compliance)?",
+      "type" : "string?",
+      "maxLength" : 20000,
+      "options" : [ "Yes", "No" ]
+    },
+    "historicalClaimThreshold":{
+      "displayName" : "Are there any individual claims that meet the following criteria?",
+      "type" : "string+",
+      "options" : [ "Greater than $50,000 non-cat", "Greater than $500,000 CAT", "Mold or Asbestor", "N/A" ]
+    }
+  },
+  "abstract" : false
+}

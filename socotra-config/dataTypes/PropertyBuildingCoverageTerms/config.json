@@ -1,0 +1,24 @@
+{
+    "displayName": "Coverage Terms", 
+    "data": {
+        "buildingValue" : {
+            "displayName" : "Requested Building Value",
+            "type" : "int"
+        },
+        "contentValue" : {
+            "displayName" : "Requested Contents Value",
+            "type" : "int"
+        },
+        "aopDeductible" : {
+            "displayName" : "AOP Deductible",
+            "type" : "string",
+            "options": ["1,000", "2,500", "50,000", "100,000", "250,000", "500,000", "750,000"]
+        },
+        "windHailDeductible" : {
+            "displayName" : "Requested Wind/Hail Deductible(%)",
+            "type" : "string",
+            "maxLength" : 20000,
+            "options" : [ "1%", "2%", "5%", "Exclude Wind/Hail Coverage" ]
+        }
+    }
+}

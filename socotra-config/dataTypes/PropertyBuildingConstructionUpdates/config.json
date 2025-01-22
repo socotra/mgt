@@ -1,0 +1,69 @@
+{
+    "displayName" : "Construction Updates",
+    "data" : {
+      "yearBuilt" : {
+        "displayName" : "When was the building built?",
+        "type" : "int"
+      },
+      "constructionType" : {
+        "displayName" : "What is the building's construction type (Frame, MNC, JM, MFR, NC, FR)?",
+        "type" : "string",
+        "maxLength" : 20000,
+        "options" : [ "Frame", "MNC", "JM", "MFR", "NC", "FR" ]
+      },
+      "ppcFireClass" : {
+        "displayName" : "What is the building's Public Protection (Fire Classification)?",
+        "type" : "string",
+        "maxLength" : 20000
+      },
+      "roofCovering" : {
+        "displayName" : "What is the primary roof covering?",
+        "type" : "string",
+        "maxLength" : 20000,
+        "options" : [ "Asphalt", "Concrete", "Glass", "Gravel", "Metal", "Wood", "Slate", "Other" ]
+      },
+      "roofShape" : {
+        "displayName" : "What is the shape of the roof?",
+        "type" : "string",
+        "maxLength" : 20000,
+        "options" : [ "Flat Roof", "Gable Roof", "Hip Roof", "Mansard Roof", "Gambrel Roof", "Shed Roof", "Butterfly Roof", "Sawtooth Roof", "Domed Roof", "Other" ]
+      },
+      "hasPriorGutRehab" : {
+        "displayName" : "Has the building ever had a full gut rehab?",
+        "type" : "string",
+        "maxLength" : 20000,
+        "options" : [ "Yes", "No", "N/A" ]
+      },
+      "hvacLastUpdated" : {
+        "displayName" : "When was Heating/HVAC last updated?",
+        "type" : "string",
+        "maxLength" : 20000
+      },
+      "electricalLastUpdated" : {
+        "displayName" : "When was Electrical/Wiring last updated?",
+        "type" : "string",
+        "maxLength" : 20000
+      },
+      "plumbingLastUpdated" : {
+        "displayName" : "When was Plumbing last updated?",
+        "type" : "string",
+        "maxLength" : 20000
+      },
+      "parkingLastUpdated" : {
+        "displayName" : "What year was the parking areas last updated?",
+        "type" : "int"
+      },
+      "hasElectricVehicleCharging" : {
+          "displayName" : "Are there electric vehicle charging stations in the parking lot?",
+          "type" : "string",
+          "maxLength" : 20000,
+          "options" : [ "Yes", "No", "N/A" ]
+        },
+      "roofLastUpdated" : {
+        "displayName" : "When was the roof last updated?",
+        "type" : "string",
+        "maxLength" : 20000
+      }
+    },
+    "abstract" : false
+  }

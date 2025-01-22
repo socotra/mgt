@@ -6,18 +6,34 @@
   "documents" : [ "BPPPropertyCoverage" ],
   "charges" : [ "Premium" ],
   "data" : {
-    "packageQuestions" : {
-      "displayName" : "General Information",
-      "type" : "PackageProductQuestions"
+    "classOfBusiness": {
+      "displayName": "Class Of Business",
+      "type": "ClassOfBusiness"
     },
-    "propertyQuestions" : {
-      "displayName" : "Property Information",
-      "type" : "PropertyQuestions"
+    "generalInformation": {
+      "displayName": "General Information",
+      "type": "GeneralInformation"
     },
-    "glQuestions" : {
-      "displayName" : "General Liability Information",
-      "type" : "GLQuestions"
+    "hasHistoricalClaims" : {
+      "displayName" : "Has the applicant had any claims in the last 5 years?",
+      "type" : "string",
+      "options" : [ "Yes", "No" ]
+    },
+    "claimHistory" : {
+      "displayName" : "Claim History",
+      "type" : "ClaimHistory*"
+    },
+    "packageOptionalForms": {
+      "displayName": "Optional Forms",
+      "type": "PackageOptionalForms*"
+    },
+    "affinityDiscount": {
+      "displayName": "Apply affinity discount?",
+      "type" : "string?",
+      "options": ["A", "B", "C", "D", "None"]
     }
   },
+  "numberingPlan" : "MGTPolicyNumberingPlan",
+  "numberingString" : "CPP",
   "abstract" : false
 }

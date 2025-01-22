@@ -1,0 +1,18 @@
+{
+    "displayName" : "Operational Details",
+    "data" : {
+      "permitsSpaceHeaters" : {
+        "displayName" : "Are tenants permitted to utilize space heaters?",
+        "type" : "string",
+        "maxLength" : 20000,
+        "options" : [ "Yes", "No", "N/A" ]
+      },
+      "permitsBalconyCooking" : {
+        "displayName" : "Is any balcony cooking permitted?",
+        "type" : "string",
+        "maxLength" : 20000,
+        "options" : [ "Yes", "No", "N/A" ]
+      }
+    },
+    "abstract" : false
+  }

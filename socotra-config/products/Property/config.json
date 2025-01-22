@@ -4,14 +4,34 @@
   "contents" : [ "PropertyLocation+" ],
   "charges" : [ "Premium" ],
   "data" : {
-    "packageQuestions" : {
-      "displayName" : "General Information",
-      "type" : "PackageProductQuestions"
+    "classOfBusiness": {
+      "displayName": "Class Of Business",
+      "type": "ClassOfBusiness"
     },
-    "propertyQuestions" : {
-      "displayName" : "Property Information",
-      "type" : "PropertyQuestions"
+    "generalInformation": {
+      "displayName": "General Information",
+      "type": "GeneralInformation"
+    },
+    "hasHistoricalClaims" : {
+      "displayName" : "Has the applicant had any claims in the last 5 years?",
+      "type" : "string",
+      "options" : [ "Yes", "No" ]
+    },
+    "claimHistory" : {
+      "displayName" : "Claim History",
+      "type" : "ClaimHistory*"
+    },
+    "propertyOptionalFarms": {
+      "displayName": "Optional Forms",
+      "type": "PropertyOptionalForms*"
+    },
+    "affinityDiscount": {
+      "displayName": "Apply affinity discount?",
+      "type" : "string?",
+      "options": ["A", "B", "C", "D", "None"]
     }
   },
+  "numberingPlan" : "MGTPolicyNumberingPlan",
+  "numberingString" : "PROP",
   "abstract" : false
 }

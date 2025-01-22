@@ -1,0 +1,29 @@
+{
+    "displayName": "Coverage Terms", 
+    "data": {
+        "coinsurancePercent" : {
+            "displayName" : "Property Coinsurance %",
+            "type" : "string",
+            "options": ["70%", "80%", "90%", "100%"]
+        },
+        "requestedBusinessInterruption": {
+            "displayName": "Requested Business Interuption Value ($)", 
+            "type": "string"
+        },
+        "businessInterruptionCoinsurance": {
+            "displayName": "Business Interruption Coinsurance ($)", 
+            "type": "string"
+        },
+        "includeExtraExpenses" : {
+            "displayName" : "Do you want to Include Extra Expenses?",
+            "type" : "string",
+            "options" : [ "Yes", "No"]
+        },
+        "causeOfLossForm" : {
+            "displayName" : "What Cause of Loss Form is requested?",
+            "type" : "string",
+            "maxLength" : 20000,
+            "options" : [ "Broad", "Basic", "Special" ]
+        }
+    }
+}

@@ -1,0 +1,44 @@
+{
+    "data": {
+        "tenantsOccupants": {
+            "displayName": "What tenants are in the building (select all that apply)",
+            "type": "string"
+        },
+        "occupancyBreakdown": {
+            "displayName": "Please complete occupancy breakout below:",
+            "type": "string+",
+            "options": ["Apartment / Hab Only", "% Student Housing", "% Subsidized Housing", "% Elderly Housing", "% Handicap", "% Halfway House", "% Mental or Drug Rehab", "N/A"]
+        },
+        "highestSquareFootTenant" : {
+            "displayName" : "Which Tenant type has the highest square footage",
+            "type" : "string",
+            "maxLength" : 20000
+        },
+        "hasVacantUnits" : {
+            "displayName" : "Are any units vacant?",
+            "type" : "string",
+            "options" : [ "Yes", "No", "N/A" ]
+        },
+        "vacantSquareFootage" : {
+            "displayName" : "What is the vacancy percentage (square footage or number of units)?",
+            "type" : "string"
+        },
+        "requiresTenantGenLiab" : {
+            "displayName" : "Does the lease require tenants to maintain general liability insurance with the applicant named as an additional insured?",
+            "type" : "string",
+            "options" : [ "Yes", "No" ]
+        },
+        "collectsTenantCoi" : {
+            "displayName" : "Does the applicant collect current Certificates of Insurance from each commercial tenant?",
+            "type" : "string",
+            "maxLength" : 20000,
+            "options" : [ "Yes", "No" ]
+        },
+        "requiresProtectiveSafeguardSystemsMaintenance": {
+            "displayName": "Does the lease agreement require that certain protective safeguard systems be maintained by tenants?",
+            "type": "string",
+            "options": ["Yes", "No"]
+        }
+    },
+    "abstract" : false
+}

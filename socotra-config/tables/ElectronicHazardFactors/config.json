@@ -1,0 +1,16 @@
+{
+  "columns": {
+    "classCode": {
+      "dataType": "int",
+      "isKey": true
+    },
+    "premOps": {
+      "dataType": "int",
+      "isKey": false
+    },
+    "prodCOps": {
+      "dataType": "string",
+      "isKey": false
+    }
+  }
+}

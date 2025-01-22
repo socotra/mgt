@@ -1,0 +1,32 @@
+{
+    "displayName" : "Building Details",
+    "data" : {
+        "isHistorical" : {
+            "displayName" : "Is the building a historical building or is the building on the historical registry?",
+            "type" : "string",
+            "maxLength" : 20000,
+            "options" : [ "Yes", "No", "N/A" ]
+        },
+        "undergroundHazards" : {
+            "displayName" : "Does the location have any of the following underground hazards?",
+            "type" : "string",
+            "maxLength" : 20000,
+            "options" : [ "Storage Tank", "Previous Mine", "Previous Landfill" ]
+        },
+        "buildingCodeGrade" : {
+            "displayName" : "What is the Building Code Effectiveness Grading?",
+            "type" : "string",
+            "maxLength" : 20000
+        },
+        "buildingWindRating" : {
+            "displayName" : "What is the Building Wind Resistance rating (AA, A, AB, B)?",
+            "type" : "string",
+            "maxLength" : 20000
+        },
+        "packageBuildingDetails": {
+            "displayName": "Additional Info",
+            "type": "PackageBuildingDetails"
+        }
+    },
+    "abstract" : false
+  }

@@ -1,0 +1,57 @@
+{
+    "data" : {
+        "providesSecurity" : {
+            "displayName" : "Is security provided by the applicant?",
+            "type" : "string?",
+            "maxLength" : 20000,
+            "options" : [ "Yes", "No", "N/A" ]
+        },
+        "securityArmed" : {
+            "displayName" : "Is the security provided by the applicant armed?",
+            "type" : "string",
+            "maxLength" : 20000,
+            "options" : [ "Armed", "Unarmed", "N/A" ]
+        },
+        "isNamedAdditionalInsuredOnSecurityFirm" : {
+            "displayName" : "Is the applicant named as an additional insured on the security firm's policy?",
+            "type" : "string?",
+            "maxLength" : 20000,
+            "options" : [ "Yes", "No", "N/A" ]
+        },
+        "securityFirmRequiredEqualGreaterLimits" : {
+            "displayName" : "Is the security firm required to carry limits greater than or equal to the applicant?",
+            "type" : "string?",
+            "maxLength" : 20000,
+            "options" : [ "Yes", "No" ]
+        },
+        "hasPeepholesOrDeadbolts" : {
+            "displayName" : "Do entry doors have peepholes and deadbolts or keyless deadbolts?",
+            "type" : "string",
+            "options" : [ "Yes", "No", "N/A" ]
+        },
+        "doesBackgroundChecksEmployee" : {
+            "displayName" : "Are criminal background checks done on employees?",
+            "type" : "string",
+            "maxLength" : 20000,
+            "options" : [ "Yes", "No" ]
+        },
+        "doesBackgroundChecksTenant" : {
+            "displayName" : "Are criminal background checks done on prospective tenants?",
+            "type" : "string",
+            "maxLength" : 20000,
+            "options" : [ "Yes", "No"]
+        },
+        "hasWrittenComplaintProcess" : {
+            "displayName" : "Does the applicant have written procedures for handling tenant complaints?",
+            "type" : "string",
+            "options" : [ "Yes", "No"]
+        },
+        "vacancyProcedures" : {
+            "displayName" : "What procedures do the applicants conduct when a tenant vacates a unit?",
+            "type" : "string",
+            "maxLength" : 20000,
+            "options" : [ "Change locks/Collect keys", "Property inspection", "Handle security deposit according to state and local laws", "Make necessary repairs", "Terminate lease agreement", "None of the above" ]
+        }
+    },
+    "abstract" : false
+  }

@@ -1,0 +1,36 @@
+{
+    "data" : {
+        "maintenanceProvider" : {
+            "displayName" : "Who is responsible for the maintenance of the premises,including snow and ice removal from sidewalks and parking lots?",
+            "type" : "string?",
+            "maxLength" : 20000,
+            "options" : [ "Applicant or its employee(s)", "Contractor/Subcontractor", "Tenant" ]
+        },
+        "isApplicantAdditionalInsured" : {
+            "displayName" : "Is the applicant named as an additional insured on the contractor/subcontractors policy?",
+            "type" : "string",
+            "options" : [ "Yes", "No", "N/A" ]
+        },
+        "contractorRequiredEqualGreaterLimits" : {
+            "displayName" : "Is the contractor required to carry limits greater than or equal to the applicant?",
+            "type" : "string",
+            "options" : [ "Yes", "No", "N/A" ]
+        },
+        "hasTenantMaintenanceRequirements" : {
+            "displayName" : "Does the lease require tenants to maintain and repair the premises, including snow and ice removal?",
+            "type" : "string",
+            "options" : [ "Yes", "No", "N/A" ]
+        },
+        "leaseDisclaimsSecurityWarranties": {
+            "displayName": "Does the lease/rental agreement makes no warranties with regard to security and that leasing agents/employees?",
+            "type" : "string",
+            "options" : [ "Yes", "No"]
+        },
+        "hasWrittenInspectionProcedures" : {
+            "displayName" : "Do you have written procedures for inspecting and maintaining the premises and parking areas?",
+            "type" : "string",
+            "options" : [ "Yes", "No", "N/A" ]
+        }
+    },
+    "abstract" : false
+  }

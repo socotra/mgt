@@ -1,0 +1,69 @@
+{
+    "data": {
+        "hasSlidingGlassLocks" : {
+            "displayName" : "Are sliding glass doors equipped with additional locks?",
+            "type" : "string?",
+            "maxLength" : 20000,
+            "options" : [ "Yes", "No", "N/A" ]
+        },
+        "premisesFeatures" : {
+            "displayName" : "Are any of the following on the premises:",
+            "type" : "string?",
+            "maxLength" : 20000,
+            "options" : [ "Baseball Fields", "Basketball Courts", "Racquetball/Tennis/Volleyball/Pickle Ball Courts", "Bathing Beaches", "Bike/Horse Trails", "Boat Docks/Slips", "Clubhouse", "Convenience Store", "Exercise Facilities", "Lakes", "Marinas", "Parks", "Playground", "Restaurants", "Saunas/Spas", "Laundry Room", "Special Events Space", "Streets/Roads", "N/A" ]
+        },
+        "poolCount" : {
+            "displayName" : "Number of pools:",
+            "type" : "int"
+        },
+        "lifeguardEmploymentType" : {
+            "displayName" : "Are lifeguards employed by you or subcontracted?",
+            "type" : "string?",
+            "maxLength" : 20000,
+            "options" : [ "Yes", "No", "N/A" ]
+        },
+        "isPoolFenced" : {
+            "displayName" : "Are pools fenced from all units?",
+            "type" : "string?",
+            "maxLength" : 20000,
+            "options" : [ "Yes", "No", "N/A" ]
+        },
+        "hasDivingBoardOrSlide" : {
+            "displayName" : "Is there a diving board or slide?",
+            "type" : "string?",
+            "maxLength" : 20000,
+            "options" : [ "Yes", "No", "N/A" ]
+        },
+        "hasDepthMarkers" : {
+            "displayName" : "Are there depth markers?",
+            "type" : "string?",
+            "maxLength" : 20000,
+            "options" : [ "Yes", "No", "N/A" ]
+        },
+        "hasShepherdsCrookRing" : {
+            "displayName" : "Is there a shepherd's crook/ring nearby?",
+            "type" : "string?",
+            "maxLength" : 20000,
+            "options" : [ "Yes", "No", "N/A" ]
+        },
+        "hasSelfClosingGate" : {
+            "displayName" : "Is there a self-closing gate?",
+            "type" : "string?",
+            "maxLength" : 20000,
+            "options" : [ "Yes", "No", "N/A" ]
+        },
+        "hasStructuresNearPool" : {
+            "displayName" : "Are any structures within 10 feet of edge of pool?",
+            "type" : "string?",
+            "maxLength" : 20000,
+            "options" : [ "Yes", "No", "N/A" ]
+        },
+        "hasWarningSigns" : {
+            "displayName" : "Are warning signs and rules posted in clearly visible areas?",
+            "type" : "string?",
+            "maxLength" : 20000,
+            "options" : [ "Yes", "No", "N/A" ]
+        }
+    },
+    "abstract" : false
+}

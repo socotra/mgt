@@ -1,5 +1,12 @@
 {
   "displayName" : "Loss of Electronic Data Coverage",
   "abstract" : false,
-  "coverageTerms": ["LimitOfInsurancePerOccurrencePD", "Deductible_PD"]
+  "coverageTerms": ["LimitOfInsurancePerOccurrence", "LiabilityDeductible"],
+  "data" : {
+    "form": {
+      "displayName": "Form Type",
+      "type": "string",
+      "options": ["CG 04 37", "CG 04 71"]
+    }
+  }
 }
