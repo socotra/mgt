@@ -1,7 +1,7 @@
 {
   "columns": {
     "classCode": {
-      "dataType": "int",
+      "dataType": "string",
       "isKey": true
     },
     "premOps": {

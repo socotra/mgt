@@ -22,7 +22,7 @@
             "displayName" : "Is the security firm required to carry limits greater than or equal to the applicant?",
             "type" : "string?",
             "maxLength" : 20000,
-            "options" : [ "Yes", "No" ]
+            "options" : [ "Yes", "No", "N/A" ]
         },
         "hasPeepholesOrDeadbolts" : {
             "displayName" : "Do entry doors have peepholes and deadbolts or keyless deadbolts?",
@@ -33,7 +33,7 @@
             "displayName" : "Are criminal background checks done on employees?",
             "type" : "string",
             "maxLength" : 20000,
-            "options" : [ "Yes", "No" ]
+            "options" : [ "Yes", "No", "N/A" ]
         },
         "doesBackgroundChecksTenant" : {
             "displayName" : "Are criminal background checks done on prospective tenants?",
@@ -48,8 +48,8 @@
         },
         "vacancyProcedures" : {
             "displayName" : "What procedures do the applicants conduct when a tenant vacates a unit?",
-            "type" : "string",
-            "maxLength" : 20000,
+            "type" : "string+",
+            "tag": ["multiselect"],
             "options" : [ "Change locks/Collect keys", "Property inspection", "Handle security deposit according to state and local laws", "Make necessary repairs", "Terminate lease agreement", "None of the above" ]
         }
     },

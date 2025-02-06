@@ -3,14 +3,14 @@
     "data" : {
       "burglarSafeguards" : {
         "displayName" : "Select from the following burglary safeguards that apply to this location:",
-        "type" : "string",
-        "maxLength" : 20000,
+        "type" : "string+",
+        "tag": ["multiselect"],
         "options" : [ "Central Burglar Alarm", "Local Burglar Alarm", "Security Service", "None" ]
       },
       "fireSafeguards" : {
         "displayName" : "Select from the following fire safeguards that apply to this location:",
-        "type" : "string",
-        "maxLength" : 20000,
+        "type" : "string+",
+        "tag": ["multiselect"],
         "options" : [ "Central Alarm", "Local Alarm", "Security Service", "Private Fire Department Service", "Fire Extinguishers", "None" ]
       },
       "hasSprinklers" : {

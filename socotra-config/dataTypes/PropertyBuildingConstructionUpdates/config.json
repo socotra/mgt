@@ -14,13 +14,13 @@
       "ppcFireClass" : {
         "displayName" : "What is the building's Public Protection (Fire Classification)?",
         "type" : "string",
-        "maxLength" : 20000
+        "options": ["1", "2", "3", "4", "5", "6", "7", "8", "8B", "9", "10", "1X-5X", "6X-7X", "8X", "1Y-5Y", "6Y-8Y", "10W"]
       },
       "roofCovering" : {
         "displayName" : "What is the primary roof covering?",
         "type" : "string",
         "maxLength" : 20000,
-        "options" : [ "Asphalt", "Concrete", "Glass", "Gravel", "Metal", "Wood", "Slate", "Other" ]
+        "options" : [ "Asphalt", "Concrete", "Glass", "Gravel", "Metal", "Wood", "Slate", "Mixed Material", "Other" ]
       },
       "roofShape" : {
         "displayName" : "What is the shape of the roof?",

@@ -8,9 +8,9 @@
         },
         "premisesFeatures" : {
             "displayName" : "Are any of the following on the premises:",
-            "type" : "string?",
-            "maxLength" : 20000,
-            "options" : [ "Baseball Fields", "Basketball Courts", "Racquetball/Tennis/Volleyball/Pickle Ball Courts", "Bathing Beaches", "Bike/Horse Trails", "Boat Docks/Slips", "Clubhouse", "Convenience Store", "Exercise Facilities", "Lakes", "Marinas", "Parks", "Playground", "Restaurants", "Saunas/Spas", "Laundry Room", "Special Events Space", "Streets/Roads", "N/A" ]
+            "type" : "string+",
+            "tag": ["multiselect"],
+            "options" : [ "Baseball Fields", "Basketball Courts", "Racquetball/Tennis/Volleyball/Pickle Ball Courts", "Bathing Beaches", "Bike/Horse Trails", "Boat Docks/Slips", "Clubhouse", "Convenience Store", "Exercise Facilities", "Lakes", "Marinas", "Parks", "Playground", "Restaurants", "Saunas/Spas", "Laundry Room", "Special Events Space", "Streets/Roads", "None" ]
         },
         "poolCount" : {
             "displayName" : "Number of pools:",
@@ -25,7 +25,6 @@
         "isPoolFenced" : {
             "displayName" : "Are pools fenced from all units?",
             "type" : "string?",
-            "maxLength" : 20000,
             "options" : [ "Yes", "No", "N/A" ]
         },
         "hasDivingBoardOrSlide" : {

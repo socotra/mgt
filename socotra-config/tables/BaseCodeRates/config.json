@@ -1,0 +1,17 @@
+{
+  "columns" : {
+    "symbol" : {
+      "dataType" : "string",
+      "isKey" : true
+    },
+    "definition": {
+      "dataType" : "string",
+      "isKey" : false
+    },
+    "rate": {
+      "dataType" : "int",
+      "isKey" : false
+    }
+  },
+  "selectionTimeBasis" : "policyStartTime"
+}

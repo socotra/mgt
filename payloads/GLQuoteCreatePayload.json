@@ -1,0 +1,131 @@
+{
+    "productName": "GeneralLiability",
+    "accountLocator": "01JD05RSDQ1A91KCSE92W2XJX4",
+    "startTime": "{{$timestamp}}",
+    "timezone": "America/Los_Angeles",
+    "currency": "USD",
+    "elements": [
+        {
+            "type": "Location",
+            "coverageTerms": {
+                    "LimitOfInsurancePerOccurrence": "bi_1000000",
+                    "LiabilityDeductible": "ded_250",
+                    "LimitOfInsuranceMedical": "med_5000",
+                    "LimitOfInsuranceAggregate": "agg_2000000"
+            },
+            "data": {
+                    "glOperationalDetails": {
+                        "contractorRequiredEqualGreaterLimits": "N/A",
+                        "hasTenantMaintenanceRequirements": "Yes",
+                        "hasWrittenInspectionProcedures": "Yes",
+                        "isApplicantAdditionalInsured": "N/A",
+                        "leaseDisclaimsSecurityWarranties": "Yes",
+                        "maintenanceProvider": "Tenant"
+                    },
+                    "propertyBuildingOperationDetails": {
+                        "permitsBalconyCooking": "No",
+                        "permitsSpaceHeaters": "No"
+                    },
+                    "applicantsExposures": 5,
+                    "packageBuildingDetails": {
+                        "hasDepthMarkers": "N/A",
+                        "hasDivingBoardOrSlide": "N/A",
+                        "hasSelfClosingGate": "N/A",
+                        "hasShepherdsCrookRing": "N/A",
+                        "hasSlidingGlassLocks": "Yes",
+                        "hasStructuresNearPool": "N/A",
+                        "hasWarningSigns": "N/A",
+                        "isPoolFenced": "N/A",
+                        "lifeguardEmploymentType": "N/A",
+                        "poolCount": 0,
+                        "premisesFeatures": "None"
+                    },
+                    "ordLawTria": [
+                        "TRIA"
+                    ],
+                    "disclaimsSecurity": "Yes",
+                    "glSecurity": {
+                        "doesBackgroundChecksEmployee": "Yes",
+                        "doesBackgroundChecksTenant": "Yes",
+                        "hasPeepholesOrDeadbolts": "N/A",
+                        "hasWrittenComplaintProcess": "Yes",
+                        "isNamedAdditionalInsuredOnSecurityFirm": "N/A",
+                        "providesSecurity": "No",
+                        "securityArmed": "N/A",
+                        "securityFirmRequiredEqualGreaterLimits": "No",
+                        "vacancyProcedures": "Change locks/Collect keys"
+                    },
+                    "packageOccupancyInfo": {
+                        "collectsTenantCoi": "No",
+                        "hasVacantUnits": "No",
+                        "tenantsOccupants": ["1 Family Dwellings (Lessor's Risk)"],
+                        "highestSquareFootTenant": ["1 Family Dwellings (Lessor's Risk)"],
+                        "requiresProtectiveSafeguardSystemsMaintenance": "Yes",
+                        "requiresTenantGenLiab": "Yes",
+                        "vacantSquareFootage": "0"
+                    },
+                    "classCode": 1,
+                    "packageProductBasicInfo": {
+                        "hasPublicParkingFee": "No",
+                        "isNamedAdditionalInsuredOnParking": "Yes",
+                        "locationAddress": {
+                            "city": "Greenwood Village",
+                            "line1": "5445 DTC Pkwy Ste 720",
+                            "state": "TX",
+                            "zipCode": 77294
+                        },
+                        "parkingSquareFootage": 0,
+                        "publicParkingAnnualSales": 0
+                    }
+                },
+            "originalEffectiveTime": "{{$timestamp}}",
+            "category": "exposure"
+        }
+    ],
+    "data": {
+            "classOfBusiness": {
+                "hasMulticlassRisk": "No",
+                "occupancyType": "Apartment Buildings"
+            },
+            "hasHistoricalClaims": "No",
+            "affinityDiscount": "None",
+            "eligibility": {
+                "buildingHazards": [
+                    "None"
+                ],
+                "buildingWiringPlumbing": [
+                    "N/A"
+                ],
+                "compliesADA": "Yes",
+                "compliesNFPA": "Yes",
+                "hasCommercialCooking": "No",
+                "hasElevatorMaintenanceAgreement": "N/A",
+                "hasOccupancyPartialTenantOwnership": "No",
+                "historicalClaimThreshold": [
+                    "N/A"
+                ],
+                "ineligibleOccupants": [
+                    "None"
+                ],
+                "locationHazardsOperations": [
+                    "N/A"
+                ],
+                "locationHazardsTenants": "N/A",
+                "priorCodeViolation": "No"
+            },
+            "generalInformation": {
+                "businessCreditScore": 750,
+                "hasFinancialHistoryIssue": "No",
+                "hasHistoricalCoverageGap": [
+                    "N/A"
+                ],
+                "hasLegalLiabilityIssue": "No",
+                "leasesHoldHarmless": "Yes",
+                "ownsAllProperties": "Yes",
+                "yearsInBusiness": 2020
+            }
+        },
+    "delinquencyPlanName": "Standard",
+    "billingTrigger": "issue",
+    "billingLevel": "inherit"
+}

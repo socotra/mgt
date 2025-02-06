@@ -1,6 +1,7 @@
 {
   "displayName" : "Location",
-  "contents" : [ "PropertyBuilding+", "CyberIncident", "LossOfElectronicDataCoverage", "ProductWithdrawalCoverage", "OwnersContractorsProtectiveLiabilityInsurance", "OrdinanceLawCoverageBBuildingDemolitionCost", "OrdinanceLawCoverageCIncreasedCostConstructionCoverage", "EarthquakeVolcanicEruptionCoverage", "FloodBackupSewerCoverageEndorsement", "DebrisRemovalAdditionalInsurance", "TreesShrubsPlants", "DischargeFromSewerDrainSump", "LegalLiabilityCoverage", "ExtraExpenseCoverage", "BusinessIncomeCoverageOptionsLandlordAsAdditionalInsured", "BuildersRiskCoverage", "BusinessIncomeCoverage", "BusinessIncomeCoverageOptionsBusinessIncomeFromDependentProperties", "BusinessIncomeCoverageOptionsSeasonalLeasesMonthlyLimitsOnLossPayment", "BusinessIncomeCoverageOptionsFoodContamination", "CommonTimeElementOptions", "MortgageholdersErrorsOmissionsCoverage", "TobaccoSalesWarehouses", "EquipmentBreakdown", "LeaseholdInterestCoverage", "LeaseholdInterestCoverageBonusPaymentImprovementsBettermentsPrepaidRent" ],
+  "contents" : [ "PropertyBuilding+", "CyberIncident?", "LossOfElectronicDataCoverage?", "ProductWithdrawalCoverage?", "OwnersContractorsProtectiveLiabilityInsurance?", "OrdinanceLawCoverageBBuildingDemolitionCost?", "OrdinanceLawCoverageCIncreasedCostConstructionCoverage?", "EarthquakeVolcanicEruptionCoverage?", "FloodBackupSewerCoverageEndorsement?", "DebrisRemovalAdditionalInsurance?", "TreesShrubsPlants?", "DischargeFromSewerDrainSump?", "LegalLiabilityCoverage?", "ExtraExpenseCoverage?", "BusinessIncomeCoverageOptionsLandlordAsAdditionalInsured?", "BuildersRiskCoverage?", "BusinessIncomeCoverage?", "BusinessIncomeCoverageOptionsBusinessIncomeFromDependentProperties?", "BusinessIncomeCoverageOptionsSeasonalLeasesMonthlyLimitsOnLossPayment?", "BusinessIncomeCoverageOptionsFoodContamination?", "CommonTimeElementOptions?", "MortgageholdersErrorsOmissionsCoverage?", "TobaccoSalesWarehouses?", "EquipmentBreakdown?", "LeaseholdInterestCoverage?", "LeaseholdInterestCoverageBonusPaymentImprovementsBettermentsPrepaidRent?" ],
+  "coverageTerms": [  "LimitOfInsurancePerOccurrence", "LimitOfInsuranceAggregate", "LimitOfInsuranceMedical", "LiabilityDeductible"],
   "data" : {
     "operationalDetails": {
       "displayName": "Operational Details", 
@@ -25,6 +26,7 @@
     "ordLawTria": {
       "displayName" : "Would you like to add any of the following?",
       "type" : "string+",
+      "tag": ["multiselect"],
       "options" : [ "Ord Law", "TRIA" ]
     },
     "disclaimsSecurity" : {
@@ -40,13 +42,21 @@
     },
     "classCode" : {
       "displayName" : "Location Class Code",
-      "type" : "int"
+      "type" : "string"
     },
     "hasCommercialCondo" : {
       "displayName" : "Is this a commercial condo unit?",
       "type" : "string",
       "maxLength" : 20000,
       "options" : [ "Yes", "No", "N/A" ]
+    },
+    "riskScores": {
+      "displayName": "Risk Scores", 
+      "type": "RiskScores"
+    },
+    "applicantsExposures": {
+      "type": "int",
+      "displayName": "Enter the Applicants Exposure Amount"
     }
   },
   "abstract" : false

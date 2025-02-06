@@ -1,6 +1,6 @@
 {
   "displayName" : "Location",
-  "contents" : [ "PropertyBuilding+", "OrdinanceLawCoverageBBuildingDemolitionCost", "OrdinanceLawCoverageCIncreasedCostConstructionCoverage", "EarthquakeVolcanicEruptionCoverage", "FloodBackupSewerCoverageEndorsement", "DebrisRemovalAdditionalInsurance", "TreesShrubsPlants", "DischargeFromSewerDrainSump", "LegalLiabilityCoverage", "ExtraExpenseCoverage", "BusinessIncomeCoverageOptionsLandlordAsAdditionalInsured", "BuildersRiskCoverage", "BusinessIncomeCoverage", "BusinessIncomeCoverageOptionsBusinessIncomeFromDependentProperties", "BusinessIncomeCoverageOptionsSeasonalLeasesMonthlyLimitsOnLossPayment", "BusinessIncomeCoverageOptionsFoodContamination", "CommonTimeElementOptions", "MortgageholdersErrorsOmissionsCoverage", "TobaccoSalesWarehouses", "EquipmentBreakdown", "LeaseholdInterestCoverage", "LeaseholdInterestCoverageBonusPaymentImprovementsBettermentsPrepaidRent" ],
+  "contents" : [ "PropertyBuilding+", "OrdinanceLawCoverageBBuildingDemolitionCost?", "OrdinanceLawCoverageCIncreasedCostConstructionCoverage?", "EarthquakeVolcanicEruptionCoverage", "FloodBackupSewerCoverageEndorsement?", "DebrisRemovalAdditionalInsurance?", "TreesShrubsPlants", "DischargeFromSewerDrainSump?", "LegalLiabilityCoverage?", "ExtraExpenseCoverage?", "BusinessIncomeCoverageOptionsLandlordAsAdditionalInsured?", "BuildersRiskCoverage?", "BusinessIncomeCoverage?", "BusinessIncomeCoverageOptionsBusinessIncomeFromDependentProperties?", "BusinessIncomeCoverageOptionsSeasonalLeasesMonthlyLimitsOnLossPayment?", "BusinessIncomeCoverageOptionsFoodContamination?", "CommonTimeElementOptions", "MortgageholdersErrorsOmissionsCoverage?", "TobaccoSalesWarehouses?", "EquipmentBreakdown?", "LeaseholdInterestCoverage?", "LeaseholdInterestCoverageBonusPaymentImprovementsBettermentsPrepaidRent?" ],
   "data" : {
     "packageProductBasicInfo" : {
       "displayName" : "Basic Info",
@@ -14,10 +14,25 @@
       "displayName": "Coverage Terms", 
       "type": "PropertyCoverageTerms"
     }, 
+    "glSecurity": {
+      "displayName": "Security", 
+      "type": "GLSecurity"
+    },
     "ordLawTria": {
       "displayName" : "Would you like to add any of the following?",
       "type" : "string+",
+      "tag": ["multiselect"],
       "options" : [ "Ord Law", "TRIA" ]
+    }, 
+    "hasCommercialCondo" : {
+      "displayName" : "Is this a commercial condo unit?",
+      "type" : "string",
+      "maxLength" : 20000,
+      "options" : [ "Yes", "No", "N/A" ]
+    },
+    "riskScores": {
+      "displayName": "Risk Scores", 
+      "type": "RiskScores"
     }
   },
   "abstract" : false

@@ -3,8 +3,8 @@
   "displayName" : "Package",
   "eligibleAccountTypes" : [ "Applicant" ],
   "contents" : [ "PackageLocation+" ],
-  "documents" : [ "BPPPropertyCoverage" ],
-  "charges" : [ "Premium" ],
+  "documents" : [ "BPPPropertyCoverage", "Package_Dec_Page_1" ],
+  "charges" : [ "Premium", "Tax" ],
   "data" : {
     "classOfBusiness": {
       "displayName": "Class Of Business",
@@ -13,6 +13,10 @@
     "generalInformation": {
       "displayName": "General Information",
       "type": "GeneralInformation"
+    },
+    "eligibility": {
+      "displayName": "Eligibility",
+      "type": "Eligibility"
     },
     "hasHistoricalClaims" : {
       "displayName" : "Has the applicant had any claims in the last 5 years?",

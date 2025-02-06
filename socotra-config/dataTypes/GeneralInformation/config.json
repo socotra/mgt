@@ -16,6 +16,7 @@
     "hasHistoricalCoverageGap" : {
       "displayName" : "At any time over the past (5) five years, has the applicant experienced:",
       "type" : "string+",
+      "tag": ["multiselect"],
       "options" : [ "A gap in coverage", "Non-renewed, failure to comply with safety or inspection recommendations", "Non-renewed, carrier product no longer supported", "Non-renewed citing underwriting reasons", "No prior insurance", "Cancelled for non-pay", "N/A"]
     },
     "hasFinancialHistoryIssue" : {

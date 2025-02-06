@@ -15,12 +15,13 @@
     "buildingWiringPlumbing" : {
       "displayName" : "Does any location have:",
       "type" : "string+",
+      "tag": ["multiselect"],
       "options" : [ "Knob-and-tube or aluminum wiring present", "Fuses present", "Federal Pacific circuit breakers", "More than 20% EIFS (Exterior Insulation Finishing System) exposure", "Pig-tailed wiring", "Steel, iron or polybutylene plumbing", "N/A" ]
     },
     "locationHazardsTenants" : {
       "displayName" : "Do any locations have:",
-      "type" : "string",
-      "maxLength" : 20000,
+      "type" : "string+",
+      "tag": ["multiselect"],
       "options" : [ "Tenant open past midnight", "Tenant working with or storing toxic, hazardous, highly-flammable or explosive chemicals or substances", "N/A" ]
     },
     "priorCodeViolation" : {
@@ -31,17 +32,19 @@
     "ineligibleOccupants" : {
       "displayName" : "Select all of the following industries, operations or products any tenant has operations involving or related to:",
       "type" : "string+",
+      "tag": ["multiselect"],
       "options" : [ "Hunting", "Archery", "Trapping", "Skeet Shooting", "Gun Range", "Snow Skiing", "Water Skiing", "Lounge ", "Bar", "Adult Entertainment Venue", "Gas or Fuel Delivery/Sales", "Food Manufacturing", "Cannabis Processing", "None" ]
     },
     "locationHazardsOperations" : {
       "displayName" : "Select all of the following that apply to any location:",
       "type" : "string*",
-      "maxLength" : 20000,
-      "options" : [ "Rentals on short-term or seasonal basis (less than 6 months)", "Tenant evicted in the past six (6) months or in the process of being evicted", "Tenant subleases a location to another tenant", "Timeshare agreements/operations" ]
+      "tag": ["multiselect"],
+      "options" : [ "Rentals on short-term or seasonal basis (less than 6 months)", "Tenant evicted in the past six (6) months or in the process of being evicted", "Tenant subleases a location to another tenant", "Timeshare agreements/operations", "N/A" ]
     },
     "buildingHazards" : {
       "displayName" : "Select all of the following that apply to any building:",
       "type" : "string+",
+      "tag": ["multiselect"],
       "options" : [ "Over 4 Stories in Height", "Less than 70% Occupied", "Have an elevator", "Any ongoing or planned structural renovations during the policy term", "Renovations exceeding 20% of the building value during the policy term", "None" ]
     },
     "hasElevatorMaintenanceAgreement" : {
@@ -64,6 +67,7 @@
     "historicalClaimThreshold":{
       "displayName" : "Are there any individual claims that meet the following criteria?",
       "type" : "string+",
+      "tag": ["multiselect"],
       "options" : [ "Greater than $50,000 non-cat", "Greater than $500,000 CAT", "Mold or Asbestor", "N/A" ]
     }
   },

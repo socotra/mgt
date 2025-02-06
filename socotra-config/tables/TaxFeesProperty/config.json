@@ -1,0 +1,42 @@
+{
+    "columns" : {
+      "state" : {
+        "dataType" : "string",
+        "isKey" : true
+      },
+      "surplusLinesTax": {
+        "dataType" : "decimal",
+        "isKey" : false
+      },
+      "stampingFee": {
+        "dataType" : "decimal",
+        "isKey" : false
+      },
+      "miscTax": {
+        "dataType" : "decimal",
+        "isKey" : false
+      },
+      "policyFee": {
+        "dataType" : "int",
+        "isKey" : false
+      },
+      "brokerFee": {
+        "dataType" : "int",
+        "isKey" : false
+      },
+      "inspectionFee": {
+        "dataType" : "decimal",
+        "isKey" : false
+      },
+      "installmentFee": {
+        "dataType" : "decimal",
+        "isKey" : false
+      },
+      "minEP": {
+        "dataType" : "decimal",
+        "isKey" : false
+      }
+    },
+    "selectionTimeBasis" : "policyStartTime"
+
+}

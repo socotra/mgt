@@ -18,7 +18,7 @@
             "displayName" : "Requested Wind/Hail Deductible(%)",
             "type" : "string",
             "maxLength" : 20000,
-            "options" : [ "1%", "2%", "5%", "Exclude Wind/Hail Coverage" ]
+            "options" : [ "1.0%", "2.0%", "5.0%", "Exclude Wind/Hail Coverage" ]
         }
     }
 }

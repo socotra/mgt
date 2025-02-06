@@ -1,0 +1,10 @@
+{
+    "data" : {
+        "affinityDiscount": {
+            "displayName": "Apply affinity discount?",
+            "type" : "string",
+            "options": ["A", "B", "C", "D", "None"]
+        }
+    },
+    "abstract" : false
+  }

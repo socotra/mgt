@@ -9,9 +9,9 @@
         },
         "undergroundHazards" : {
             "displayName" : "Does the location have any of the following underground hazards?",
-            "type" : "string",
-            "maxLength" : 20000,
-            "options" : [ "Storage Tank", "Previous Mine", "Previous Landfill" ]
+            "type" : "string+",
+            "tag": ["multiselect"],
+            "options" : [ "Storage Tank", "Previous Mine", "Previous Landfill",  "None" ]
         },
         "buildingCodeGrade" : {
             "displayName" : "What is the Building Code Effectiveness Grading?",

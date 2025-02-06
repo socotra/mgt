@@ -1,0 +1,13 @@
+{
+    "columns" : {
+      "occupancyType" : {
+        "dataType" : "string",
+        "isKey" : true
+      },
+      "classCode" : {
+        "dataType" : "string",
+        "isKey" : false
+      }
+    },
+    "selectionTimeBasis" : "policyStartTime"
+  }

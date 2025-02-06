@@ -1,0 +1,277 @@
+{
+    "productName": "Property",
+    "accountLocator": "{{accountLocator}}",
+    "startTime": "{{$timestamp}}",
+    "timezone": "America/Los_Angeles",
+    "currency": "USD",
+    "elements": [
+        {
+            "type": "PropertyLocation",
+            "elements": [
+                {
+                    "type": "DebrisRemovalAdditionalInsurance",
+                    "originalEffectiveTime": "{{$timestamp}}",
+                    "category": "coverage"
+                },
+                {
+                    "type": "LeaseholdInterestCoverageBonusPaymentImprovementsBettermentsPrepaidRent",
+                    "originalEffectiveTime": "{{$timestamp}}",
+                    "category": "coverage"
+                },
+                {
+                    "type": "BusinessIncomeCoverageOptionsLandlordAsAdditionalInsured",
+                    "originalEffectiveTime": "{{$timestamp}}",
+                    "category": "coverage"
+                },
+                {
+                    "type": "BusinessIncomeCoverageOptionsBusinessIncomeFromDependentProperties",
+                    "originalEffectiveTime": "{{$timestamp}}",
+                    "category": "coverage"
+                },
+                {
+                    "type": "FloodBackupSewerCoverageEndorsement",
+                    "originalEffectiveTime": "{{$timestamp}}",
+                    "category": "coverage"
+                },
+                {
+                    "type": "TreesShrubsPlants",
+                    "originalEffectiveTime": "{{$timestamp}}",
+                    "category": "coverage"
+                },
+                {
+                    "type": "LegalLiabilityCoverage",
+                    "originalEffectiveTime": "{{$timestamp}}",
+                    "category": "coverage"
+                },
+                {
+                    "type": "BusinessIncomeCoverageOptionsFoodContamination",
+                    "originalEffectiveTime": "{{$timestamp}}",
+                    "category": "coverage"
+                },
+                {
+                    "type": "CommonTimeElementOptions",
+                    "originalEffectiveTime": "{{$timestamp}}",
+                    "category": "coverage"
+                },
+                {
+                    "type": "EarthquakeVolcanicEruptionCoverage",
+                    "originalEffectiveTime": "{{$timestamp}}",
+                    "category": "coverage"
+                },
+                {
+                    "type": "DischargeFromSewerDrainSump",
+                    "originalEffectiveTime": "{{$timestamp}}",
+                    "category": "coverage"
+                },
+                {
+                    "type": "TobaccoSalesWarehouses",
+                    "originalEffectiveTime": "{{$timestamp}}",
+                    "category": "coverage"
+                },
+                {
+                    "type": "PropertyBuilding",
+                    "data": {
+                        "roofACV": "ReplacementKey",
+                        "buildingCoverageTerms": {
+                            "aopDeductible": "1,000",
+                            "buildingValue": 100,
+                            "contentValue": 100,
+                            "windHailDeductible": "1.0%"
+                        },
+                        "propertyBuildingDetails": {
+                            "buildingCodeGrade": "10",
+                            "buildingWindRating": "AA",
+                            "isHistorical": "Yes",
+                            "packageBuildingDetails": {
+                                "hasDivingBoardOrSlide": "Yes",
+                                "hasSlidingGlassLocks": "No",
+                                "isPoolFenced": "No",
+                                "poolCount": 1,
+                                "premisesFeatures": "Baseball Fields"
+                            },
+                            "undergroundHazards": "Storage Tank"
+                        },
+                        "propertySafeguards": {
+                            "burglarSafeguards": [
+                                "Central Burglar Alarm"
+                            ],
+                            "fireSafeguards": [
+                                "Central Alarm"
+                            ],
+                            "hasSprinklerService": "Yes",
+                            "hasSprinklers": "No"
+                        },
+                        "propertyBuildingInfo": {
+                            "area": 100,
+                            "hasMortgage": "Yes",
+                            "mortgageeHolder": {
+                                "mortgageeAddress": {
+                                    "city": "North Charleston",
+                                    "line1": "4401 Withers Drive",
+                                    "state": "TX",
+                                    "zipCode": 77294
+                                },
+                                "mortgageeName": "Lydia"
+                            },
+                            "stories": 1
+                        },
+                        "propertyConstructionUpdates": {
+                            "constructionType": "Frame",
+                            "electricalLastUpdated": "2001",
+                            "hasElectricVehicleCharging": "N/A",
+                            "hasPriorGutRehab": "N/A",
+                            "hvacLastUpdated": "2001",
+                            "parkingLastUpdated": 2001,
+                            "plumbingLastUpdated": "2001",
+                            "ppcFireClass": "3",
+                            "roofCovering": "Asphalt",
+                            "roofLastUpdated": "2001",
+                            "roofShape": "Flat Roof",
+                            "yearBuilt": 2001
+                        },
+                        "roofAge": "5",
+                        "classCode": "0567",
+                        "propertyBuildingOperationDetails": {
+                            "permitsBalconyCooking": "No",
+                            "permitsSpaceHeaters": "No"
+                        },
+                        "buildingAge": "1"
+                    },
+                    "originalEffectiveTime": "{{$timestamp}}",
+                    "category": "exposure"
+                },
+                {
+                    "type": "BusinessIncomeCoverageOptionsSeasonalLeasesMonthlyLimitsOnLossPayment",
+                    "originalEffectiveTime": "{{$timestamp}}",
+                    "category": "coverage"
+                },
+                {
+                    "type": "BuildersRiskCoverage",
+                    "originalEffectiveTime": "{{$timestamp}}",
+                    "category": "coverage"
+                },
+                {
+                    "type": "OrdinanceLawCoverageCIncreasedCostConstructionCoverage",
+                    "originalEffectiveTime": "{{$timestamp}}",
+                    "category": "coverage"
+                },
+                {
+                    "type": "OrdinanceLawCoverageBBuildingDemolitionCost",
+                    "originalEffectiveTime": "{{$timestamp}}",
+                    "category": "coverage"
+                },
+                {
+                    "type": "MortgageholdersErrorsOmissionsCoverage",
+                    "originalEffectiveTime": "{{$timestamp}}",
+                    "category": "coverage"
+                },
+                {
+                    "type": "BusinessIncomeCoverage",
+                    "originalEffectiveTime": "{{$timestamp}}",
+                    "category": "coverage"
+                },
+                {
+                    "type": "LeaseholdInterestCoverage",
+                    "originalEffectiveTime": "{{$timestamp}}",
+                    "category": "coverage"
+                },
+                {
+                    "type": "ExtraExpenseCoverage",
+                    "originalEffectiveTime": "{{$timestamp}}",
+                    "category": "coverage"
+                },
+                {
+                    "type": "EquipmentBreakdown",
+                    "originalEffectiveTime": "{{$timestamp}}",
+                    "category": "coverage"
+                }
+            ],
+            "data": {
+                "hasCommercialCondo": "No",
+                "packageLocationCoverageTerms": {
+                    "businessInterruptionCoinsurance": "20",
+                    "causeOfLossForm": "Broad",
+                    "coinsurancePercent": "70%",
+                    "includeExtraExpenses": "Yes",
+                    "requestedBusinessInterruption": "20"
+                },
+                "packageProductBasicInfo": {
+                    "hasPublicParking": "N/A",
+                    "hasPublicParkingFee": "Yes",
+                    "isNamedAdditionalInsuredOnParking": "No",
+                    "locationAddress": {
+                        "city": "North Charleston",
+                        "line1": "4401 Withers Drive",
+                        "state": "TX",
+                        "zipCode": 29405
+                    },
+                    "parkingSquareFootage": 1,
+                    "publicParkingAnnualSales": 1
+                },
+                "riskScores": {
+                    "hhScore": "A"
+                },
+                "ordLawTria": [
+                    "Ord Law"
+                ],
+                "packageOccupancyInfo": {
+                    "collectsTenantCoi": "Yes",
+                    "hasVacantUnits": "N/A",
+                    "tenantsOccupants": ["1 Family Dwellings (Lessor's Risk)"],
+                    "highestSquareFootTenant": ["1 Family Dwellings (Lessor's Risk)"],
+                    "requiresProtectiveSafeguardSystemsMaintenance": "Yes",
+                    "requiresTenantGenLiab": "No",
+                    "vacantSquareFootage": "1200"
+                }
+            },
+            "originalEffectiveTime": "{{$timestamp}}",
+            "category": "exposure"
+        }
+    ],
+    "data": {
+        "classOfBusiness": {
+            "hasMulticlassRisk": "No",
+            "occupancyType": "Apartment Buildings"
+        },
+        "hasHistoricalClaims": "No",
+        "affinityDiscount": "None",
+        "eligibility": {
+            "buildingHazards": [
+                "None"
+            ],
+            "buildingWiringPlumbing": [
+                "Knob-and-tube or aluminum wiring present"
+            ],
+            "compliesADA": "Yes",
+            "compliesNFPA": "Yes",
+            "hasCommercialCooking": "No",
+            "hasElevatorMaintenanceAgreement": "Yes",
+            "hasOccupancyPartialTenantOwnership": "No",
+            "historicalClaimThreshold": [
+                "N/A"
+            ],
+            "ineligibleOccupants": [
+                "None"
+            ],
+            "locationHazardsOperations": [
+                "Tenant subleases a location to another tenant"
+            ],
+            "locationHazardsTenants": "N/A",
+            "priorCodeViolation": "No"
+        },
+        "generalInformation": {
+            "businessCreditScore": 800,
+            "hasFinancialHistoryIssue": "No",
+            "hasHistoricalCoverageGap": [
+                "A gap in coverage"
+            ],
+            "hasLegalLiabilityIssue": "No",
+            "leasesHoldHarmless": "No",
+            "ownsAllProperties": "No",
+            "yearsInBusiness": 1
+        }
+    },
+    "delinquencyPlanName": "Standard",
+    "billingTrigger": "issue",
+    "billingLevel": "inherit"
+}

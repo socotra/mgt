@@ -1,9 +1,8 @@
 {
-  "defaultTermDuration" : 0,
   "displayName" : "General Liability",
   "contents" : [ "Location+" ],
-  "charges" : [ "Premium" ],
-  "documents" : [ "BPPPropertyCoverage", "GeneralLiabilityCoverage" ],
+  "charges" : [ "Premium", "Tax", "CarrierPolicyFee", "BrokerFee", "StampingFee", "InstallmentFee", "Terrorism" ],
+  "documents" : [ "BPPPropertyCoverage", "GL_Dec_Page_1" ],
   "data" : {
     "classOfBusiness": {
       "displayName": "Class Of Business",
@@ -12,6 +11,10 @@
     "generalInformation": {
       "displayName": "General Information",
       "type": "GeneralInformation"
+    },
+    "eligibility": {
+      "displayName": "Eligibility",
+      "type": "Eligibility"
     },
     "hasHistoricalClaims" : {
       "displayName" : "Has the applicant had any claims in the last 5 years?",
@@ -28,7 +31,7 @@
     },
     "affinityDiscount": {
       "displayName": "Apply affinity discount?",
-      "type" : "string?",
+      "type" : "string",
       "options": ["A", "B", "C", "D", "None"]
     }
   },

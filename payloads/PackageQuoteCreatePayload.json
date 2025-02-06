@@ -1,0 +1,226 @@
+{
+    "productName": "PackageProduct",
+    "accountLocator": "{{accountLocator}}",
+    "startTime": "{{$timestamp}}",
+    "timezone": "America/Los_Angeles",
+    "currency": "USD",
+    "elements": [
+        {
+                "type": "PackageLocation",
+                "elements": [
+                    {
+                        "type": "PropertyBuilding",
+                        "data": {
+                            "buildingCoverageTerms": {
+                                "aopDeductible": "1,000",
+                                "buildingValue": 100000,
+                                "contentValue": 100000,
+                                "windHailDeductible": "1.0%"
+                            },
+                            "propertyBuildingDetails": {
+                                "buildingCodeGrade": "10",
+                                "buildingWindRating": "AA",
+                                "isHistorical": "No",
+                                "packageBuildingDetails": {
+                                    "hasDepthMarkers": "N/A",
+                                    "hasDivingBoardOrSlide": "N/A",
+                                    "hasSelfClosingGate": "N/A",
+                                    "hasShepherdsCrookRing": "N/A",
+                                    "hasSlidingGlassLocks": "N/A",
+                                    "hasStructuresNearPool": "N/A",
+                                    "hasWarningSigns": "N/A",
+                                    "isPoolFenced": "N/A",
+                                    "lifeguardEmploymentType": "N/A",
+                                    "poolCount": 0,
+                                    "premisesFeatures": [
+                                        "None"
+                                    ]
+                                },
+                                "undergroundHazards": [
+                                    "None"
+                                ]
+                            },
+                            "propertySafeguards": {
+                                "burglarSafeguards": [
+                                    "Central Burglar Alarm"
+                                ],
+                                "fireSafeguards": [
+                                    "Central Alarm"
+                                ],
+                                "hasSprinklerService": "Yes",
+                                "hasSprinklers": "Yes"
+                            },
+                            "propertyBuildingInfo": {
+                                "area": 2500,
+                                "hasMortgage": "No",
+                                "mortgageeHolder": {
+                                    "mortgageeAddress": {
+                                        "city": "North Charleston",
+                                        "line1": "4401 Withers Drive",
+                                        "state": "SC",
+                                        "zipCode": 29405
+                                    },
+                                    "mortgageeName": "Lydia"
+                                },
+                                "stories": 4
+                            },
+                            "propertyConstructionUpdates": {
+                                "constructionType": "Frame",
+                                "electricalLastUpdated": "2001",
+                                "hasElectricVehicleCharging": "No",
+                                "hasPriorGutRehab": "N/A",
+                                "hvacLastUpdated": "2001",
+                                "parkingLastUpdated": 2001,
+                                "plumbingLastUpdated": "2001",
+                                "ppcFireClass": "3",
+                                "roofCovering": "Asphalt",
+                                "roofLastUpdated": "2001",
+                                "roofShape": "Flat Roof",
+                                "yearBuilt": 2001
+                            },
+                            "roofAge": "5",
+                            "classCode": "0567",
+                            "propertyBuildingOperationDetails": {
+                                "permitsBalconyCooking": "No",
+                                "permitsSpaceHeaters": "No"
+                            },
+                            "buildingAge": "10",
+                            "roofACV": "ACV"
+                        },
+                        "originalEffectiveTime": "{{$timestamp}}",
+                        "category": "exposure"
+                    }
+                ],
+                "coverageTerms": {
+                    "LiabilityDeductible": "ded_20000",
+                    "LimitOfInsuranceMedical": "med_10000",
+                    "LimitOfInsuranceAggregate": "agg_100000",
+                    "LimitOfInsurancePerOccurrence": "bi_100000"
+                },
+                "data": {
+                    "operationalDetails": {
+                        "contractorRequiredEqualGreaterLimits": "N/A",
+                        "hasTenantMaintenanceRequirements": "No",
+                        "hasWrittenInspectionProcedures": "N/A",
+                        "isApplicantAdditionalInsured": "N/A",
+                        "leaseDisclaimsSecurityWarranties": "No",
+                        "maintenanceProvider": "Applicant or its employee(s)"
+                    },
+                    "applicantsExposures": 5,
+                    "classCode": "0567",
+                    "packageLocationCoverageTerms": {
+                        "businessInterruptionCoinsurance": "20",
+                        "causeOfLossForm": "Broad",
+                        "coinsurancePercent": "80%",
+                        "includeExtraExpenses": "No",
+                        "requestedBusinessInterruption": "20"
+                    },
+                    "ordLawTria": [
+                        "TRIA"
+                    ],
+                    "packageProductBasicInfo": {
+                        "hasPublicParking": "No",
+                        "isNamedAdditionalInsuredOnParking": [
+                            "Yes"
+                        ],
+                        "locationAddress": {
+                            "city": "North Charleston",
+                            "line1": "4401 Withers Drive",
+                            "state": "TX",
+                            "zipCode": 77294
+                        },
+                        "parkingSquareFootage": 2500
+                    },
+                    "packageOccupancyInfo": {
+                        "collectsTenantCoi": "Yes",
+                        "hasVacantUnits": "No",
+                        "highestSquareFootTenant": [
+                            "1 Family Dwellings (Lessor's Risk)"
+                        ],
+                        "requiresProtectiveSafeguardSystemsMaintenance": "No",
+                        "requiresTenantGenLiab": "Yes",
+                        "tenantsOccupants": [
+                            "1 Family Dwellings (Lessor's Risk)"
+                        ],
+                        "vacantSquareFootage": "0"
+                    },
+                    "locationNumber": " 0567 ",
+                    "glSecurity": {
+                        "doesBackgroundChecksEmployee": "N/A",
+                        "doesBackgroundChecksTenant": "Yes",
+                        "hasPeepholesOrDeadbolts": "N/A",
+                        "hasWrittenComplaintProcess": "Yes",
+                        "isNamedAdditionalInsuredOnSecurityFirm": "N/A",
+                        "providesSecurity": "N/A",
+                        "securityArmed": "N/A",
+                        "securityFirmRequiredEqualGreaterLimits": "N/A",
+                        "vacancyProcedures": [
+                            "Change locks/Collect keys"
+                        ]
+                    },
+                    "hasCommercialCondo": "No",
+                    "disclaimsSecurity": "N/A",
+                    "riskScores": {
+                        "crimeScore": "1",
+                        "distanceToCoastScore": "1",
+                        "hailScore": "1",
+                        "hhScore": "A",
+                        "hurricaneScore": "1",
+                        "tornadoScore": "1",
+                        "wildfireScore": "1",
+                        "windScore": "1"
+                    }
+                },
+                "originalEffectiveTime": "{{$timestamp}}",
+                "category": "exposure"
+            }
+    ],
+    "data": {
+            "classOfBusiness": {
+                "hasMulticlassRisk": "No",
+                "occupancyType": "Apartment Buildings"
+            },
+            "hasHistoricalClaims": "No",
+            "affinityDiscount": "A",
+            "eligibility": {
+                "buildingHazards": [
+                    "None"
+                ],
+                "buildingWiringPlumbing": [
+                    "N/A"
+                ],
+                "compliesADA": "Yes",
+                "compliesNFPA": "Yes",
+                "hasCommercialCooking": "No",
+                "hasElevatorMaintenanceAgreement": "N/A",
+                "hasOccupancyPartialTenantOwnership": "No",
+                "historicalClaimThreshold": [
+                    "N/A"
+                ],
+                "ineligibleOccupants": [
+                    "None"
+                ],
+                "locationHazardsOperations": [
+                    "N/A"
+                ],
+                "locationHazardsTenants": [
+                    "N/A"
+                ],
+                "priorCodeViolation": "No"
+            },
+            "generalInformation": {
+                "businessCreditScore": 800,
+                "hasFinancialHistoryIssue": "No",
+                "hasHistoricalCoverageGap": [
+                    "N/A"
+                ],
+                "hasLegalLiabilityIssue": "No",
+                "leasesHoldHarmless": "Yes",
+                "ownsAllProperties": "Yes",
+                "yearsInBusiness": 2025
+            }
+        },
+    "delinquencyPlanName": "Standard",
+    "billingTrigger": "issue",
+    "billingLevel": "inherit"
+}

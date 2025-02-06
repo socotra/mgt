@@ -27,8 +27,9 @@
 
         "isNamedAdditionalInsuredOnParking":{
             "displayName": "Is the applicant named as an additional insured on the parking facility owners policy?",
-            "type": "string",
-            "options": ["Yes", "No"]
+            "type" : "string+",
+            "tag": ["multiselect"],
+            "options": ["Yes", "No", "N/A"]
         }
     },
     "abstract" : false

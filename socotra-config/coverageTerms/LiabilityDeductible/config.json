@@ -2,6 +2,10 @@
   "type" : "deductible",
   "displayName" : "Liability Deductible",
   "options" : {
+    "ded_0" : {
+      "displayName" : "$0",
+      "value" : 0
+    },
     "ded_250" : {
       "displayName" : "$250",
       "value" : 250

@@ -2,17 +2,87 @@
     "data": {
         "tenantsOccupants": {
             "displayName": "What tenants are in the building (select all that apply)",
-            "type": "string"
-        },
-        "occupancyBreakdown": {
-            "displayName": "Please complete occupancy breakout below:",
             "type": "string+",
-            "options": ["Apartment / Hab Only", "% Student Housing", "% Subsidized Housing", "% Elderly Housing", "% Handicap", "% Halfway House", "% Mental or Drug Rehab", "N/A"]
+            "tag": ["multiselect"],
+            "options": [
+                "1 Family Dwellings (Lessor's Risk)",
+                "2 Family Dwellings (Lessor's Risk)",
+                "3 or 4 Family Dwellings (Lessor's Risk)",
+                "Apartments w/o Mercantile Occupancies - up to 10 units", 
+                "Apartments with Mercantile Occupancies - up to 10 units", 
+                "Mercantile - Sole Occupancy Only - Not Otherwise Classified - Low Susceptibility Personal Property",
+                "Mercantile - Sole Occupancy Only - Tire, Battery & Accessory Dealers w/o tire capping & vulcanization",
+                "Mercantile - Sole Occupancy Only - Wearing apparel, textiles, shoes",
+                "Mercantile - Sole Occupancy Only - Alcoholic Beverages other than Bars",
+                "Mercantile - Sole Occupancy Only - Food Products, incl Retail Bakeries, Non-alcoholic beverages (Sales only - no baking or cooking)",
+                "Mercantile - Sole Occupancy Only - Baking on premises, no delivery to outlets",
+                "Mercantile - Sole Occupancy Only - Food Products with Limited Cooking, excluding Bakeries",
+                "Bakeries - Baking on Premises - no delivery to other outlets - using cannabis as ingredient",
+                "Mercantile - Sole Occupancy Only - Restaurants with Limited Cooking",
+                "Mercantile - Sole Occupancy Only - Motor Vehicles, No Repair",
+                "Mercantile - Sole Occupany Only - Boat & Marine Supply Dealers",
+                "Mercantile - Sole Occupancy Only - Drugs",
+                "Machinery or Equipment Dealers - no repair",
+                "Mercantile - Sole Occupancy Only - Furniture & Home Furnishings other than Appliances",
+                "Mercantile - Sole Occupancy Only - Jewelry",
+                "Mercantile - Sole Occupancy Only - Sporting Goods",
+                "Mercantile - Sole Occupancy Only - Not Otherwise Classified - Moderate Susceptibility Personal Property",
+                "Mercantile - Sole Occupancy Only - Not Otherwise Classified - High Susceptibility Personal Property",
+                "Mercantile - Sole Occupancy Only - Cannabis containing Products Distributors or Retail Sales, Cannabis, NOC",
+                "Mercantile - Multiple Occupany without 0564 Occupant",
+                "Banks & Offices other than Governmental",
+                "Auto Parking Garages, Car Washes",
+                "Day Care Centers - child or adult",
+                "General Storage Warehouses - Bailee",
+                "Miscellaneous Products Storage - (other than Retail, Wholesale or Cold)",
+                "Warehouses - Public - household goods storage but with no storage of fibers, oils, petroleum products, rags, fireworks, matches or explosives",
+                "Warehouses - Public - cold storage",
+                "Cannabis - Distributors - wholesale or warehouse stock of cultivated products"
+            ]
+        },
+        "occBreakdown": {
+            "displayName": "Occupancy Breakdown",
+            "type": "OccupancyBreakdown?"
         },
         "highestSquareFootTenant" : {
-            "displayName" : "Which Tenant type has the highest square footage",
-            "type" : "string",
-            "maxLength" : 20000
+            "displayName" : "Which Tenant type has the highest square footage?",
+            "type" : "string+",
+            "options": [
+                "1 Family Dwellings (Lessor's Risk)",
+                "2 Family Dwellings (Lessor's Risk)",
+                "3 or 4 Family Dwellings (Lessor's Risk)",
+                "Apartments w/o Mercantile Occupancies - up to 10 units", 
+                "Apartments with Mercantile Occupancies - up to 10 units", 
+                "Mercantile - Sole Occupancy Only - Not Otherwise Classified - Low Susceptibility Personal Property",
+                "Mercantile - Sole Occupancy Only - Tire, Battery & Accessory Dealers w/o tire capping & vulcanization",
+                "Mercantile - Sole Occupancy Only - Wearing apparel, textiles, shoes",
+                "Mercantile - Sole Occupancy Only - Alcoholic Beverages other than Bars",
+                "Mercantile - Sole Occupancy Only - Food Products, incl Retail Bakeries, Non-alcoholic beverages (Sales only - no baking or cooking)",
+                "Mercantile - Sole Occupancy Only - Baking on premises, no delivery to outlets",
+                "Mercantile - Sole Occupancy Only - Food Products with Limited Cooking, excluding Bakeries",
+                "Bakeries - Baking on Premises - no delivery to other outlets - using cannabis as ingredient",
+                "Mercantile - Sole Occupancy Only - Restaurants with Limited Cooking",
+                "Mercantile - Sole Occupancy Only - Motor Vehicles, No Repair",
+                "Mercantile - Sole Occupany Only - Boat & Marine Supply Dealers",
+                "Mercantile - Sole Occupancy Only - Drugs",
+                "Machinery or Equipment Dealers - no repair",
+                "Mercantile - Sole Occupancy Only - Furniture & Home Furnishings other than Appliances",
+                "Mercantile - Sole Occupancy Only - Jewelry",
+                "Mercantile - Sole Occupancy Only - Sporting Goods",
+                "Mercantile - Sole Occupancy Only - Not Otherwise Classified - Moderate Susceptibility Personal Property",
+                "Mercantile - Sole Occupancy Only - Not Otherwise Classified - High Susceptibility Personal Property",
+                "Mercantile - Sole Occupancy Only - Cannabis containing Products Distributors or Retail Sales, Cannabis, NOC",
+                "Mercantile - Multiple Occupany without 0564 Occupant",
+                "Banks & Offices other than Governmental",
+                "Auto Parking Garages, Car Washes",
+                "Day Care Centers - child or adult",
+                "General Storage Warehouses - Bailee",
+                "Miscellaneous Products Storage - (other than Retail, Wholesale or Cold)",
+                "Warehouses - Public - household goods storage but with no storage of fibers, oils, petroleum products, rags, fireworks, matches or explosives",
+                "Warehouses - Public - cold storage",
+                "Cannabis - Distributors - wholesale or warehouse stock of cultivated products"
+            ],
+            "tag": ["multiselect"]
         },
         "hasVacantUnits" : {
             "displayName" : "Are any units vacant?",
@@ -32,7 +102,7 @@
             "displayName" : "Does the applicant collect current Certificates of Insurance from each commercial tenant?",
             "type" : "string",
             "maxLength" : 20000,
-            "options" : [ "Yes", "No" ]
+            "options" : [ "Yes", "No", "N/A" ]
         },
         "requiresProtectiveSafeguardSystemsMaintenance": {
             "displayName": "Does the lease agreement require that certain protective safeguard systems be maintained by tenants?",

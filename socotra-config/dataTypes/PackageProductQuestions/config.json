@@ -19,7 +19,7 @@
     },
     "affinityDiscount": {
       "displayName": "Apply affinity discount?",
-      "type" : "string?",
+      "type" : "string",
       "options": ["A", "B", "C", "D", "None"]
     }
   },

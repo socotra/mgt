@@ -19,14 +19,29 @@
       "displayName": "Occupancy", 
       "type": "PackageOccupancy"
     },
+    "packageBuildingDetails": {
+      "displayName": "Additional Info",
+      "type": "PackageBuildingDetails"
+    },
+    "propertyBuildingOperationDetails": {
+      "displayName": "Operational Details",
+      "type": "PropertyBuildingOperationDetails"
+    },
     "ordLawTria": {
       "displayName" : "Would you like to add any of the following?",
       "type" : "string+",
+      "tag": ["multiselect"],
       "options" : [ "Ord Law", "TRIA" ]
+    },
+    "disclaimsSecurity" : {
+      "displayName" : "Does the lease/rental agreement makes no warranties with regard to security and that leasing agents/employees",
+      "type" : "string",
+      "maxLength" : 20000,
+      "options" : [ "Yes", "No", "N/A" ]
     },
     "classCode" : {
       "displayName" : "Location Class Code",
-      "type" : "int"
+      "type" : "string"
     },
     "applicantsExposures": {
       "type": "int",

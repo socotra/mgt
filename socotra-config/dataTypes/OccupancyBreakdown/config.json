@@ -1,0 +1,33 @@
+{
+    "data" : {
+        "adultOnly": {
+            "displayName": "Adult Only %",
+            "type": "int?"
+        },
+        "studentHousing": {
+            "displayName": "Student Housing %",
+            "type": "int?"
+        },
+        "subsidizedHousing": {
+            "displayName": "Subsidized Housing %", 
+            "type": "int?"
+        },
+        "elderlyHousing": {
+            "displayName": "Elderly Housing %", 
+            "type": "int?"
+        },
+        "handicap": {
+            "displayName": "Handicap %", 
+            "type": "int?"
+        },
+        "halfwayHouse": {
+            "displayName": "Halfway House %", 
+            "type": "int?"
+        },
+        "mentalDrugRehab": {
+            "displayName": "Mental or Drug Rehab %", 
+            "type": "int?"
+        }
+    },
+    "abstract" : false
+  }

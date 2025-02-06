@@ -24,141 +24,169 @@ public class PackageUnderwritingPlugin implements UnderwritingPlugin {
         // Create Empty List of flags to create
         List<UnderwritingFlagCore> flagsToCreate = new ArrayList<>();
 
-//        for (int i = 0; i < 100; i++) {
-//            Optional<UWRules> uwRulesRecord = tableRecordFetcher.getTable(UWRules.class)
-//                    .getRecord(UWRules.makeKey("uwRule", Integer.toString(i)));
-//
-//            log.info("Processing rule ID: {}", i);
-//
-//            // If no rule is found, exit the loop
-//            if (uwRulesRecord.isEmpty()) {
-//                log.info("No more underwriting rules found, exiting.");
-//                break;
-//            }
-//
-//            // Process the found underwriting rule
-//            UWRules uwRule = uwRulesRecord.get();
-//            boolean uwResult = processUWRule(quote, uwRule);
-//
-//            // If the underwriting result fails and the message is not already there, reject the risk and return modification
-//            if (uwResult) {
-//                flagsToCreate.add(createUnderwritingFlag(uwRule.decision(), uwRule.message()));
-//            }
-//            log.info("Underwriting result for rule ID {}: {}", i, uwResult);
-//        }
-
-        // if (quote.data().glQuestions().hasMulticlassRisk().equalsIgnoreCase("Yes")) {
-        //     flagsToCreate.add(createUnderwritingFlag("block", "Refer to underwriter. Business entails services outside of what is listed."));
-        // } else if (quote.data().glQuestions().hasMulticlassRiskDesc().length() > 0 && quote.data().glQuestions().hasMulticlassRisk().equalsIgnoreCase("Yes")) {
-        //     flagsToCreate.add(createUnderwritingFlag("block", "Refer to underwriter. Business entails services outside of what is listed."));
-        // } else if (quote.data().glQuestions().leasesHoldHarmless().equalsIgnoreCase("No")) {
-        //     flagsToCreate.add(createUnderwritingFlag("reject", "Rejected. Does not hold harmless wording"));
-        // } else if (quote.data().glQuestions().compliesADA().equalsIgnoreCase("No")) {
-        //     flagsToCreate.add(createUnderwritingFlag("block", "Refer to underwriter. Does not comply with ADA."));
-        // } else if (quote.data().glQuestions().locationHazardsTenants().length() > 0) {
-        //     flagsToCreate.add(createUnderwritingFlag("block", "Refer to underwriter. Location Hazards."));
-        // } else if (quote.data().glQuestions().locationHazardsOperations().size() > 0) {
-        //     flagsToCreate.add(createUnderwritingFlag("reject", "Rejected. Location has hazardous operations."));
-        // } else if (quote.packageLocations().size() > 5) {
-        //     flagsToCreate.add(createUnderwritingFlag("reject", "Rejected. More than 5 locations."));
-        // } 
-        // // else if (quote.data().propertyQuestions().hasCommercialCooking().equalsIgnoreCase("Yes")) {
-        // //     flagsToCreate.add(createUnderwritingFlag("block", "Refer to underwriter. Business entails services outside of what is listed."));
-        // // } else if (!(quote.data().propertyQuestions().buildingWiringPlumbing().contains("N/A"))) {
-        // //     flagsToCreate.add(createUnderwritingFlag("block", "Refer to underwriter. Building, wiring, plumbing block"));
-        // // } else if (!(quote.data().propertyQuestions().ineligibleOccupants().contains("N/A"))) {
-        // //     flagsToCreate.add(createUnderwritingFlag("reject", "Rejected. Ineligible occupants"));
-        // // } else if (!(quote.data().propertyQuestions().buildingHazards().contains("N/A"))) {
-        // //     flagsToCreate.add(createUnderwritingFlag("reject", "Rejected. Ineligible occupants"));
-        // // } 
-        // else if (quote.packageLocations().size() > 5) {
-        //     flagsToCreate.add(createUnderwritingFlag("reject", "Rejected. More than 5 locations."));
-        // } else if (quote.data().packageQuestions().ownsAllProperties().equalsIgnoreCase("No")) {
-        //     flagsToCreate.add(createUnderwritingFlag("block", "Refer to underwriter. Applicant does not own all properties."));
-        // } else if (quote.data().packageQuestions().hasHistoricalCoverageGap().equalsIgnoreCase("Non-renewed citing underwriting reasons")) {
-        //     flagsToCreate.add(createUnderwritingFlag("reject", "Rejected. Non-renewed citing underwriting reasons."));
-        // } else if (!(quote.data().packageQuestions().hasHistoricalCoverageGap().equalsIgnoreCase("No")) ||
-        //         !(quote.data().packageQuestions().hasHistoricalCoverageGap().equalsIgnoreCase("Non-renewed, carrier product no longer supported"))) {
-        //     flagsToCreate.add(createUnderwritingFlag("block", "Refer to underwriter. Historical gap reason."));
-        // } else if (quote.data().packageQuestions().hasFinancialHistoryIssue().equalsIgnoreCase("Yes")) {
-        //     flagsToCreate.add(createUnderwritingFlag("reject", "Rejected. Financial history issue."));
-        // } else if (quote.data().packageQuestions().hasLegalLiabilityIssue().equalsIgnoreCase("Yes")) {
-        //     flagsToCreate.add(createUnderwritingFlag("reject", "Rejected. Legal Liability issue."));
-        // } else if (quote.data().packageQuestions().compliesNfPA().equalsIgnoreCase("No")) {
-        //     flagsToCreate.add(createUnderwritingFlag("block", "Refer to underwriter. Does not comply with NFPA."));
-        // } else if (quote.data().packageQuestions().priorCodeViolation().equalsIgnoreCase("Yes")) {
-        //     flagsToCreate.add(createUnderwritingFlag("reject", "Rejected. Prior Code Violation."));
-        // } else if (quote.data().packageQuestions().claimHistory().size() > 0) {
-        //     for (ClaimHistory claim : quote.data().packageQuestions().claimHistory()) {
-        //         // only applicable to GL
-        //         if (claim.claimStatus().equalsIgnoreCase("Open")) {
-        //             flagsToCreate.add(UnderwritingFlagCore.builder()
-        //                     .level(UnderwritingLevel.block)
-        //                     .note("Refer to underwriter. Claim Open.")
-        //                     .build());
-        //         }
-        //     }
-        // } else {
-        //     for (PackageLocation loc : quote.packageLocations()) {
-        //         if (loc.data().hasOccupancyPartialTenantOwnership().equalsIgnoreCase("Yes")) {
-        //             flagsToCreate.add(createUnderwritingFlag("block", "Refer to underwriter. Partial Tenant Ownership."));
-        //         } else if (loc.data().isNamedAdditionalInsuredOnParking().equalsIgnoreCase("No")) {
-        //             flagsToCreate.add(createUnderwritingFlag("reject", "Rejected. Parking not insured."));
-        //         } else if (loc.data().isPoolFenced().equalsIgnoreCase("No")) {
-        //             flagsToCreate.add(createUnderwritingFlag("block", "Refer to underwriter. Pool unfenced."));
-        //         } else if (loc.data().hasDivingBoardOrSlide().equalsIgnoreCase("Yes")) {
-        //             flagsToCreate.add(createUnderwritingFlag("block", "Refer to underwriter. Has divingboard/slide."));
-        //         } else if (loc.data().hasDepthMarkers().equalsIgnoreCase("No")) {
-        //             flagsToCreate.add(createUnderwritingFlag("block", "Refer to underwriter. No depth markers."));
-        //         } else if (loc.data().hasShepherdsCrookRing().equalsIgnoreCase("No")) {
-        //             flagsToCreate.add(createUnderwritingFlag("block", "Refer to underwriter. No shephers crook ring."));
-        //         } else if (loc.data().hasSelfClosingGate().equalsIgnoreCase("No")) {
-        //             flagsToCreate.add(createUnderwritingFlag("block", "Refer to underwriter. No self closing gate."));
-        //         } else if (loc.data().hasStructuresNearPool().equalsIgnoreCase("Yes")) {
-        //             flagsToCreate.add(createUnderwritingFlag("block", "Refer to underwriter. Structures near pool."));
-        //         } else if (loc.data().hasWarningSigns().equalsIgnoreCase("No")) {
-        //             flagsToCreate.add(createUnderwritingFlag("block", "Refer to underwriter. No warning signs."));
-        //         } else if (loc.data().hasSlidingGlassLocks().equalsIgnoreCase("No")) {
-        //             flagsToCreate.add(createUnderwritingFlag("block", "Refer to underwriter. No sliding glass locks."));
-        //         } else if (loc.data().hasPeepholesOrDeadbolts().equalsIgnoreCase("No")) {
-        //             flagsToCreate.add(createUnderwritingFlag("block", "Refer to underwriter. No peepholdes or deadbolts."));
-        //         } else if (loc.data().doesBackgroundChecksEmployee().equalsIgnoreCase("No")) {
-        //             flagsToCreate.add(createUnderwritingFlag("block", "Refer to underwriter. No employee background-check."));
-        //         } else if (loc.data().doesBackgroundChecksTenant().equalsIgnoreCase("No")) {
-        //             flagsToCreate.add(createUnderwritingFlag("block", "Refer to underwriter. No tenant background-check."));
-        //         } else if (loc.data().disclaimsSecurity().equalsIgnoreCase("No")) {
-        //             flagsToCreate.add(createUnderwritingFlag("block", "Refer to underwriter. No security disclaimers."));
-        //         } else if (loc.data().vacancyProcedures().length() == 0) {
-        //             flagsToCreate.add(createUnderwritingFlag("block", "Refer to underwriter. No vacancy procedures."));
-        //         } else if (loc.data().permitsBalconyCooking().equalsIgnoreCase("Yes")) {
-        //             flagsToCreate.add(createUnderwritingFlag("reject", "Rejected. Permits Balcony Cooking."));
-        //         } else if (loc.data().securityArmed().equalsIgnoreCase("Armed")) {
-        //             flagsToCreate.add(createUnderwritingFlag("reject", "Rejected. Armed security."));
-        //         } else if ((Year.now().getValue() - loc.data().yearBuilt()) > 40) {
-        //             flagsToCreate.add(createUnderwritingFlag("block", "Refer to underwriter. House is older than 40 years."));
-        //         } else if (loc.data().ppcFireClass().equalsIgnoreCase("9")) {
-        //             flagsToCreate.add(createUnderwritingFlag("reject", "Rejected. PPC Fire Class is PC 9."));
-        //         } else if (loc.data().stories() > 4) {
-        //             flagsToCreate.add(createUnderwritingFlag("block", "Blocked. Building is taller than 4 stories."));
-        //         } else if (loc.data().area() > 25000) {
-        //             flagsToCreate.add(createUnderwritingFlag("reject", "Rejected. Building is greater than 25k sq. ft.."));
-        //         } else if (loc.data().roofCovering().equalsIgnoreCase("Wood")) {
-        //             flagsToCreate.add(createUnderwritingFlag("reject", "Rejected. Roof is made of wood."));
-        //         } else if (((Year.now().getValue() - loc.data().parkingLastUpdated()) > 30) &&
-        //                 loc.data().hasElectricVehicleCharging().equalsIgnoreCase("Yes")
-        //         ) {
-        //             flagsToCreate.add(createUnderwritingFlag("reject", "Rejected. Has electrical vehicle charging and parking lot was updated more than 30 years ago."));
-        //         } else if (loc.data().isHistorical().equalsIgnoreCase("Yes")) {
-        //             flagsToCreate.add(createUnderwritingFlag("reject", "Rejected. Historical building."));
-        //         } else if (!loc.data().undergroundHazards().equalsIgnoreCase("N/A")) {
-        //             flagsToCreate.add(createUnderwritingFlag("reject", "Rejected. Underground hazards."));
-        //         } else if (loc.data().permitsSpaceHeaters().equalsIgnoreCase("Yes")) {
-        //             flagsToCreate.add(createUnderwritingFlag("reject", "Rejected. Permits space heaters."));
-        //         } else if (loc.data().vacantSquareFootage().length()  > 0) {
-        //             flagsToCreate.add(createUnderwritingFlag("block", "Blocked. Vacancy Square Footage present."));
-        //         }
-        //     }
-        // }
+        if (quote.data().classOfBusiness().hasMulticlassRisk().equalsIgnoreCase("Yes")) {
+            flagsToCreate.add(createUnderwritingFlag("block", "Refer to underwriter. Business entails services outside of what is listed."));
+        } else if (quote.data().classOfBusiness().hasMulticlassRiskDesc() != null &&
+                quote.data().classOfBusiness().hasMulticlassRiskDesc().length() > 0) {
+            flagsToCreate.add(createUnderwritingFlag("block", "Refer to underwriter. Business entails services outside of what is listed."));
+        } else if (quote.data().generalInformation().leasesHoldHarmless().equalsIgnoreCase("No")) {
+            flagsToCreate.add(createUnderwritingFlag("reject", "Rejected. Does not hold harmless wording"));
+        } else if (quote.data().eligibility().compliesADA().equalsIgnoreCase("No")) {
+            flagsToCreate.add(createUnderwritingFlag("block", "Refer to underwriter. Does not comply with ADA."));
+        } else if (!quote.data().eligibility().locationHazardsTenants().contains("N/A")) {
+            flagsToCreate.add(createUnderwritingFlag("block", "Refer to underwriter. Location Hazards."));
+        } else if (!quote.data().eligibility().locationHazardsOperations().contains("N/A")) {
+            flagsToCreate.add(createUnderwritingFlag("reject", "Rejected. Location has hazardous operations."));
+        } else if (quote.packageLocations().size() > 5) {
+            flagsToCreate.add(createUnderwritingFlag("reject", "Rejected. More than 5 locations."));
+        } else if (quote.data().eligibility().hasCommercialCooking().equalsIgnoreCase("Yes")) {
+            flagsToCreate.add(createUnderwritingFlag("block", "Refer to underwriter. Business entails services outside of what is listed."));
+        } else if (!(quote.data().eligibility().buildingWiringPlumbing().contains("N/A"))) {
+            flagsToCreate.add(createUnderwritingFlag("block", "Refer to underwriter. Building, wiring, plumbing block"));
+        } else if (!(quote.data().eligibility().ineligibleOccupants().contains("None"))) {
+            flagsToCreate.add(createUnderwritingFlag("reject", "Rejected. Ineligible occupants"));
+        } else if (!(quote.data().eligibility().buildingHazards().contains("Have an elevator")) && !(quote.data().eligibility().buildingHazards().contains("None"))) {
+            flagsToCreate.add(createUnderwritingFlag("reject", "Rejected. Building hazards"));
+        } 
+        else if (quote.packageLocations().size() > 5) {
+            flagsToCreate.add(createUnderwritingFlag("reject", "Rejected. More than 5 locations."));
+        } else if (quote.data().generalInformation().ownsAllProperties().equalsIgnoreCase("No")) {
+            flagsToCreate.add(
+                    createUnderwritingFlag("block", "Refer to underwriter. Applicant does not own all properties."));
+        } else if (quote.data().generalInformation().hasHistoricalCoverageGap().contains("Non-renewed citing underwriting reasons")) {
+                flagsToCreate.add(createUnderwritingFlag("reject", "Rejected. Non-renewed citing underwriting reasons."));
+        } else if(!quote.data().generalInformation().hasHistoricalCoverageGap().contains("N/A") &&
+                !quote.data().generalInformation().hasHistoricalCoverageGap().contains("Non-renewed, carrier product no longer supported")) {
+            flagsToCreate.add(createUnderwritingFlag("block", "Refer to underwriter. Historical gap reason."));
+        } else if (quote.data().generalInformation().hasFinancialHistoryIssue().equalsIgnoreCase("Yes")) {
+            flagsToCreate.add(createUnderwritingFlag("reject", "Rejected. Financial history issue."));
+        } else if (quote.data().generalInformation().hasLegalLiabilityIssue().equalsIgnoreCase("Yes")) {
+            flagsToCreate.add(createUnderwritingFlag("reject", "Rejected. Legal Liability issue."));
+        } else if (quote.data().eligibility().compliesNFPA().equalsIgnoreCase("No")) {
+            flagsToCreate.add(createUnderwritingFlag("block", "Refer to underwriter. Does not comply with NFPA."));
+        } else if (quote.data().eligibility().priorCodeViolation().equalsIgnoreCase("Yes")) {
+            flagsToCreate.add(createUnderwritingFlag("reject", "Rejected. Prior Code Violation."));
+        } else if (quote.data().claimHistory() != null && quote.data().claimHistory().size() > 0) {
+            for (ClaimHistory claim : quote.data().claimHistory()) {
+                // only applicable to GL
+                if (claim.claimStatus().equalsIgnoreCase("Open")) {
+                    flagsToCreate.add(UnderwritingFlagCore.builder()
+                            .level(UnderwritingLevel.block)
+                            .note("Refer to underwriter. Claim Open.")
+                            .build());
+                } else if (claim.claimLineOfBusiness().length() > 0) {
+                    flagsToCreate.add(UnderwritingFlagCore.builder()
+                            .level(UnderwritingLevel.block)
+                            .note("Refer to underwriter. Line of business claim was filed.")
+                            .build());
+                }
+            }
+        } else if (quote.data().eligibility().hasOccupancyPartialTenantOwnership().equalsIgnoreCase("Yes")) {
+            flagsToCreate.add(createUnderwritingFlag("block", "Refer to underwriter. Partial Tenant Ownership."));
+        } else {
+            for (PackageLocation loc : quote.packageLocations()) {
+                for (PropertyBuilding building : loc.propertyBuildings()) {
+                    if (building.data().propertyBuildingDetails().packageBuildingDetails().isPoolFenced().equalsIgnoreCase("No")) {
+                        flagsToCreate.add(createUnderwritingFlag("block", "Refer to underwriter. Pool unfenced."));
+                    } else if (building.data().propertyBuildingOperationDetails().permitsBalconyCooking().equalsIgnoreCase("Yes")) {
+                        flagsToCreate.add(createUnderwritingFlag("reject", "Rejected. Permits Balcony Cooking."));
+                    } else if (building.data().propertyBuildingDetails().packageBuildingDetails().hasDivingBoardOrSlide().equalsIgnoreCase("Yes")) {
+                        flagsToCreate.add(createUnderwritingFlag("block", "Refer to underwriter. Has divingboard/slide."));
+                    } else if (building.data().propertyBuildingDetails().packageBuildingDetails().hasDepthMarkers().equalsIgnoreCase("No")) {
+                        flagsToCreate.add(createUnderwritingFlag("block", "Refer to underwriter. No depth markers."));
+                    } else if (building.data().propertyBuildingDetails().packageBuildingDetails().hasShepherdsCrookRing().equalsIgnoreCase("No")) {
+                        flagsToCreate.add(createUnderwritingFlag("block", "Refer to underwriter. No shephers crook ring."));
+                    } else if (building.data().propertyBuildingDetails().packageBuildingDetails().hasSelfClosingGate().equalsIgnoreCase("No")) {
+                        flagsToCreate.add(createUnderwritingFlag("block", "Refer to underwriter. No self closing gate."));
+                    } else if (building.data().propertyBuildingDetails().packageBuildingDetails().hasStructuresNearPool().equalsIgnoreCase("Yes")) {
+                        flagsToCreate.add(createUnderwritingFlag("block", "Refer to underwriter. Structures near pool."));
+                    } else if (building.data().propertyBuildingDetails().packageBuildingDetails().hasWarningSigns().equalsIgnoreCase("No")) {
+                        flagsToCreate.add(createUnderwritingFlag("block", "Refer to underwriter. No warning signs."));
+                    } else if (building.data().propertyBuildingDetails().packageBuildingDetails().hasSlidingGlassLocks()
+                            .equalsIgnoreCase("No")) {
+                        flagsToCreate
+                                .add(createUnderwritingFlag("block", "Refer to underwriter. No sliding glass locks."));
+                    } else if (building.data().propertyBuildingOperationDetails().permitsBalconyCooking().equalsIgnoreCase("Yes")) {
+                        flagsToCreate.add(createUnderwritingFlag("reject", "Rejected. Permits Balcony Cooking."));
+                    } else if ((Year.now().getValue() - building.data().propertyConstructionUpdates().yearBuilt()) > 40) {
+                        flagsToCreate.add(createUnderwritingFlag("block", "Refer to underwriter. House is older than 40 years."));
+                    } else if (building.data().propertyConstructionUpdates().ppcFireClass().equalsIgnoreCase("9")  ||
+                            building.data().propertyConstructionUpdates().ppcFireClass().equalsIgnoreCase("10") ||
+                            building.data().propertyConstructionUpdates().ppcFireClass().equalsIgnoreCase("6X-7X") ||
+                            building.data().propertyConstructionUpdates().ppcFireClass().equalsIgnoreCase("1Y-5Y")  ||
+                            building.data().propertyConstructionUpdates().ppcFireClass().equalsIgnoreCase("6Y-8Y") ||
+                            building.data().propertyConstructionUpdates().ppcFireClass().equalsIgnoreCase("10W")
+                    ) {
+                        flagsToCreate.add(createUnderwritingFlag("reject", "Rejected. PPC Fire Class is PC 9."));
+                    } else if (building.data().propertyBuildingInfo().stories() > 4) {
+                        flagsToCreate.add(createUnderwritingFlag("block", "Blocked. Building is taller than 4 stories."));
+                    } else if (building.data().propertyBuildingInfo().area() > 25000) {
+                        flagsToCreate.add(createUnderwritingFlag("reject", "Rejected. Building is greater than 25k sq. ft.."));
+                    } else if (((Year.now().getValue() - building.data().propertyConstructionUpdates().parkingLastUpdated()) > 30) &&
+                        building.data().propertyConstructionUpdates().hasElectricVehicleCharging().equalsIgnoreCase("Yes")
+                    ) {
+                        flagsToCreate.add(createUnderwritingFlag("reject", "Rejected. Has electrical vehicle charging and parking lot was updated more than 30 years ago."));
+                    } else if (building.data().propertyConstructionUpdates().roofCovering().equalsIgnoreCase("Wood")) {
+                        flagsToCreate.add(createUnderwritingFlag("reject", "Rejected. Roof is made of wood."));
+                    } else if (building.data().propertyBuildingDetails().isHistorical().equalsIgnoreCase("Yes")) {
+                        flagsToCreate.add(createUnderwritingFlag("reject", "Rejected. Historical building."));
+                    } else if (!building.data().propertyBuildingDetails().undergroundHazards().contains("None")) {
+                        flagsToCreate.add(createUnderwritingFlag("reject", "Rejected. Underground hazards."));
+                    } else if (building.data().propertyBuildingOperationDetails().permitsSpaceHeaters().equalsIgnoreCase("Yes")) {
+                        flagsToCreate.add(createUnderwritingFlag("reject", "Rejected. Permits space heaters."));
+                    } 
+                
+                }
+                if (loc.data().packageProductBasicInfo().isNamedAdditionalInsuredOnParking().contains("No")) {
+                    flagsToCreate.add(createUnderwritingFlag("reject", "Rejected. Parking not insured."));
+                } else if (loc.data().operationalDetails().leaseDisclaimsSecurityWarranties().equalsIgnoreCase("No")) {
+                    flagsToCreate.add(createUnderwritingFlag("block", "Lease disclaims security warranties"));
+                } else if (loc.data().packageProductBasicInfo().publicParkingAnnualSales() !=null && loc.data().packageProductBasicInfo().publicParkingAnnualSales() >= 0) {
+                } else if (loc.data().glSecurity().hasPeepholesOrDeadbolts().equalsIgnoreCase("No")) {
+                    flagsToCreate.add(createUnderwritingFlag("block", "Refer to underwriter. No peepholdes or deadbolts."));
+                } else if (loc.data().glSecurity().doesBackgroundChecksEmployee().equalsIgnoreCase("No")) {
+                    flagsToCreate.add(createUnderwritingFlag("block", "Refer to underwriter. No employee background-check."));
+                } else if (loc.data().glSecurity().doesBackgroundChecksTenant().equalsIgnoreCase("No")) {
+                    flagsToCreate.add(createUnderwritingFlag("block", "Refer to underwriter. No tenant background-check."));
+                } else if (loc.data().disclaimsSecurity().equalsIgnoreCase("No")) {
+                    flagsToCreate.add(createUnderwritingFlag("block", "Refer to underwriter. No security disclaimers."));
+                } else if (loc.data().glSecurity().vacancyProcedures().contains("None of the above")) {
+                    flagsToCreate.add(createUnderwritingFlag("block", "Refer to underwriter. No vacancy procedures."));
+                } else if (!loc.data().glSecurity().vacancyProcedures().contains("Change locks/Collect keys") &&
+                        !loc.data().glSecurity().vacancyProcedures().contains("Property inspection") &&
+                        !loc.data().glSecurity().vacancyProcedures().contains("Handle security deposit according to state and local laws") &&
+                        !loc.data().glSecurity().vacancyProcedures().contains("Make necessary repairs") &&
+                        !loc.data().glSecurity().vacancyProcedures().contains("Terminate lease agreement")
+                ) {
+                    flagsToCreate.add(createUnderwritingFlag("block", "Refer to underwriter. Not all vacancy procedures selected."));
+                } else if (loc.data().glSecurity().securityArmed().equalsIgnoreCase("Armed")) {
+                    flagsToCreate.add(createUnderwritingFlag("reject", "Rejected. Armed security."));
+                } else if (!loc.data().packageOccupancyInfo().vacantSquareFootage().equalsIgnoreCase("0")) {
+                    flagsToCreate.add(createUnderwritingFlag("block", "Blocked. Vacancy Square Footage present."));
+                } else if (loc.data().packageOccupancyInfo().occBreakdown().adultOnly() != null &&
+                        loc.data().packageOccupancyInfo().occBreakdown().adultOnly() > 10) {
+                    flagsToCreate.add(createUnderwritingFlag("block", "Refer to underwriter. More than 10% occupancy of adults."));
+                } else if (loc.data().packageOccupancyInfo().occBreakdown().studentHousing() != null &&
+                        loc.data().packageOccupancyInfo().occBreakdown().studentHousing() > 10) {
+                    flagsToCreate.add(createUnderwritingFlag("block", "Refer to underwriter. More than 10% occupancy of students."));
+                } else if (loc.data().packageOccupancyInfo().occBreakdown().subsidizedHousing() != null &&
+                        loc.data().packageOccupancyInfo().occBreakdown().subsidizedHousing() > 10) {
+                    flagsToCreate.add(createUnderwritingFlag("block", "Refer to underwriter. More than 10% occupancy of subsidized housing."));
+                } else if (loc.data().packageOccupancyInfo().occBreakdown().elderlyHousing() != null &&
+                        loc.data().packageOccupancyInfo().occBreakdown().elderlyHousing() > 10) {
+                    flagsToCreate.add(createUnderwritingFlag("block", "Refer to underwriter. More than 10% occupancy for elderly housing."));
+                } else if (loc.data().packageOccupancyInfo().occBreakdown().handicap() != null &&
+                        loc.data().packageOccupancyInfo().occBreakdown().handicap() > 10) {
+                    flagsToCreate.add(createUnderwritingFlag("block", "Refer to underwriter. More than 10% occupancy for handicap."));
+                } else if (loc.data().packageOccupancyInfo().occBreakdown().halfwayHouse() != null &&
+                        loc.data().packageOccupancyInfo().occBreakdown().halfwayHouse() > 10) {
+                    flagsToCreate.add(createUnderwritingFlag("block", "Refer to underwriter. More than 10% occupancy for halfway-house."));
+                } else if (loc.data().packageOccupancyInfo().occBreakdown().mentalDrugRehab() != null &&
+                        loc.data().packageOccupancyInfo().occBreakdown().mentalDrugRehab() > 10) {
+                    flagsToCreate.add(createUnderwritingFlag("block", "Refer to underwriter. More than 10% occupancy for mental/drug rehab."));
+                }
+            }
+        }
 
         /* ensure return size of plugin is not exceeded */
         List<UnderwritingFlagCore> singleRetFlag = new ArrayList<>();
@@ -190,34 +218,4 @@ public class PackageUnderwritingPlugin implements UnderwritingPlugin {
                 .build();
     }
 
-    /**
-     * Processes an individual underwriting rule and evaluates it against the quote data.
-     */
-    private boolean processUWRule(PackageProductQuote quote, UWRules uwRule) {
-        String uwRuleField = uwRule.field();
-        log.info("Field Value being evaulated: {}", uwRuleField);
-        String uwRuleCondition = uwRule.condition();
-        String uwRuleValue = uwRule.value();
-
-        log.info("Evaluating the following rule: {} {} {}", uwRuleField, uwRuleCondition, uwRuleValue);
-
-        // Retrieve the field value from the quote based on the UW rule key
-//        String fieldValue = getFieldValueFromQuote(quote.element(), uwRuleKey);
-
-        // Determine if the field and rule values are integers or strings, and evaluate the rule
-        return evaluateString(uwRuleField, uwRuleCondition, uwRuleValue);
-    }
-
-    /**
-     * Evaluates string-based underwriting rules.
-     */
-    private static boolean evaluateString(String fieldValue, String condition, String ruleValue) {
-        return switch (condition.toLowerCase()) {
-            case "=" -> fieldValue.equalsIgnoreCase(ruleValue);
-            case "!=" -> !fieldValue.equalsIgnoreCase(ruleValue);
-//            case "in" -> isIn(fieldValue, ruleValue);
-//            case "not in" -> !isIn(fieldValue, ruleValue);
-            default -> throw new IllegalArgumentException("Unsupported condition: " + condition);
-        };
-    }
 }
