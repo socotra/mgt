@@ -25,10 +25,6 @@
       "displayName": "Coverage Terms", 
       "type": "PropertyBuildingCoverageTerms"
     },
-    "classCode": {
-      "displayName" : "What is the building's class code?",
-      "type" : "string"
-    },
     "buildingAge": {
       "displayName" : "What is the building's age?",
       "type" : "string?",

@@ -136,6 +136,8 @@ public class GLRatingPlugin implements RatePlugin {
 
             finalDedRate = dedBIRate.multiply(dedPDRate).multiply(dedBIPDRate).add(finalDedRate);
             log.info("deductible rate: {}", finalDedRate.toString());
+
+            // TODO: claims made coverage default to NONE
         }
 
         // TODO: discount factors, tenure is for renewals only
@@ -144,8 +146,11 @@ public class GLRatingPlugin implements RatePlugin {
         String affinityDiscount = quote.data().affinityDiscount();
         BigDecimal affinityRate = tableRecordFetcher.getTable(DiscountFactorsAffinity.class).getRecord(DiscountFactorsAffinity.makeKey(affinityDiscount)).orElseThrow().factor();
 
+        // TODO: do not worry about rate capping...
+
+
         // will always be single as this is the GL rater
-        String packageGrp = "Package";
+        String packageGrp = "Single";
         BigDecimal packageRate = tableRecordFetcher.getTable(PackageProductTable.class).getRecord(PackageProductTable.makeKey(packageGrp)).orElseThrow().packageFctr();
         log.info("package discount: {}", packageRate.toString());
 
@@ -155,19 +160,19 @@ public class GLRatingPlugin implements RatePlugin {
         BigDecimal finalRate = (packageRate.multiply(baseRateTerritory).multiply(baseRateLCM).multiply(lolFinalRate).multiply(finalDedRate).multiply(affinityRate)).setScale(3, RoundingMode.CEILING);
         log.info("final rate w/o TRIA: {}", finalRate.toString());
 
-        finalRate = (finalRate.multiply(baseRate)).setScale(0, RoundingMode.CEILING);
+        finalRate = (finalRate.multiply(baseRate)).setScale(3, RoundingMode.CEILING);
         log.info("final premium: {}", finalRate.toString());
 
         /* apply full pay discount */
         BigDecimal fullPayDiscount = new BigDecimal(".950");
-        finalRate = (finalRate.multiply(fullPayDiscount)).setScale(0, RoundingMode.CEILING);
+        finalRate = (finalRate.multiply(fullPayDiscount)).setScale(3, RoundingMode.CEILING);
         log.info("final premium w/ discount: {}", finalRate.toString());
 
         BigDecimal terrorismCertificate = new BigDecimal("0.0");
         terrorismCertificate = (terrorismRate.multiply(finalRate)).subtract(finalRate);
         log.info("terrorism certificate amount: {}", terrorismCertificate.toString());
 
-        finalRate = (finalRate.multiply(terrorismRate)).setScale(0, RoundingMode.CEILING);
+        finalRate = (finalRate.multiply(terrorismRate)).setScale(3, RoundingMode.CEILING);
         log.info("final premium w/ TRIA: {}", finalRate.toString());
 
         BigDecimal minimumPremium = new BigDecimal("500.0");
@@ -210,7 +215,7 @@ public class GLRatingPlugin implements RatePlugin {
                             .multiply(baseRateTerritory)
                             .multiply(lollossOfElectronicDataCoverageRate)
                             .multiply(lossOfElectronicDed_PDFactor)
-                            .multiply(hazardFactor)).setScale(0, RoundingMode.CEILING);
+                            .multiply(hazardFactor)).setScale(3, RoundingMode.CEILING);
                     lossOfElectronics.add(currentCoveragePremium);
 
                     log.info("current locations electronic premium: {} ", currentCoveragePremium.toString());
@@ -244,7 +249,7 @@ public class GLRatingPlugin implements RatePlugin {
                             .multiply(baseRateTerritory)
                             .multiply(cyberIncidentCoverageRate)
                             .multiply(cyberIncidentDed_PDFactor)
-                            .multiply(hazardFactor)).setScale(0, RoundingMode.CEILING);
+                            .multiply(hazardFactor)).setScale(3, RoundingMode.CEILING);
                     cyberIncident.add(currentCoveragePremium);
 
                     log.info("current cyber-incident premium: {} ", currentCoveragePremium.toString());

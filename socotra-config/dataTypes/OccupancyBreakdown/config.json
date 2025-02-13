@@ -2,31 +2,31 @@
     "data" : {
         "adultOnly": {
             "displayName": "Adult Only %",
-            "type": "int?"
+            "type": "int"
         },
         "studentHousing": {
             "displayName": "Student Housing %",
-            "type": "int?"
+            "type": "int"
         },
         "subsidizedHousing": {
             "displayName": "Subsidized Housing %", 
-            "type": "int?"
+            "type": "int"
         },
         "elderlyHousing": {
             "displayName": "Elderly Housing %", 
-            "type": "int?"
+            "type": "int"
         },
         "handicap": {
             "displayName": "Handicap %", 
-            "type": "int?"
+            "type": "int"
         },
         "halfwayHouse": {
             "displayName": "Halfway House %", 
-            "type": "int?"
+            "type": "int"
         },
         "mentalDrugRehab": {
             "displayName": "Mental or Drug Rehab %", 
-            "type": "int?"
+            "type": "int"
         }
     },
     "abstract" : false

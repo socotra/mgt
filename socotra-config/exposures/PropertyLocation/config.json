@@ -23,7 +23,11 @@
       "type" : "string+",
       "tag": ["multiselect"],
       "options" : [ "Ord Law", "TRIA" ]
-    }, 
+    },
+    "classCode" : {
+      "displayName" : "Location Class Code",
+      "type" : "string?"
+    },
     "hasCommercialCondo" : {
       "displayName" : "Is this a commercial condo unit?",
       "type" : "string",

@@ -28,11 +28,19 @@
       "dataType" : "string",
       "isKey" : false
     },
-    "group1Factor": {
+    "group1Structure": {
       "dataType" : "decimal",
       "isKey" : false
     },
-    "group2Factor": {
+    "group2Structure": {
+      "dataType" : "decimal",
+      "isKey" : false
+    },
+    "group1Contents": {
+      "dataType" : "decimal",
+      "isKey" : false
+    },
+    "group2Contents": {
       "dataType" : "decimal",
       "isKey" : false
     }

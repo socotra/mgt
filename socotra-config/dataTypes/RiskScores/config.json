@@ -2,36 +2,42 @@
     "data": {
         "hhScore": {
             "displayName" : "HH Score:",
-            "type" : "string?",
-            "options": ["A", "B", "C", "D"]
+            "type" : "string",
+            "options": ["A", "B", "C", "D", "F"]
         },
         "distanceToCoastScore": {
-            "displayName" : "Distance To Coast Score:",
-            "type" : "string?"
+            "displayName" : "Distance To Coast Score (miles):",
+            "type" : "int"
         },
         "hurricaneScore": {
             "displayName" : "Hurricane Score:",
-            "type" : "string?"
+            "type" : "string?",
+            "options": ["A", "B", "C", "D", "F"]
         },
         "wildfireScore": {
             "displayName" : "Wildfire Score:",
-            "type" : "string?"
+            "type" : "string?",
+            "options": ["A", "B", "C", "D", "F"]
         },
         "crimeScore": {
             "displayName" : "Crime Score:",
-            "type" : "string?"
+            "type" : "string?",
+            "options": ["1", "2", "3", "4", "5"]
         },
         "windScore": {
             "displayName" : "Wind Score:",
-            "type" : "string?"
+            "type" : "string?",
+            "options": ["A", "B", "C", "D", "F"]
         },
         "hailScore": {
             "displayName" : "Hail Score:",
-            "type" : "string?"
+            "type" : "string?",
+            "options": ["A", "B", "C", "D", "F"]
         },
         "tornadoScore": {
             "displayName" : "Tornado Score:",
-            "type" : "string?"
+            "type" : "string?",
+            "options": ["A", "B", "C", "D", "F"]
         }
     },
     "abstract" : false

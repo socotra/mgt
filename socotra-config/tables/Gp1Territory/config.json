@@ -8,7 +8,11 @@
         "dataType" : "string",
         "isKey" : true
       },
-      "factor" : {
+      "structureFactor" : {
+        "dataType" : "decimal",
+        "isKey" : false
+      },
+      "contentFactor" : {
         "dataType" : "decimal",
         "isKey" : false
       }

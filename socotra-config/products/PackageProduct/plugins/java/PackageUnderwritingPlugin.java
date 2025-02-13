@@ -1,10 +1,7 @@
 package com.socotra.deployment.customer.packageproduct;
 
 import com.socotra.coremodel.*;
-import com.socotra.deployment.DataFetcher;
-import com.socotra.deployment.DataFetcher;
-import com.socotra.deployment.ResourceSelector;
-import com.socotra.deployment.ResourceSelectorFactory;
+import com.socotra.deployment.*;
 import com.socotra.deployment.customer.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -21,6 +18,8 @@ public class PackageUnderwritingPlugin implements UnderwritingPlugin {
 
         PackageProductQuote quote = packageProductQuoteRequest.quote();
 
+        ResourceSelector tableRecordFetcher = ResourceSelectorFactory.getInstance().getSelector(quote);
+
         // Create Empty List of flags to create
         List<UnderwritingFlagCore> flagsToCreate = new ArrayList<>();
 
@@ -31,7 +30,9 @@ public class PackageUnderwritingPlugin implements UnderwritingPlugin {
             flagsToCreate.add(createUnderwritingFlag("block", "Refer to underwriter. Business entails services outside of what is listed."));
         } else if (quote.data().generalInformation().leasesHoldHarmless().equalsIgnoreCase("No")) {
             flagsToCreate.add(createUnderwritingFlag("reject", "Rejected. Does not hold harmless wording"));
-        } else if (quote.data().eligibility().compliesADA().equalsIgnoreCase("No")) {
+        } else if (quote.data().eligibility().hasElevatorMaintenanceAgreement().equalsIgnoreCase("No")) {
+            flagsToCreate.add(createUnderwritingFlag("block", "Blocked. No elevator agreement"));
+        }  else if (quote.data().eligibility().compliesADA().equalsIgnoreCase("No")) {
             flagsToCreate.add(createUnderwritingFlag("block", "Refer to underwriter. Does not comply with ADA."));
         } else if (!quote.data().eligibility().locationHazardsTenants().contains("N/A")) {
             flagsToCreate.add(createUnderwritingFlag("block", "Refer to underwriter. Location Hazards."));
@@ -85,6 +86,13 @@ public class PackageUnderwritingPlugin implements UnderwritingPlugin {
             flagsToCreate.add(createUnderwritingFlag("block", "Refer to underwriter. Partial Tenant Ownership."));
         } else {
             for (PackageLocation loc : quote.packageLocations()) {
+                String hazardHubScore = loc.data().riskScores().hhScore();
+                String hazardHubScoreMaxDeductible = tableRecordFetcher.getTable(HailWindTornadoScores.class).getRecord(HailWindTornadoScores.makeKey(hazardHubScore)).orElseThrow().requiredDeductible();
+                log.info("max hazard-hub deductible: {}", hazardHubScoreMaxDeductible);
+
+                String[] coastalStates = { "AL", "CT", "DE", "GA", "LA", "MA", "MD", "NC", "NJ", "NY", "RI", "SC", "TX", "VA"};
+                String currentState = loc.data().packageProductBasicInfo().locationAddress().state();
+
                 for (PropertyBuilding building : loc.propertyBuildings()) {
                     if (building.data().propertyBuildingDetails().packageBuildingDetails().isPoolFenced().equalsIgnoreCase("No")) {
                         flagsToCreate.add(createUnderwritingFlag("block", "Refer to underwriter. Pool unfenced."));
@@ -134,14 +142,84 @@ public class PackageUnderwritingPlugin implements UnderwritingPlugin {
                         flagsToCreate.add(createUnderwritingFlag("reject", "Rejected. Underground hazards."));
                     } else if (building.data().propertyBuildingOperationDetails().permitsSpaceHeaters().equalsIgnoreCase("Yes")) {
                         flagsToCreate.add(createUnderwritingFlag("reject", "Rejected. Permits space heaters."));
-                    } 
-                
+                    } else if (hazardHubScore.equalsIgnoreCase("B") && building.data().buildingCoverageTerms().windHailDeductible().equalsIgnoreCase("Exclude Wind/Hail Coverage")) {
+                        flagsToCreate.add(createUnderwritingFlag("reject", "Rejected. Hazard Hub Score B must have mininum deductible of 1%/$2,500 mininum."));
+                    } else if ((hazardHubScore.equalsIgnoreCase("C") && building.data().buildingCoverageTerms().windHailDeductible().equalsIgnoreCase("Exclude Wind/Hail Coverage")) ||
+                            (hazardHubScore.equalsIgnoreCase("C") && building.data().buildingCoverageTerms().windHailDeductible().equalsIgnoreCase("1.0%"))){
+                        flagsToCreate.add(createUnderwritingFlag("reject", "Rejected. Hazard Hub Score C must have mininum deductible of 2%/$2,500 mininum."));
+                    } else if ((hazardHubScore.equalsIgnoreCase("D") && building.data().buildingCoverageTerms().windHailDeductible().equalsIgnoreCase("Exclude Wind/Hail Coverage")) ||
+                            (hazardHubScore.equalsIgnoreCase("D") && building.data().buildingCoverageTerms().windHailDeductible().equalsIgnoreCase("1.0%")) ||
+                            (hazardHubScore.equalsIgnoreCase("D") && building.data().buildingCoverageTerms().windHailDeductible().equalsIgnoreCase("2.0%"))){
+                        flagsToCreate.add(createUnderwritingFlag("reject", "Rejected. Hazard Hub Score D must have mininum deductible of 5%/$10,000 mininum."));
+                    } else if (hazardHubScore.equalsIgnoreCase("F")) {
+                        flagsToCreate.add(createUnderwritingFlag("reject", "Rejected. Hazard Hub Score F, exclude."));
+                    } else if (loc.data().riskScores().wildfireScore().equalsIgnoreCase("C") || loc.data().riskScores().wildfireScore().equalsIgnoreCase("D") || loc.data().riskScores().wildfireScore().equalsIgnoreCase("E") || loc.data().riskScores().wildfireScore().equalsIgnoreCase("F")) {
+                        flagsToCreate.add(createUnderwritingFlag("reject", "Rejected. Wild fire score is too high."));
+                    } else if (check(coastalStates, currentState)) {
+                        // retrieve construction type
+                        String constructionType = building.data().propertyConstructionUpdates().constructionType();
+                        if (!constructionType.equalsIgnoreCase("Frame")) {
+                            constructionType = "Non-Frame";
+                        }
+                        log.info("construction type: {}", constructionType);
+                        // retrieve miles to coast
+                        int distanceToCoast = loc.data().riskScores().distanceToCoastScore();
+
+                        // make underwriting decision based on distance
+                        String decisionPercent = "";
+                        String decisionDollar = "";
+                        if (distanceToCoast <= 1) {
+                            decisionPercent = tableRecordFetcher.getTable(DistanceToCoast.class).getRecord(DistanceToCoast.makeKey(currentState, constructionType)).orElseThrow().oneMilePercent();
+                            decisionDollar = tableRecordFetcher.getTable(DistanceToCoast.class).getRecord(DistanceToCoast.makeKey(currentState, constructionType)).orElseThrow().oneMileDollar();
+                        } else if (distanceToCoast < 2) {
+                            decisionPercent = tableRecordFetcher.getTable(DistanceToCoast.class).getRecord(DistanceToCoast.makeKey(currentState, constructionType)).orElseThrow().twoMilePercent();
+                            decisionDollar = tableRecordFetcher.getTable(DistanceToCoast.class).getRecord(DistanceToCoast.makeKey(currentState, constructionType)).orElseThrow().twoMileDollar();
+                        } else if (distanceToCoast < 5) {
+                            decisionPercent = tableRecordFetcher.getTable(DistanceToCoast.class).getRecord(DistanceToCoast.makeKey(currentState, constructionType)).orElseThrow().fiveMilePercent();
+                            decisionDollar = tableRecordFetcher.getTable(DistanceToCoast.class).getRecord(DistanceToCoast.makeKey(currentState, constructionType)).orElseThrow().fiveMileDollar();
+                        } else if (distanceToCoast < 10) {
+                            decisionPercent = tableRecordFetcher.getTable(DistanceToCoast.class).getRecord(DistanceToCoast.makeKey(currentState, constructionType)).orElseThrow().tenMilePercent();
+                            decisionDollar = tableRecordFetcher.getTable(DistanceToCoast.class).getRecord(DistanceToCoast.makeKey(currentState, constructionType)).orElseThrow().tenMileDollar();
+                        } else if (distanceToCoast < 20) {
+                            decisionPercent = tableRecordFetcher.getTable(DistanceToCoast.class).getRecord(DistanceToCoast.makeKey(currentState, constructionType)).orElseThrow().twentyMilePercent();
+                            decisionDollar = tableRecordFetcher.getTable(DistanceToCoast.class).getRecord(DistanceToCoast.makeKey(currentState, constructionType)).orElseThrow().twentyMileDollar();
+                        } else if (distanceToCoast < 30) {
+                            decisionPercent = tableRecordFetcher.getTable(DistanceToCoast.class).getRecord(DistanceToCoast.makeKey(currentState, constructionType)).orElseThrow().thirtyMilePercent();
+                            decisionDollar = tableRecordFetcher.getTable(DistanceToCoast.class).getRecord(DistanceToCoast.makeKey(currentState, constructionType)).orElseThrow().thirtyMileDollar();
+                        } else {
+                            decisionPercent = tableRecordFetcher.getTable(DistanceToCoast.class).getRecord(DistanceToCoast.makeKey(currentState, constructionType)).orElseThrow().overThirtyPercent();
+                            decisionDollar = tableRecordFetcher.getTable(DistanceToCoast.class).getRecord(DistanceToCoast.makeKey(currentState, constructionType)).orElseThrow().overThirtyDollar();
+                        }
+                        if (decisionPercent.equalsIgnoreCase("Ineligible")) {
+                            flagsToCreate.add(createUnderwritingFlag("reject", "Rejected. Distance to coast ineligible."));
+                        } else if (!decisionPercent.equalsIgnoreCase("N/A")) {
+                            String windHailDeductiblePercent = building.data().buildingCoverageTerms().windHailDeductible();
+                            String windHailDeductibleDollar = building.data().buildingCoverageTerms().windHailDollarAmount();
+                            if (!decisionPercent.equalsIgnoreCase(windHailDeductiblePercent)) {
+                                if (decisionPercent.equalsIgnoreCase("Exclude Wind/Hail Coverage")) {
+                                    flagsToCreate.add(createUnderwritingFlag("reject", "Rejected. Wind/Hail Coverage has been excluded for coastal state."));
+                                } else if (decisionPercent.equalsIgnoreCase("2.0%") && windHailDeductiblePercent.equalsIgnoreCase("1.0%")) {
+                                    flagsToCreate.add(createUnderwritingFlag("reject", "Rejected. Wind/Hail Deductible needs to be more than 1.0%."));
+                                } else if (decisionPercent.equalsIgnoreCase("5.0%") && (windHailDeductiblePercent.equalsIgnoreCase("1.0%") || windHailDeductiblePercent.equalsIgnoreCase("2.0%"))) {
+                                    flagsToCreate.add(createUnderwritingFlag("reject", "Rejected. Wind/Hail Deductible needs to be 5.0%."));
+                                }
+                            } else if (!decisionDollar.equalsIgnoreCase(windHailDeductibleDollar)) {
+                                if (decisionDollar.equalsIgnoreCase("$5,000") && windHailDeductibleDollar.equalsIgnoreCase("$2,500")) {
+                                    flagsToCreate.add(createUnderwritingFlag("reject", "Rejected. Wind/Hail Coverage ($) needs to be more than $2,500."));
+                                } else if (decisionDollar.equalsIgnoreCase("$10,000") && (windHailDeductibleDollar.equalsIgnoreCase("$2,500") || windHailDeductibleDollar.equalsIgnoreCase("$5,000"))) {
+                                    flagsToCreate.add(createUnderwritingFlag("reject", "Rejected. Wind/Hail Deductible needs to be $10,000."));
+                                }
+                            }
+                        }
+                    }
                 }
                 if (loc.data().packageProductBasicInfo().isNamedAdditionalInsuredOnParking().contains("No")) {
                     flagsToCreate.add(createUnderwritingFlag("reject", "Rejected. Parking not insured."));
                 } else if (loc.data().operationalDetails().leaseDisclaimsSecurityWarranties().equalsIgnoreCase("No")) {
                     flagsToCreate.add(createUnderwritingFlag("block", "Lease disclaims security warranties"));
-                } else if (loc.data().packageProductBasicInfo().publicParkingAnnualSales() !=null && loc.data().packageProductBasicInfo().publicParkingAnnualSales() >= 0) {
+                } else if (loc.data().packageProductBasicInfo().publicParkingAnnualSales() !=null &&
+                        loc.data().packageProductBasicInfo().publicParkingAnnualSales() > 0) {
+                    flagsToCreate.add(createUnderwritingFlag("block", "Public parking receipts greater than 0."));
                 } else if (loc.data().glSecurity().hasPeepholesOrDeadbolts().equalsIgnoreCase("No")) {
                     flagsToCreate.add(createUnderwritingFlag("block", "Refer to underwriter. No peepholdes or deadbolts."));
                 } else if (loc.data().glSecurity().doesBackgroundChecksEmployee().equalsIgnoreCase("No")) {
@@ -152,10 +230,10 @@ public class PackageUnderwritingPlugin implements UnderwritingPlugin {
                     flagsToCreate.add(createUnderwritingFlag("block", "Refer to underwriter. No security disclaimers."));
                 } else if (loc.data().glSecurity().vacancyProcedures().contains("None of the above")) {
                     flagsToCreate.add(createUnderwritingFlag("block", "Refer to underwriter. No vacancy procedures."));
-                } else if (!loc.data().glSecurity().vacancyProcedures().contains("Change locks/Collect keys") &&
-                        !loc.data().glSecurity().vacancyProcedures().contains("Property inspection") &&
-                        !loc.data().glSecurity().vacancyProcedures().contains("Handle security deposit according to state and local laws") &&
-                        !loc.data().glSecurity().vacancyProcedures().contains("Make necessary repairs") &&
+                } else if (!loc.data().glSecurity().vacancyProcedures().contains("Change locks/Collect keys") ||
+                        !loc.data().glSecurity().vacancyProcedures().contains("Property inspection") ||
+                        !loc.data().glSecurity().vacancyProcedures().contains("Handle security deposit according to state and local laws") ||
+                        !loc.data().glSecurity().vacancyProcedures().contains("Make necessary repairs") ||
                         !loc.data().glSecurity().vacancyProcedures().contains("Terminate lease agreement")
                 ) {
                     flagsToCreate.add(createUnderwritingFlag("block", "Refer to underwriter. Not all vacancy procedures selected."));
@@ -216,6 +294,20 @@ public class PackageUnderwritingPlugin implements UnderwritingPlugin {
                 .level(uwLevel)
                 .note(note)
                 .build();
+    }
+
+    private static boolean check(String[] arr, String toCheckValue) {
+        // check if the specified element
+        // is present in the array or not
+        // using Linear Search method
+        boolean test = false;
+        for (String element : arr) {
+            if (element.equalsIgnoreCase(toCheckValue)) {
+                test = true;
+                break;
+            }
+        }
+        return test;
     }
 
 }

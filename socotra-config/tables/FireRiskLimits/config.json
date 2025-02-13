@@ -1,0 +1,24 @@
+{
+  "columns": {
+    "fireRisk": {
+      "dataType": "string",
+      "isKey": true
+    },
+    "constructionType": {
+      "dataType": "string",
+      "isKey": true
+    },
+    "hasSprinkler": {
+      "dataType": "string",
+      "isKey": true
+    },
+    "buildingLimit": {
+      "dataType": "int",
+      "isKey": false
+    },
+    "glLimit": {
+      "dataType": "string",
+      "isKey": false
+    }
+  }
+}

@@ -10,17 +10,17 @@
         },
         "publicParkingAnnualSales" : {
             "displayName" : "Please input annual gross receipts for parking",
-            "type" : "int?"
+            "type" : "int"
         },
         "hasPublicParking" : {
             "displayName" : "Are the parking facilities open to use by the public?",
-            "type" : "string?",
+            "type" : "string",
             "maxLength" : 20000,
             "options" : [ "Yes", "No", "N/A" ]
         },
         "hasPublicParkingFee" : {
             "displayName" : "If yes, is there a fee charged?",
-            "type" : "string?",
+            "type" : "string",
             "maxLength" : 20000,
             "options" : [ "Yes", "No", "N/A" ]
         },

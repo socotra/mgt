@@ -3,31 +3,31 @@
   "data" : {
     "applicantName" : {
       "displayName" : "What is the name of the applicant?",
-      "type" : "string?",
+      "type" : "string",
       "maxLength" : 20000
     },
     "applicantDBA" : {
       "displayName" : "Applicants DBA (if applicable)",
-      "type" : "string?",
+      "type" : "string",
       "maxLength" : 20000
     },
     "applicantMailingAddress" : {
       "displayName" : "What is the mailing address of the applicant?",
-      "type" : "Address?"
+      "type" : "Address"
     },
     "applicantEmail" : {
       "displayName" : "What is your email address?",
-      "type" : "string?",
+      "type" : "string",
       "maxLength" : 20000
     },
     "applicantPhoneNumber" : {
       "displayName" : "What is your phone number?",
-      "type" : "string?",
+      "type" : "string",
       "maxLength" : 20000
     },
     "applicantLegalEntity" : {
       "displayName" : "What is the applicant's entity type?",
-      "type" : "string?",
+      "type" : "string",
       "maxLength" : 20000,
       "options" : [ "Individual", "Partnership", "Corporation", "Joint Venture", "Not For Profit", "LLC" ]
     }

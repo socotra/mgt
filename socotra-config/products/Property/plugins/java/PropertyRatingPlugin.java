@@ -15,9 +15,6 @@ import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.socotra.deployment.ResourceSelector;
-import com.socotra.deployment.ResourceSelectorFactory;
-
 public class PropertyRatingPlugin implements RatePlugin {
         private static final Logger log = LoggerFactory.getLogger(PropertyRatingPlugin.class);
 
@@ -58,6 +55,13 @@ public class PropertyRatingPlugin implements RatePlugin {
 
                 // Rating Location
                 log.info("Rating the location: {}", loc.data());
+                // TODO: clarify behavior around occupancy type for launch
+                String occupancyType = loc.data().packageOccupancyInfo().tenantsOccupants().get(0);
+                String classCode = tableRecordFetcher.getTable(PropertyOccupancyClassCodes.class).getRecord(PropertyOccupancyClassCodes.makeKey(occupancyType)).orElseThrow().classCode();
+                if (classCode == null || classCode.length() == 0) {
+                    classCode = loc.data().classCode();
+                }
+                log.info("location class-code: {}", classCode);
 
                 for (PropertyBuilding building : loc.propertyBuildings()) {
                                BigDecimal contentValue = BigDecimal.valueOf(building.data().buildingCoverageTerms().contentValue());
@@ -71,15 +75,15 @@ public class PropertyRatingPlugin implements RatePlugin {
 
                                BigDecimal oneHundredth = new BigDecimal("100.0");
                                String windHailDeductibleString = building.data().buildingCoverageTerms().windHailDeductible();
-                               log.info("wh deductible: {}", windHailDeductibleString);
-                               BigDecimal windHailDeductible = new BigDecimal(windHailDeductibleString.substring(0, windHailDeductibleString.length() - 1)).divide(oneHundredth);
-                               log.info("Exposure building wind-hail: {}", windHailDeductible);
+                                BigDecimal windHailDeductible = new BigDecimal("1.00");
+                                if (!windHailDeductibleString.equalsIgnoreCase("Exclude Wind/Hail Coverage")) {
+                                    windHailDeductible = new BigDecimal(windHailDeductibleString.substring(0,
+                                            windHailDeductibleString.length() - 1)).divide(oneHundredth);
+                                }
+                                log.info("Exposure building wind-hail: {}", windHailDeductible);
 
                                BigDecimal calculatedLOI = buildingValue.multiply(windHailDeductible);
                                log.info("calculatedLOI for building: ", calculatedLOI);
-
-                                String classCode = building.data().classCode();
-                                log.info("building class code: {}", classCode);
 
                                 String constructionType = building.data().propertyConstructionUpdates()
                                         .constructionType();
@@ -266,27 +270,27 @@ public class PropertyRatingPlugin implements RatePlugin {
                                                .divide(classBaseRateContents, 2, RoundingMode.HALF_EVEN);
                                log.info("deductible contents: {}", whDeductibleContents);
                                // TODO: check
-                                String territoryNamegroup1 = "Austin (Central)";
-//                               String territoryNamegroup1 = tableRecordFetcher.getTable(TerritoryProperty.class)
-//                                               .getRecord(TerritoryProperty.makeKey(zipCode)).orElseThrow()
-//                                               .group1();
+//                                String territoryNamegroup1 = "Austin (Central)";
+                               String territoryNamegroup1 = tableRecordFetcher.getTable(TerritoryProperty.class)
+                                               .getRecord(TerritoryProperty.makeKey(zipCode)).orElseThrow()
+                                               .group1();
                                 log.info("territory group 1 name: {}", territoryNamegroup1);
-                                String territoryNamegroup2 = "Austin (Central)";
-//                               String territoryNamegroup2 = tableRecordFetcher.getTable(TerritoryProperty.class)
-//                                               .getRecord(TerritoryProperty.makeKey(zipCode)).orElseThrow()
-//                                               .group2();
+//                                String territoryNamegroup2 = "Austin (Central)";
+                               String territoryNamegroup2 = tableRecordFetcher.getTable(TerritoryProperty.class)
+                                               .getRecord(TerritoryProperty.makeKey(zipCode)).orElseThrow()
+                                               .group2();
                                 log.info("territory group 2 name: {}", territoryNamegroup2);
 
                                BigDecimal territory1 = tableRecordFetcher.getTable(Gp1Territory.class)
                                                .getRecord(Gp1Territory.makeKey(state, territoryNamegroup1))
                                                .orElseThrow()
-                                               .factor();
+                                               .structureFactor();
                                log.info("territory group 1 factor: {}", territory1);
 
                                BigDecimal territory2 = tableRecordFetcher.getTable(Gp2Territory.class)
                                                .getRecord(Gp2Territory.makeKey(state, territoryNamegroup2))
                                                .orElseThrow()
-                                               .factor();
+                                               .structureFactor();
                                log.info("territory group 2 factor: {}", territory2);
 
                                BigDecimal territoryBuildingRate = (((classBRGroup1).multiply(territory1))

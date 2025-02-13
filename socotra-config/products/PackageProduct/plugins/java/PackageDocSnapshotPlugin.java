@@ -22,8 +22,7 @@ public class PackageDocSnapshotPlugin implements DocumentDataSnapshotPlugin {
         Map<String, Object> pricingData = getPricingData(pricing);
         Map<String, Object> locationData = new HashMap<>();
         Map<String, Object> combinedData = new HashMap<>();
-        // TODO: below is throwing an error
-        // var account = DataFetcherFactory.get().getAccount(quote.accountLocator());
+        Applicant account = DataFetcherFactory.get().getAccount(quote.accountLocator());
 
         log.info("quote: {}", quote);
 
@@ -34,13 +33,14 @@ public class PackageDocSnapshotPlugin implements DocumentDataSnapshotPlugin {
             combinedData.put("hasAffinityDiscount", "X");
         }
         combinedData.put("isPackage", "Yes");
-        combinedData.put("applicantName", "LA Baker Union 17");
-        combinedData.put("applicantPhoneNumber", "7571234170");
-        combinedData.put("line1", "121 Forest Drive");
-        combinedData.put("city", "Houston");
-        combinedData.put("state", "TX");
-        combinedData.put("zipCode", "79901");
-        combinedData.put("applicantLegalEntity", "Individual");
+
+        combinedData.put("applicantName", account.data().applicantName());
+        combinedData.put("applicantPhoneNumber", account.data().applicantPhoneNumber());
+        combinedData.put("line1", account.data().applicantMailingAddress().line1());
+        combinedData.put("city", account.data().applicantMailingAddress().city());
+        combinedData.put("state", account.data().applicantMailingAddress().state());
+        combinedData.put("zipCode", account.data().applicantMailingAddress().zipCode());
+        combinedData.put("applicantLegalEntity", account.data().applicantLegalEntity());
 
         // // Policy Data Mapping
         String productName = "Commercial Package Policy";
@@ -82,19 +82,73 @@ public class PackageDocSnapshotPlugin implements DocumentDataSnapshotPlugin {
                 locationData.put("city", loc.data().packageProductBasicInfo().locationAddress().city());
                 locationData.put("state", loc.data().packageProductBasicInfo().locationAddress().state());
                 locationData.put("zipCode", loc.data().packageProductBasicInfo().locationAddress().zipCode());
+                locationData.put("causeOfLossForm", loc.data().packageLocationCoverageTerms().causeOfLossForm());
+                locationData.put("coinsurancePercent", loc.data().packageLocationCoverageTerms().coinsurancePercent());
 
                 locationData.put("perOccurence", loc.limitOfInsurancePerOccurrence().value().toString());
                 locationData.put("aggregate", loc.limitOfInsuranceAggregate().value().toString());
                 locationData.put("liabilityDeductible", loc.liabilityDeductible().value().toString());
                 locationData.put("medicalLimit", loc.limitOfInsuranceMedical().value().toString());
 
+                for (PropertyBuilding building : loc.propertyBuildings()) {
+                    locationData.put("yearBuilt", Integer.toString(building.data().propertyConstructionUpdates().yearBuilt()));
+                    locationData.put("squareFoot", Integer.toString(building.data().propertyBuildingInfo().area()));
+                    locationData.put("buildingValue", "$" + Integer.toString(building.data().buildingCoverageTerms().buildingValue()));
+                    locationData.put("contentValue", "$" + Integer.toString(building.data().buildingCoverageTerms().contentValue()));
+                    locationData.put("mortgageeName", building.data().propertyBuildingInfo().mortgageeHolder().mortgageeName());
+                    locationData.put("mortgageeHolderAddressLine1", building.data().propertyBuildingInfo().mortgageeHolder().mortgageeAddress().line1());
+                    locationData.put("mortgageeHolderAddressCity", building.data().propertyBuildingInfo().mortgageeHolder().mortgageeAddress().city());
+                    locationData.put("mortgageeHolderAddressState", building.data().propertyBuildingInfo().mortgageeHolder().mortgageeAddress().state());
+                    locationData.put("mortgageeHolderAddresszipCode", building.data().propertyBuildingInfo().mortgageeHolder().mortgageeAddress().zipCode());
+
+                    locationData.put("aopDeductible", building.data().buildingCoverageTerms().aopDeductible());
+                    locationData.put("windHailDeductible", building.data().buildingCoverageTerms().windHailDeductible());
+
+                    String protectDevices = "";
+                    String hasSprinklers = building.data().propertySafeguards().hasSprinklers();
+                    if (hasSprinklers.equals("Yes") && !building.data().propertySafeguards().fireSafeguards().contains("None") && !building.data().propertySafeguards().burglarSafeguards().contains("None")) {
+                        protectDevices = "Sprinkler System, Fire-Alarm System, Burglary Protective Safeguards";
+                    } else if ((hasSprinklers.equals("Yes") && !building.data().propertySafeguards().fireSafeguards().contains("None")) ||
+                            (building.data().propertySafeguards().fireSafeguards().equals("Yes") && !building.data().propertySafeguards().burglarSafeguards().contains("None")) ||
+                            (!building.data().propertySafeguards().fireSafeguards().contains("None") && !building.data().propertySafeguards().burglarSafeguards().contains("None"))
+                    ) {
+                        protectDevices = "2 of 3Systems";
+                    } else if (hasSprinklers.equals("Yes")) {
+                        protectDevices = "Sprinkler System";
+                    } else if (!building.data().propertySafeguards().fireSafeguards().contains("None")) {
+                        protectDevices = "Fire-Alarm System";
+                    } else if (!building.data().propertySafeguards().burglarSafeguards().contains("None")) {
+                        protectDevices = "Burglary Protective Safeguards";
+                    }
+                    locationData.put("protectDevices", protectDevices);
+                }
+
                 BigDecimal zero = new BigDecimal("0.0");
                 String currentState = loc.data().packageProductBasicInfo().locationAddress().state();
                 log.info("current state for document generation: {}", currentState);
                 if (currentState.equals("TX") || currentState.equals("IL") || currentState.equals("OH")) {
+                    combinedData.put("CP00101012", "CP_00_10_10_12");
+
+                    // filter the below by business income and extra expense
+                    if (loc.businessIncomeCoverage() != null && loc.extraExpenseCoverage() != null) {
+                        combinedData.put("CP00301012", "CP_00_30_10_12");
+                    } else if (loc.businessIncomeCoverage() != null && loc.extraExpenseCoverage() == null) {
+                        combinedData.put("CP00321012", "CP_00_32_10_12");
+                    }
+
+                    combinedData.put("CP00900788", "CP_00_90_07_88");
+                    combinedData.put("CP01400706", "CP_01_40_07_06");
+                    combinedData.put("CP01420312", "CP_01_42_03_12");
+
                     if ((loc.liabilityDeductible().value()).compareTo(zero) > 0) {
                         combinedData.put("CG03000196", "CG_03_00_01_96");
                     }
+
+                    // for ord law being attached
+                    if (loc.data().ordLawTria().size() > 0 && loc.data().ordLawTria().contains("Ord Law")) {
+                        combinedData.put("CP04050917", "CP_04_05_09_17");
+                    }
+
                     combinedData.put("CG00010413", "CG_00_01_04_13");
                     combinedData.put("CG00691223", "CG_00_69_12_23");
                     combinedData.put("CG21061223", "CG_21_06_12_23");
@@ -181,6 +235,83 @@ public class PackageDocSnapshotPlugin implements DocumentDataSnapshotPlugin {
                         combinedData.put("IL01470911", "IL_01_47_09_11");
                         combinedData.put("IL02751113", "IL_02_75_11_13");
                         combinedData.put("IL01621013", "IL_01_62_10_13");
+                    }
+
+                    // for safety questions add
+                    for (PropertyBuilding building : loc.propertyBuildings()) {
+                        String hasSprinklers = building.data().propertySafeguards().hasSprinklers();
+                        if (hasSprinklers.equalsIgnoreCase("Yes") ||
+                                !building.data().propertySafeguards().burglarSafeguards().contains("None") ||
+                                !building.data().propertySafeguards().fireSafeguards().contains("None")
+                        ) {
+                            combinedData.put("CP04110917", "CP_04_11_09_17");
+                        }
+
+                        String windHailDeductible = building.data().buildingCoverageTerms().windHailDeductible();
+                        // if wind hail is not excluded, add the below
+                        if (!windHailDeductible.equalsIgnoreCase("Exclude Wind/Hail Coverage")) {
+                            combinedData.put("MGTPR10040125", "MGT_PR_1004_01_25");
+                        }
+                        if (loc.data().hasCommercialCondo().equalsIgnoreCase("Yes")) {
+                            combinedData.put("MGTPR10000125", "MGT_PR_1000_01_25");
+                        }
+                        // cause of loss form
+                        String causeOfLossForm = loc.data().packageLocationCoverageTerms().causeOfLossForm();
+                        if (causeOfLossForm.equalsIgnoreCase("Broad")) {
+                            combinedData.put("CP10201012", "CP_10_20_10_12");
+                        } else if (causeOfLossForm.equalsIgnoreCase("Special")) {
+                            combinedData.put("CP_10_30_09_17", "CP10300917");
+                        }
+
+                        // NOTE: logic of marking paragraph in dynamic document
+                        String roofCovering = building.data().propertyConstructionUpdates().roofCovering();
+                        int roofAge = Integer.parseInt(building.data().roofAge());
+                        if (roofAge >= 11 ||
+                                (roofAge <= 10 && roofCovering.equalsIgnoreCase("Metal"))) {
+                            combinedData.put("CP10361012", "CP_10_36_10_12");
+                        }
+
+                        combinedData.put("CP10751220", "CP_10_75_12_20");
+                        combinedData.put("IL00171198", "IL_00_17_11_98");
+                        combinedData.put("IL09520115", "IL_09_52_01_15");
+                        combinedData.put("IL09851220", "IL_09_85_12_20");
+                        combinedData.put("ILP0010104", "IL_P_001_01_04");
+
+
+                        if (currentState.equalsIgnoreCase("OH")) {
+                            if (causeOfLossForm.equalsIgnoreCase("Special")) {
+                                combinedData.put("CP10461012", "CP_10_46_10_12");
+                            }
+                            if (windHailDeductible.equalsIgnoreCase("Exclude Wind/Hail Coverage")) {
+                                combinedData.put("CP10540607", "CP_10_54_06_07");
+                            }
+                            combinedData.put("IL09350702", "IL_09_35_07_02");
+                            combinedData.put("CP01230408", "CP_01_23_04_08");
+                            combinedData.put("IL02440907", "IL_02_44_09_07");
+                        } else if (currentState.equalsIgnoreCase("TX")) {
+                            combinedData.put("CP01420312", "CP_01_42_03_12");
+
+                            // NOTE: not in package
+                            combinedData.put("CP02020824", "CP_02_02_08_24");
+                            if (causeOfLossForm.equalsIgnoreCase("Special")) {
+                                combinedData.put("CP10461012", "CP_10_46_10_12");
+                            }
+                            combinedData.put("IL02751113", "IL_02_75_11_13");
+                            combinedData.put("IL02751113", "IL_02_75_11_13");
+                            // TODO: document needs to be provided
+                            // combinedData.put("IL12041298", "IL_12_04_12_98");
+                            combinedData.put("ILN1780313", "IL_N_178_03_13");
+                        } else if (currentState.equalsIgnoreCase("IL")) {
+                            combinedData.put("CP01490607", "CP_01_49_06_07");
+                            // wind hail is not excluded, add the below
+                            if (windHailDeductible.equalsIgnoreCase("Exclude Wind/Hail Coverage")) {
+                                combinedData.put("CP10540607", "CP_10_54_06_07");
+                            }
+                            combinedData.put("IL01180217", "IL_01_18_02_17");
+                            combinedData.put("IL02840118", "IL_02_84_01_18");
+                            combinedData.put("IL09350702", "IL_09_35_07_02");
+
+                        }
                     }
                 }
             }

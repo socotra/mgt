@@ -22,8 +22,7 @@ public class PropertyDocSnapshotPlugin implements DocumentDataSnapshotPlugin {
         Map<String, Object> pricingData = getPricingData(pricing);
         Map<String, Object> locationData = new HashMap<>();
         Map<String, Object> combinedData = new HashMap<>();
-        //TODO: below is throwing an error
-//        var account = DataFetcherFactory.get().getAccount(quote.accountLocator());
+        Applicant account = DataFetcherFactory.get().getAccount(quote.accountLocator());
 
 
         log.info("quote: {}", quote);
@@ -35,13 +34,16 @@ public class PropertyDocSnapshotPlugin implements DocumentDataSnapshotPlugin {
             combinedData.put("hasAffinityDiscount", "X");
         }
         combinedData.put("isProperty", "Yes");
-        combinedData.put("applicantName", "LA Baker Union 17");
-        combinedData.put("applicantPhoneNumber", "7571234170");
-        combinedData.put("line1", "121 Forest Drive");
-        combinedData.put("city", "Houston");
-        combinedData.put("state", "TX");
-        combinedData.put("zipCode", "79901");
-        combinedData.put("applicantLegalEntity", "Individual");
+
+        combinedData.put("applicantName", account.data().applicantName());
+        combinedData.put("applicantPhoneNumber", account.data().applicantPhoneNumber());
+        combinedData.put("line1", account.data().applicantMailingAddress().line1());
+        combinedData.put("city", account.data().applicantMailingAddress().city());
+        combinedData.put("state", account.data().applicantMailingAddress().state());
+        combinedData.put("zipCode", account.data().applicantMailingAddress().zipCode());
+        combinedData.put("applicantLegalEntity", account.data().applicantLegalEntity());
+
+        combinedData.put("occupancyType", quote.data().classOfBusiness().occupancyType());
 
 //        // Policy Data Mapping
         String productName = "Commercial Property";
@@ -200,7 +202,8 @@ public class PropertyDocSnapshotPlugin implements DocumentDataSnapshotPlugin {
                             }
                             combinedData.put("IL02751113", "IL_02_75_11_13");
                             combinedData.put("IL02751113", "IL_02_75_11_13");
-                            combinedData.put("IL12041298", "IL_12_04_12_98");
+                            // TODO: document needs to be provided
+                            // combinedData.put("IL12041298", "IL_12_04_12_98");
                             combinedData.put("ILN1780313", "IL_N_178_03_13");
                         } else if (currentState.equalsIgnoreCase("IL")) {
                             combinedData.put("CP01490607", "CP_01_49_06_07");

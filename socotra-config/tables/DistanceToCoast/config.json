@@ -1,0 +1,68 @@
+{
+  "columns": {
+    "state": {
+      "dataType": "string",
+      "isKey": true
+    },
+    "construction": {
+      "dataType": "string",
+      "isKey": true
+    },
+    "oneMilePercent": {
+      "dataType": "string",
+      "isKey": false
+    },
+    "oneMileDollar": {
+      "dataType": "string",
+      "isKey": false
+    },
+    "twoMilePercent": {
+      "dataType": "string",
+      "isKey": false
+    },
+    "twoMileDollar": {
+      "dataType": "string",
+      "isKey": false
+    },
+    "fiveMilePercent": {
+      "dataType": "string",
+      "isKey": false
+    },
+    "fiveMileDollar": {
+      "dataType": "string",
+      "isKey": false
+    },
+    "tenMilePercent": {
+      "dataType": "string",
+      "isKey": false
+    },
+    "tenMileDollar": {
+      "dataType": "string",
+      "isKey": false
+    },
+    "twentyMilePercent": {
+      "dataType": "string",
+      "isKey": false
+    },
+    "twentyMileDollar": {
+      "dataType": "string",
+      "isKey": false
+    },
+    "thirtyMilePercent": {
+      "dataType": "string",
+      "isKey": false
+    },
+    "thirtyMileDollar": {
+      "dataType": "string",
+      "isKey": false
+    },
+    "overThirtyPercent": {
+      "dataType": "string",
+      "isKey": false
+    },
+    "overThirtyDollar": {
+      "dataType": "string",
+      "isKey": false
+    }
+  }
+}

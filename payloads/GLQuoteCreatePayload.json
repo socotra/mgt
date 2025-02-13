@@ -53,19 +53,39 @@
                         "providesSecurity": "No",
                         "securityArmed": "N/A",
                         "securityFirmRequiredEqualGreaterLimits": "No",
-                        "vacancyProcedures": "Change locks/Collect keys"
+                        "vacancyProcedures": [
+                            "Change locks/Collect keys",
+                            "Property inspection",
+                            "Handle security deposit according to state and local laws",
+                            "Make necessary repairs",
+                            "Terminate lease agreement"
+                        ]
                     },
                     "packageOccupancyInfo": {
                         "collectsTenantCoi": "No",
                         "hasVacantUnits": "No",
-                        "tenantsOccupants": ["1 Family Dwellings (Lessor's Risk)"],
-                        "highestSquareFootTenant": ["1 Family Dwellings (Lessor's Risk)"],
+                        "highestSquareFootTenant": [
+                            "1 Family Dwellings (Lessor's Risk)"
+                        ],
+                        "occBreakdown": {
+                            "adultOnly": 0,
+                            "elderlyHousing": 0,
+                            "halfwayHouse": 0,
+                            "handicap": 0,
+                            "mentalDrugRehab": 0,
+                            "studentHousing": 0,
+                            "subsidizedHousing": 0
+                        },
                         "requiresProtectiveSafeguardSystemsMaintenance": "Yes",
                         "requiresTenantGenLiab": "Yes",
+                        "tenantsOccupants": [
+                            "1 Family Dwellings (Lessor's Risk)"
+                        ],
                         "vacantSquareFootage": "0"
                     },
                     "classCode": 1,
                     "packageProductBasicInfo": {
+                        "hasPublicParking": "N/A",
                         "hasPublicParkingFee": "No",
                         "isNamedAdditionalInsuredOnParking": "Yes",
                         "locationAddress": {

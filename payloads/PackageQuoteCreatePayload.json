@@ -11,11 +11,35 @@
                     {
                         "type": "PropertyBuilding",
                         "data": {
-                            "buildingCoverageTerms": {
-                                "aopDeductible": "1,000",
-                                "buildingValue": 100000,
-                                "contentValue": 100000,
-                                "windHailDeductible": "1.0%"
+                            "roofAge": "5",
+                            "propertyBuildingOperationDetails": {
+                                "permitsBalconyCooking": "No",
+                                "permitsSpaceHeaters": "No"
+                            },
+                            "propertyConstructionUpdates": {
+                                "constructionType": "Frame",
+                                "electricalLastUpdated": "2001",
+                                "hasElectricVehicleCharging": "No",
+                                "hasPriorGutRehab": "N/A",
+                                "hvacLastUpdated": "2001",
+                                "parkingLastUpdated": 2001,
+                                "plumbingLastUpdated": "2001",
+                                "ppcFireClass": "3",
+                                "roofCovering": "Asphalt",
+                                "roofLastUpdated": "2001",
+                                "roofShape": "Flat Roof",
+                                "yearBuilt": 2001
+                            },
+                            "buildingAge": "10",
+                            "propertySafeguards": {
+                                "burglarSafeguards": [
+                                    "Central Burglar Alarm"
+                                ],
+                                "fireSafeguards": [
+                                    "Central Alarm"
+                                ],
+                                "hasSprinklerService": "Yes",
+                                "hasSprinklers": "Yes"
                             },
                             "propertyBuildingDetails": {
                                 "buildingCodeGrade": "10",
@@ -40,15 +64,13 @@
                                     "None"
                                 ]
                             },
-                            "propertySafeguards": {
-                                "burglarSafeguards": [
-                                    "Central Burglar Alarm"
-                                ],
-                                "fireSafeguards": [
-                                    "Central Alarm"
-                                ],
-                                "hasSprinklerService": "Yes",
-                                "hasSprinklers": "Yes"
+                            "roofACV": "ACV",
+                            "buildingCoverageTerms": {
+                                "aopDeductible": "1,000",
+                                "buildingValue": 100000,
+                                "contentValue": 100000,
+                                "windHailDeductible": "2.0%",
+                                "windHailDollarAmount": "$10,000"
                             },
                             "propertyBuildingInfo": {
                                 "area": 2500,
@@ -63,29 +85,7 @@
                                     "mortgageeName": "Lydia"
                                 },
                                 "stories": 4
-                            },
-                            "propertyConstructionUpdates": {
-                                "constructionType": "Frame",
-                                "electricalLastUpdated": "2001",
-                                "hasElectricVehicleCharging": "No",
-                                "hasPriorGutRehab": "N/A",
-                                "hvacLastUpdated": "2001",
-                                "parkingLastUpdated": 2001,
-                                "plumbingLastUpdated": "2001",
-                                "ppcFireClass": "3",
-                                "roofCovering": "Asphalt",
-                                "roofLastUpdated": "2001",
-                                "roofShape": "Flat Roof",
-                                "yearBuilt": 2001
-                            },
-                            "roofAge": "5",
-                            "classCode": "0567",
-                            "propertyBuildingOperationDetails": {
-                                "permitsBalconyCooking": "No",
-                                "permitsSpaceHeaters": "No"
-                            },
-                            "buildingAge": "10",
-                            "roofACV": "ACV"
+                            }
                         },
                         "originalEffectiveTime": "{{$timestamp}}",
                         "category": "exposure"
@@ -98,15 +98,6 @@
                     "LimitOfInsurancePerOccurrence": "bi_100000"
                 },
                 "data": {
-                    "operationalDetails": {
-                        "contractorRequiredEqualGreaterLimits": "N/A",
-                        "hasTenantMaintenanceRequirements": "No",
-                        "hasWrittenInspectionProcedures": "N/A",
-                        "isApplicantAdditionalInsured": "N/A",
-                        "leaseDisclaimsSecurityWarranties": "No",
-                        "maintenanceProvider": "Applicant or its employee(s)"
-                    },
-                    "applicantsExposures": 5,
                     "classCode": "0567",
                     "packageLocationCoverageTerms": {
                         "businessInterruptionCoinsurance": "20",
@@ -115,11 +106,9 @@
                         "includeExtraExpenses": "No",
                         "requestedBusinessInterruption": "20"
                     },
-                    "ordLawTria": [
-                        "TRIA"
-                    ],
                     "packageProductBasicInfo": {
-                        "hasPublicParking": "No",
+                        "hasPublicParking": "N/A",
+                        "hasPublicParkingFee": "N/A",
                         "isNamedAdditionalInsuredOnParking": [
                             "Yes"
                         ],
@@ -129,22 +118,22 @@
                             "state": "TX",
                             "zipCode": 77294
                         },
-                        "parkingSquareFootage": 2500
+                        "parkingSquareFootage": 2500,
+                        "publicParkingAnnualSales": 0
                     },
-                    "packageOccupancyInfo": {
-                        "collectsTenantCoi": "Yes",
-                        "hasVacantUnits": "No",
-                        "highestSquareFootTenant": [
-                            "1 Family Dwellings (Lessor's Risk)"
-                        ],
-                        "requiresProtectiveSafeguardSystemsMaintenance": "No",
-                        "requiresTenantGenLiab": "Yes",
-                        "tenantsOccupants": [
-                            "1 Family Dwellings (Lessor's Risk)"
-                        ],
-                        "vacantSquareFootage": "0"
+                    "riskScores": {
+                        "crimeScore": "1",
+                        "distanceToCoastScore": 30,
+                        "hailScore": "A",
+                        "hhScore": "C",
+                        "hurricaneScore": "A",
+                        "tornadoScore": "A",
+                        "wildfireScore": "A",
+                        "windScore": "A"
                     },
-                    "locationNumber": " 0567 ",
+                    "ordLawTria": [
+                        "TRIA"
+                    ],
                     "glSecurity": {
                         "doesBackgroundChecksEmployee": "N/A",
                         "doesBackgroundChecksTenant": "Yes",
@@ -155,32 +144,53 @@
                         "securityArmed": "N/A",
                         "securityFirmRequiredEqualGreaterLimits": "N/A",
                         "vacancyProcedures": [
-                            "Change locks/Collect keys"
+                            "Change locks/Collect keys",
+                            "Property inspection",
+                            "Handle security deposit according to state and local laws",
+                            "Make necessary repairs",
+                            "Terminate lease agreement"
                         ]
                     },
+                    "packageOccupancyInfo": {
+                        "collectsTenantCoi": "Yes",
+                        "hasVacantUnits": "No",
+                        "highestSquareFootTenant": [
+                            "1 Family Dwellings (Lessor's Risk)"
+                        ],
+                        "occBreakdown": {
+                            "adultOnly": 0,
+                            "elderlyHousing": 0,
+                            "halfwayHouse": 0,
+                            "handicap": 0,
+                            "mentalDrugRehab": 0,
+                            "studentHousing": 0,
+                            "subsidizedHousing": 0
+                        },
+                        "requiresProtectiveSafeguardSystemsMaintenance": "No",
+                        "requiresTenantGenLiab": "Yes",
+                        "tenantsOccupants": [
+                            "1 Family Dwellings (Lessor's Risk)"
+                        ],
+                        "vacantSquareFootage": "0"
+                    },
+                    "applicantsExposures": 5,
                     "hasCommercialCondo": "No",
-                    "disclaimsSecurity": "N/A",
-                    "riskScores": {
-                        "crimeScore": "1",
-                        "distanceToCoastScore": "1",
-                        "hailScore": "1",
-                        "hhScore": "A",
-                        "hurricaneScore": "1",
-                        "tornadoScore": "1",
-                        "wildfireScore": "1",
-                        "windScore": "1"
-                    }
+                    "operationalDetails": {
+                        "contractorRequiredEqualGreaterLimits": "N/A",
+                        "hasTenantMaintenanceRequirements": "No",
+                        "hasWrittenInspectionProcedures": "N/A",
+                        "isApplicantAdditionalInsured": "N/A",
+                        "leaseDisclaimsSecurityWarranties": "Yes",
+                        "maintenanceProvider": "Applicant or its employee(s)"
+                    },
+                    "locationNumber": " 0567 ",
+                    "disclaimsSecurity": "N/A"
                 },
                 "originalEffectiveTime": "{{$timestamp}}",
                 "category": "exposure"
             }
     ],
     "data": {
-            "classOfBusiness": {
-                "hasMulticlassRisk": "No",
-                "occupancyType": "Apartment Buildings"
-            },
-            "hasHistoricalClaims": "No",
             "affinityDiscount": "A",
             "eligibility": {
                 "buildingHazards": [
@@ -218,7 +228,12 @@
                 "leasesHoldHarmless": "Yes",
                 "ownsAllProperties": "Yes",
                 "yearsInBusiness": 2025
-            }
+            },
+            "classOfBusiness": {
+                "hasMulticlassRisk": "No",
+                "occupancyType": "Apartment Buildings"
+            },
+            "hasHistoricalClaims": "No"
         },
     "delinquencyPlanName": "Standard",
     "billingTrigger": "issue",

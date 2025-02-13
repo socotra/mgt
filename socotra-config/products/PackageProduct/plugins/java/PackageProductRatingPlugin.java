@@ -58,6 +58,15 @@ public class PackageProductRatingPlugin implements RatePlugin {
                         // Rating Location
                         log.info("Rating the location: {}", loc.data());
 
+                        log.info("Rating the location: {}", loc.data());
+                        // TODO: clarify behavior around occupancy type for launch
+                        String occupancyType = loc.data().packageOccupancyInfo().tenantsOccupants().get(0);
+                        String classCode = tableRecordFetcher.getTable(PropertyOccupancyClassCodes.class).getRecord(PropertyOccupancyClassCodes.makeKey(occupancyType)).orElseThrow().classCode();
+                        if (classCode == null || classCode.length() == 0) {
+                                classCode = loc.data().classCode();
+                        }
+                        log.info("location class-code: {}", classCode);
+
                         for (PropertyBuilding building : loc.propertyBuildings()) {
                                 BigDecimal contentValue = BigDecimal
                                                 .valueOf(building.data().buildingCoverageTerms().contentValue());
@@ -75,15 +84,15 @@ public class PackageProductRatingPlugin implements RatePlugin {
                                 String windHailDeductibleString = building.data().buildingCoverageTerms()
                                                 .windHailDeductible();
                                 log.info("wh deductible: {}", windHailDeductibleString);
-                                BigDecimal windHailDeductible = new BigDecimal(windHailDeductibleString.substring(0,
+                                BigDecimal windHailDeductible = new BigDecimal("1.00");
+                                if (!windHailDeductibleString.equalsIgnoreCase("Exclude Wind/Hail Coverage")) {
+                                        windHailDeductible = new BigDecimal(windHailDeductibleString.substring(0,
                                                 windHailDeductibleString.length() - 1)).divide(oneHundredth);
+                                }
                                 log.info("Exposure building wind-hail: {}", windHailDeductible);
 
                                 BigDecimal calculatedLOI = buildingValue.multiply(windHailDeductible);
                                 log.info("calculatedLOI for building: {}", calculatedLOI);
-
-                                String classCode = building.data().classCode();
-                                log.info("building class code: {}", classCode);
 
                                 String constructionType = building.data().propertyConstructionUpdates()
                                                 .constructionType();
@@ -271,29 +280,29 @@ public class PackageProductRatingPlugin implements RatePlugin {
                                                  .divide(classBaseRateContents, 2, RoundingMode.HALF_EVEN);
                                 log.info("deductible contents: {}", whDeductibleContents);
                                 // TODO: check
-                                String territoryNamegroup1 = "Austin (Central)";
-                                // String territoryNamegroup1 =
-                                // tableRecordFetcher.getTable(TerritoryProperty.class)
-                                // .getRecord(TerritoryProperty.makeKey(zipCode)).orElseThrow()
-                                // .group1();
+//                                String territoryNamegroup1 = "Austin (Central)";
+                                 String territoryNamegroup1 =
+                                 tableRecordFetcher.getTable(TerritoryProperty.class)
+                                 .getRecord(TerritoryProperty.makeKey(zipCode)).orElseThrow()
+                                 .group1();
                                 log.info("territory group 1 name: {}", territoryNamegroup1);
-                                String territoryNamegroup2 = "Austin (Central)";
-                                // String territoryNamegroup2 =
-                                // tableRecordFetcher.getTable(TerritoryProperty.class)
-                                // .getRecord(TerritoryProperty.makeKey(zipCode)).orElseThrow()
-                                // .group2();
+//                                String territoryNamegroup2 = "Austin (Central)";
+                                 String territoryNamegroup2 =
+                                 tableRecordFetcher.getTable(TerritoryProperty.class)
+                                 .getRecord(TerritoryProperty.makeKey(zipCode)).orElseThrow()
+                                 .group2();
                                 log.info("territory group 2 name: {}", territoryNamegroup2);
 
                                 BigDecimal territory1 = tableRecordFetcher.getTable(Gp1Territory.class)
-                                                .getRecord(Gp1Territory.makeKey(state, territoryNamegroup1))
-                                                .orElseThrow()
-                                                .factor();
+                                        .getRecord(Gp1Territory.makeKey(state, territoryNamegroup1))
+                                        .orElseThrow()
+                                        .structureFactor();
                                 log.info("territory group 1 factor: {}", territory1);
 
                                 BigDecimal territory2 = tableRecordFetcher.getTable(Gp2Territory.class)
-                                                .getRecord(Gp2Territory.makeKey(state, territoryNamegroup2))
-                                                .orElseThrow()
-                                                .factor();
+                                        .getRecord(Gp2Territory.makeKey(state, territoryNamegroup2))
+                                        .orElseThrow()
+                                        .structureFactor();
                                 log.info("territory group 2 factor: {}", territory2);
 
                                 BigDecimal territoryBuildingRate = (((classBRGroup1).multiply(territory1))
@@ -1123,19 +1132,19 @@ public class PackageProductRatingPlugin implements RatePlugin {
         BigDecimal finalRate = (packageRate.multiply(baseRateTerritory).multiply(baseRateLCM).multiply(lolFinalRate).multiply(finalDedRate).multiply(affinityRate)).setScale(3, RoundingMode.CEILING);
         log.info("final rate: {}", finalRate.toString());
 
-        finalRate = (finalRate.multiply(baseRate)).setScale(0, RoundingMode.CEILING);
+        finalRate = (finalRate.multiply(baseRate)).setScale(3, RoundingMode.CEILING);
         log.info("final premium: {}", finalRate.toString());
 
         /* apply full pay discount */
         BigDecimal fullPayDiscount = new BigDecimal(".950");
-        finalRate = (finalRate.multiply(fullPayDiscount)).setScale(0, RoundingMode.CEILING);
+        finalRate = (finalRate.multiply(fullPayDiscount)).setScale(3, RoundingMode.CEILING);
         log.info("final premium w/ discount: {}", finalRate.toString());
 
         BigDecimal terrorismCertificate = new BigDecimal("0.0");
         terrorismCertificate = (terrorismRate.multiply(finalRate)).subtract(finalRate);
         log.info("terrorism certificate amount: {}", terrorismCertificate.toString());
 
-        finalRate = (finalRate.multiply(terrorismRate)).setScale(0, RoundingMode.CEILING);
+        finalRate = (finalRate.multiply(terrorismRate)).setScale(3, RoundingMode.CEILING);
         log.info("final premium w/ TRIA: {}", finalRate.toString());
 
 
@@ -1175,7 +1184,7 @@ public class PackageProductRatingPlugin implements RatePlugin {
                             .multiply(baseRateTerritory)
                             .multiply(lollossOfElectronicDataCoverageRate)
                             .multiply(lossOfElectronicDed_PDFactor)
-                            .multiply(hazardFactor)).setScale(0, RoundingMode.CEILING);
+                            .multiply(hazardFactor)).setScale(3, RoundingMode.CEILING);
                     lossOfElectronics.add(currentCoveragePremium);
 
                     log.info("current locations electronic premium: {} ", currentCoveragePremium.toString());
@@ -1209,7 +1218,7 @@ public class PackageProductRatingPlugin implements RatePlugin {
                             .multiply(baseRateTerritory)
                             .multiply(cyberIncidentCoverageRate)
                             .multiply(cyberIncidentDed_PDFactor)
-                            .multiply(hazardFactor)).setScale(0, RoundingMode.CEILING);
+                            .multiply(hazardFactor)).setScale(3, RoundingMode.CEILING);
                     cyberIncident.add(currentCoveragePremium);
 
                     log.info("current cyber-incident premium: {} ", currentCoveragePremium.toString());

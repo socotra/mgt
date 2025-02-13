@@ -19,6 +19,11 @@
             "type" : "string",
             "maxLength" : 20000,
             "options" : [ "1.0%", "2.0%", "5.0%", "Exclude Wind/Hail Coverage" ]
+        },
+        "windHailDollarAmount" : {
+            "displayName" : "Requested Wind/Hail Deductible($)",
+            "type" : "string",
+            "options" : [ "$2,500", "$5,000", "$10,000" ]
         }
     }
 }

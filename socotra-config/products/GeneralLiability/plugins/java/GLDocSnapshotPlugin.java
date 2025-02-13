@@ -13,6 +13,7 @@ import java.math.BigDecimal;
 public class GLDocSnapshotPlugin implements DocumentDataSnapshotPlugin {
 
     private static final Logger log = LoggerFactory.getLogger(DocumentDataSnapshotPlugin.class);
+
     @Override
     public DocumentDataSnapshot dataSnapshot(GeneralLiabilityQuoteRequest generalLiabilityQuoteRequest) {
         var quote = generalLiabilityQuoteRequest.quote();
@@ -21,9 +22,9 @@ public class GLDocSnapshotPlugin implements DocumentDataSnapshotPlugin {
         Map<String, Object> pricingData = getPricingData(pricing);
         Map<String, Object> locationData = new HashMap<>();
         Map<String, Object> combinedData = new HashMap<>();
-        //TODO: below is throwing an error
-//       var account = DataFetcherFactory.get().getAccount(quote.accountLocator());
-
+        // TODO: below is throwing an error
+        Applicant account = DataFetcherFactory.get().getAccount(quote.accountLocator());
+        log.info("account: {}", account);
 
         log.info("quote: {}", quote);
 
@@ -34,28 +35,27 @@ public class GLDocSnapshotPlugin implements DocumentDataSnapshotPlugin {
             combinedData.put("hasAffinityDiscount", "X");
         }
         combinedData.put("isGeneralLiability", "Yes");
-        combinedData.put("applicantName", "LA Baker Union 17");
-        combinedData.put("applicantPhoneNumber", "7571234170");
-        combinedData.put("line1", "121 Forest Drive");
-        combinedData.put("city", "Houston");
-        combinedData.put("state", "TX");
-        combinedData.put("zipCode", "79901");
-        combinedData.put("applicantLegalEntity", "Individual");
 
-//        // Policy Data Mapping
+        combinedData.put("applicantName", account.data().applicantName());
+        combinedData.put("applicantPhoneNumber", account.data().applicantPhoneNumber());
+        combinedData.put("line1", account.data().applicantMailingAddress().line1());
+        combinedData.put("city", account.data().applicantMailingAddress().city());
+        combinedData.put("state", account.data().applicantMailingAddress().state());
+        combinedData.put("zipCode", account.data().applicantMailingAddress().zipCode());
+        combinedData.put("applicantLegalEntity", account.data().applicantLegalEntity());
+
+        // Policy Data Mapping
         String productName = "Commercial General Liability";
 
         // get today
-        String pattern = "MM/dd/yyyy";
-        DateFormat df = new SimpleDateFormat(pattern);
+        String currentDayPattern = "MM/dd/yyyy";
+        DateFormat df = new SimpleDateFormat(currentDayPattern);
         Date today = Calendar.getInstance().getTime();
-        // Using DateFormat format method we can create a string
-        // representation of a date with the defined format.
         String todayAsString = df.format(today);
 
         // TODO: get effective to and from dates in readable format
-//        Policy Effective From: 2025-01-31T18:26:18Z
-        //
+        // Policy Effective From: 2025-01-31T18:26:18Z
+
         combinedData.put("productName", productName);
         combinedData.put("quote", quote);
         combinedData.put("currentDay", todayAsString);
@@ -101,9 +101,13 @@ public class GLDocSnapshotPlugin implements DocumentDataSnapshotPlugin {
                     combinedData.put("CG00691223", "CG_00_69_12_23");
                     combinedData.put("CG21061223", "CG_21_06_12_23");
                     String classCode = loc.data().classCode();
-                    String[] classCodeCG_21_35 = { "16670" , "40046", "41665", "41666", "43117", "44222", "45224", "45225", "47221", "48177", "48178", "48252", "48924" };
-                    String[] classCodeCG_21_38 = { "43200", "46822", "46881", "46882", "65007", "66122", "66123", "91130", "91636", "98751" };
-                    String[] classCodeCG_21_01 = {"40059", "40061", "40063", "40064", "40066", "40067", "40069", "43421", "43422", "43424", "46911", "46912", "46915", "46916", "47318", "48441", "63217", "63218", "63219", "63220"};
+                    String[] classCodeCG_21_35 = { "16670", "40046", "41665", "41666", "43117", "44222", "45224",
+                            "45225", "47221", "48177", "48178", "48252", "48924" };
+                    String[] classCodeCG_21_38 = { "43200", "46822", "46881", "46882", "65007", "66122", "66123",
+                            "91130", "91636", "98751" };
+                    String[] classCodeCG_21_01 = { "40059", "40061", "40063", "40064", "40066", "40067", "40069",
+                            "43421", "43422", "43424", "46911", "46912", "46915", "46916", "47318", "48441", "63217",
+                            "63218", "63219", "63220" };
 
                     if (check(classCodeCG_21_35, classCode)) {
                         combinedData.put("CG21351001", "CG_21_35_10_01");
@@ -115,18 +119,22 @@ public class GLDocSnapshotPlugin implements DocumentDataSnapshotPlugin {
                         combinedData.put("CG22700413", "CG_22_70_04_13");
                     }
                     combinedData.put("CG21450798", "CG_21_45_07_98");
-                    // TODO: filter class code result.put("CG_21_52_04_13",DocumentSelectionAction.generate);
+                    // TODO: filter class code
+                    // result.put("CG_21_52_04_13",DocumentSelectionAction.generate);
 
                     combinedData.put("CG21671204", "CG_21_67_12_04");
-                    combinedData.put("CG21900106", "CG_21_90_01_06");
+                    // TODO: ensure generate
+//                    combinedData.put("CG21900106", "CG_21_90_01_06");
                     combinedData.put("CG21960305", "CG_21_96_03_05");
                     combinedData.put("CG40041219", "CG_40_04_12_19");
                     combinedData.put("CG40320523", "CG_40_32_05_23");
 
-                    // TODO: ensure other forms are not attached prior, does not seem other forms are also attached for launch
+                    // TODO: ensure other forms are not attached prior, does not seem other forms
+                    // are also attached for launch
                     combinedData.put("CG40141220", "CG_40_14_12_20");
                     combinedData.put("CG40351223", "CG_40_35_12_23");
 
+                    // TODO: may not be added...
                     combinedData.put("CGDS011001", "CG_DS_01_10_01");
 
                     combinedData.put("MGTGL10000125", "MGT_GL_1000_01_25");
@@ -171,7 +179,8 @@ public class GLDocSnapshotPlugin implements DocumentDataSnapshotPlugin {
                         combinedData.put("CG21490999", "CG_21_49_09_99");
                         combinedData.put("IL02751113", "IL_02_75_11_13");
                     } else if (currentState.equals("IL")) {
-                        // TODO: MGT needs to privde result.put("CG_02_00_01_18",DocumentSelectionAction.generate);
+                        // TODO: MGT needs to privde
+                        // result.put("CG_02_00_01_18",DocumentSelectionAction.generate);
                         combinedData.put("CG21471207", "CG_21_47_12_07");
                         combinedData.put("IL01470911", "IL_01_47_09_11");
                         combinedData.put("IL02751113", "IL_02_75_11_13");
@@ -220,20 +229,21 @@ public class GLDocSnapshotPlugin implements DocumentDataSnapshotPlugin {
             }
         }
 
-        pricingData.put("premium", "$"  + Double.toString(premium));
+        pricingData.put("premium", "$" + Double.toString(premium));
         pricingData.put("tax", "$" + Double.toString(taxes));
-        pricingData.put("premiumAndTaxes", "$" + Double.toString(premium+taxes));
-        pricingData.put("premiumAndTaxesAndTerrorism", "$" + Double.toString(premium+taxes+terrosimCertificate));
+        pricingData.put("premiumAndTaxes", "$" + Double.toString(premium + taxes));
+        pricingData.put("premiumAndTaxesAndTerrorism", "$" + Double.toString(premium + taxes + terrosimCertificate));
         pricingData.put("stampingFee", "$" + Double.toString(stampingFee));
         pricingData.put("carrierPolicyFee", "$" + Double.toString(carrierPolicyFee));
         pricingData.put("installmentFee", "$" + Double.toString(installmentFee));
         pricingData.put("brokerFee", "$" + Double.toString(brokerFee));
         pricingData.put("terrosimCertificate", "$" + Double.toString(terrosimCertificate));
-        pricingData.put("premiumAndTaxesAndFees", "$" + Double.toString(brokerFee+stampingFee+carrierPolicyFee+installmentFee+premium+taxes+terrosimCertificate));
+        pricingData.put("premiumAndTaxesAndFees", "$" + Double.toString(
+                brokerFee + stampingFee + carrierPolicyFee + installmentFee + premium + taxes + terrosimCertificate));
         return pricingData;
     }
-    private static boolean check(String[] arr, String toCheckValue)
-    {
+
+    private static boolean check(String[] arr, String toCheckValue) {
         // check if the specified element
         // is present in the array or not
         // using Linear Search method

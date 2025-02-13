@@ -21,6 +21,7 @@ public class PropDocSelectionPlugin implements DocumentSelectionPlugin {
         result.put("CP_00_10_10_12", DocumentSelectionAction.generate);
         PropertyQuote quote = propertyQuoteRequest.quote();
         // NOTE: going live with only 1 location, may need a check in the future to ensure same documents are not duplicated
+        result.put("Prop_Dec_Page_1",DocumentSelectionAction.generate);
         if (quote.data().propertyOptionalForms() != null && quote.data().propertyOptionalForms().size() > 0) {
             for (PropertyOptionalForms form : quote.data().propertyOptionalForms()) {
                 String currentForm = form.optionalForms();
@@ -112,7 +113,8 @@ public class PropDocSelectionPlugin implements DocumentSelectionPlugin {
                                 result.put("CP_10_46_10_12", DocumentSelectionAction.generate);
                             }
                             result.put("IL_02_75_11_13", DocumentSelectionAction.generate);
-                            result.put("IL_12_04_12_98", DocumentSelectionAction.generate);
+                            // TODO: document needs to be provided
+                            // combinedData.put("IL12041298", "IL_12_04_12_98");
                             result.put("IL_N_178_03_13", DocumentSelectionAction.generate);
                         } else if (currentState.equalsIgnoreCase("IL")) {
                             result.put("CP_01_49_06_07", DocumentSelectionAction.generate);

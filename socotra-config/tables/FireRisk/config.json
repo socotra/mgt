@@ -1,0 +1,12 @@
+{
+  "columns": {
+    "highestSquareFootTenant": {
+      "dataType": "string",
+      "isKey": true
+    },
+    "fireRisk": {
+      "dataType": "string",
+      "isKey": false
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "columns" : {
+    "hazardHubScore" : {
+      "dataType" : "string",
+      "isKey" : true
+    },
+    "requiredDeductible" : {
+      "dataType" : "string",
+      "isKey" :false
+    }
+  },
+  "selectionTimeBasis" : "policyStartTime"
+}

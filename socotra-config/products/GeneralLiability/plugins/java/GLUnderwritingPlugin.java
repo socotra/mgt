@@ -31,7 +31,9 @@ public class GLUnderwritingPlugin implements UnderwritingPlugin {
             flagsToCreate.add(createUnderwritingFlag("block", "Refer to underwriter. Building, wiring, plumbing block"));
         } else if (!(quote.data().eligibility().ineligibleOccupants().contains("None"))) {
             flagsToCreate.add(createUnderwritingFlag("reject", "Rejected. Ineligible occupants"));
-        } else if (!(quote.data().eligibility().buildingHazards().contains("Have an elevator")) && !(quote.data().eligibility().buildingHazards().contains("None"))) {
+        } else if (quote.data().eligibility().hasElevatorMaintenanceAgreement().equalsIgnoreCase("No")) {
+            flagsToCreate.add(createUnderwritingFlag("block", "Blocked. No elevator agreement"));
+        }  else if (!(quote.data().eligibility().buildingHazards().contains("Have an elevator")) && !(quote.data().eligibility().buildingHazards().contains("None"))) {
             flagsToCreate.add(createUnderwritingFlag("reject", "Rejected. Building hazards"));
         }else if (quote.data().eligibility().hasCommercialCooking().equalsIgnoreCase("Yes")) {
             flagsToCreate.add(createUnderwritingFlag("block", "Refer to underwriter. Business entails services outside of what is listed."));
@@ -80,6 +82,8 @@ public class GLUnderwritingPlugin implements UnderwritingPlugin {
             for (Location loc : quote.locations()) {
                 if (loc.data().packageProductBasicInfo().isNamedAdditionalInsuredOnParking().contains("No")) {
                     flagsToCreate.add(createUnderwritingFlag("reject", "Rejected. Parking not insured."));
+                } else if (loc.data().packageProductBasicInfo().publicParkingAnnualSales() !=null && loc.data().packageProductBasicInfo().publicParkingAnnualSales() > 0) {
+                    flagsToCreate.add(createUnderwritingFlag("block", "Public parking receipts greater than 0."));
                 } else if (loc.data().glOperationalDetails().leaseDisclaimsSecurityWarranties().equalsIgnoreCase("No")) {
                     flagsToCreate.add(createUnderwritingFlag("block", "Lease disclaims security warranties"));
                 } else if (loc.data().packageBuildingDetails().isPoolFenced().equalsIgnoreCase("No")) {
@@ -116,6 +120,15 @@ public class GLUnderwritingPlugin implements UnderwritingPlugin {
                     flagsToCreate.add(createUnderwritingFlag("reject", "Rejected. Armed security."));
                 } else if (!loc.data().packageOccupancyInfo().vacantSquareFootage().equalsIgnoreCase("0")) {
                     flagsToCreate.add(createUnderwritingFlag("block", "Blocked. Vacancy Square Footage present."));
+                } else if (loc.data().glSecurity().vacancyProcedures().contains("None of the above")) {
+                    flagsToCreate.add(createUnderwritingFlag("block", "Refer to underwriter. No vacancy procedures."));
+                } else if (!loc.data().glSecurity().vacancyProcedures().contains("Change locks/Collect keys") ||
+                        !loc.data().glSecurity().vacancyProcedures().contains("Property inspection") ||
+                        !loc.data().glSecurity().vacancyProcedures().contains("Handle security deposit according to state and local laws") ||
+                        !loc.data().glSecurity().vacancyProcedures().contains("Make necessary repairs") ||
+                        !loc.data().glSecurity().vacancyProcedures().contains("Terminate lease agreement")
+                ) {
+                    flagsToCreate.add(createUnderwritingFlag("block", "Refer to underwriter. Not all vacancy procedures selected."));
                 }
             }
         }

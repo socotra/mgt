@@ -1,17 +1,21 @@
 {
-    "columns" : {
-      "state" : {
-        "dataType" : "string",
-        "isKey" : true
-      },
-      "territory" : {
-        "dataType" : "string",
-        "isKey" : true
-      },
-      "factor" : {
-        "dataType" : "decimal",
-        "isKey" : false
-      }
+  "columns" : {
+    "state" : {
+      "dataType" : "string",
+      "isKey" : true
     },
-    "selectionTimeBasis" : "policyStartTime"
-  }
+    "territory" : {
+      "dataType" : "string",
+      "isKey" : true
+    },
+    "structureFactor" : {
+      "dataType" : "decimal",
+      "isKey" : false
+    },
+    "contentFactor" : {
+      "dataType" : "decimal",
+      "isKey" : false
+    }
+  },
+  "selectionTimeBasis" : "policyStartTime"
+}
