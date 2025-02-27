@@ -115,7 +115,7 @@
                         "locationAddress": {
                             "city": "North Charleston",
                             "line1": "4401 Withers Drive",
-                            "state": "TX",
+                            "state": f"{name}",
                             "zipCode": 77294
                         },
                         "parkingSquareFootage": 2500,
@@ -154,9 +154,7 @@
                     "packageOccupancyInfo": {
                         "collectsTenantCoi": "Yes",
                         "hasVacantUnits": "No",
-                        "highestSquareFootTenant": [
-                            "1 Family Dwellings (Lessor's Risk)"
-                        ],
+                        "highestSquareFootTenant": "1 Family Dwellings (Lessor's Risk)",
                         "occBreakdown": {
                             "adultOnly": 0,
                             "elderlyHousing": 0,

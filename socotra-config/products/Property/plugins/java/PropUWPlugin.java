@@ -88,6 +88,25 @@ public class PropUWPlugin implements UnderwritingPlugin {
                 String currentState = loc.data().packageProductBasicInfo().locationAddress().state();
 
                 for (PropertyBuilding building : loc.propertyBuildings()) {
+                    String constructionType = building.data().propertyConstructionUpdates().constructionType();
+                    String hasSprinklers = building.data().propertySafeguards().hasSprinklers();
+                    String highestSquareFootTenant = loc.data().packageOccupancyInfo().highestSquareFootTenant();
+                    log.info("highest square foot tenant: {}", highestSquareFootTenant);
+
+                    // retrieve fire risk for tenant
+                    String fireRisk = tableRecordFetcher.getTable(FireRisk.class).getRecord(FireRisk.makeKey(highestSquareFootTenant)).orElseThrow().fireRisk();
+                    log.info("fire risk for tenant: {}", fireRisk);
+
+                    // retrieve building limit
+                    if (constructionType.equalsIgnoreCase("MNC") || constructionType.equalsIgnoreCase("FR")) {
+                        constructionType = "MNC/FR";
+                    }
+                    if (hasSprinklers.equalsIgnoreCase("N/A")) {
+                        hasSprinklers = "No";
+                    }
+                    int buildingLimit = tableRecordFetcher.getTable(FireRiskLimits.class).getRecord(FireRiskLimits.makeKey(fireRisk, constructionType, hasSprinklers)).orElseThrow().buildingLimit();
+                    log.info("building limit: {}", Integer.toString(buildingLimit));
+
                     if ((Year.now().getValue() - building.data().propertyConstructionUpdates().yearBuilt()) > 40) {
                         flagsToCreate.add(
                                 createUnderwritingFlag("block", "Refer to underwriter. House is older than 40 years."));
@@ -169,9 +188,9 @@ public class PropUWPlugin implements UnderwritingPlugin {
                         flagsToCreate.add(createUnderwritingFlag("block", "Refer to underwriter. Not all vacancy procedures selected."));
                     } else if (loc.data().glSecurity().securityArmed().equalsIgnoreCase("Armed")) {
                         flagsToCreate.add(createUnderwritingFlag("reject", "Rejected. Armed security."));
+                    } else if (building.data().buildingCoverageTerms().buildingValue() > buildingLimit) {
+                        flagsToCreate.add(createUnderwritingFlag("block", "Blocked. Building value exceeds maximum allotted value, due to frame, fire-risk, and construction."));
                     } else if (check(coastalStates, currentState)) {
-                        // retrieve construction type
-                        String constructionType = building.data().propertyConstructionUpdates().constructionType();
                         if (!constructionType.equalsIgnoreCase("Frame")) {
                             constructionType = "Non-Frame";
                         }

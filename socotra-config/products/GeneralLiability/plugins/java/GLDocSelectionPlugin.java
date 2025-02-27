@@ -70,8 +70,9 @@ public class GLDocSelectionPlugin implements DocumentSelectionPlugin {
                     result.put("CG_21_45_07_98",DocumentSelectionAction.generate);
                     // filter class code result.put("CG_21_52_04_13",DocumentSelectionAction.generate);
 
-                    result.put("CG_21_67_12_04",DocumentSelectionAction.generate);
-                    result.put("CG_21_90_01_06",DocumentSelectionAction.generate);
+                    result.put("CG_21_67_12_04", DocumentSelectionAction.generate);
+                    // TODO: optional for general-liability
+                    // result.put("CG_21_90_01_06",DocumentSelectionAction.generate);
                     result.put("CG_21_96_03_05",DocumentSelectionAction.generate);
                     result.put("CG_40_04_12_19", DocumentSelectionAction.generate);
                     result.put("CG_40_32_05_23", DocumentSelectionAction.generate);

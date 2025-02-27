@@ -84,6 +84,8 @@ public class PackageDocSnapshotPlugin implements DocumentDataSnapshotPlugin {
                 locationData.put("zipCode", loc.data().packageProductBasicInfo().locationAddress().zipCode());
                 locationData.put("causeOfLossForm", loc.data().packageLocationCoverageTerms().causeOfLossForm());
                 locationData.put("coinsurancePercent", loc.data().packageLocationCoverageTerms().coinsurancePercent());
+                locationData.put("applicantsExposures", Integer.toString(loc.data().applicantsExposures()));
+                locationData.put("classCode", loc.data().classCode());
 
                 locationData.put("perOccurence", loc.limitOfInsurancePerOccurrence().value().toString());
                 locationData.put("aggregate", loc.limitOfInsuranceAggregate().value().toString());

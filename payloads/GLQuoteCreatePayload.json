@@ -64,9 +64,7 @@
                     "packageOccupancyInfo": {
                         "collectsTenantCoi": "No",
                         "hasVacantUnits": "No",
-                        "highestSquareFootTenant": [
-                            "1 Family Dwellings (Lessor's Risk)"
-                        ],
+                        "highestSquareFootTenant": "1 Family Dwellings (Lessor's Risk)",
                         "occBreakdown": {
                             "adultOnly": 0,
                             "elderlyHousing": 0,
