@@ -99,9 +99,9 @@ public class PackageDocSelectionPlugin implements DocumentSelectionPlugin {
                         result.put("IL_P_001_01_04", DocumentSelectionAction.generate);
 
                         if (currentState.equalsIgnoreCase("OH")) {
-                            if (causeOfLossForm.equalsIgnoreCase("Special")) {
-                                result.put("CP_10_46_10_12", DocumentSelectionAction.generate);
-                            }
+                            // if (causeOfLossForm.equalsIgnoreCase("Special")) {
+                            //     result.put("CP_10_46_10_12", DocumentSelectionAction.generate);
+                            // }
                             if (windHailDeductible.equalsIgnoreCase("Exclude Wind/Hail Coverage")) {
                                 result.put("CP_10_54_06_07", DocumentSelectionAction.generate);
                             }
@@ -113,9 +113,9 @@ public class PackageDocSelectionPlugin implements DocumentSelectionPlugin {
 
                             // NOTE: not in package
                             result.put("CP_02_02_08_24", DocumentSelectionAction.generate);
-                            if (causeOfLossForm.equalsIgnoreCase("Special")) {
-                                result.put("CP_10_46_10_12", DocumentSelectionAction.generate);
-                            }
+                            // if (causeOfLossForm.equalsIgnoreCase("Special")) {
+                            //     result.put("CP_10_46_10_12", DocumentSelectionAction.generate);
+                            // }
                             result.put("IL_02_75_11_13", DocumentSelectionAction.generate);
                             // TODO: document needs to be provided
                             // result.put("IL_12_04_12_98", DocumentSelectionAction.generate);
@@ -156,8 +156,9 @@ public class PackageDocSelectionPlugin implements DocumentSelectionPlugin {
                     result.put("CG_21_45_07_98",DocumentSelectionAction.generate);
                     // filter class code result.put("CG_21_52_04_13",DocumentSelectionAction.generate);
 
-                    result.put("CG_21_67_12_04",DocumentSelectionAction.generate);
-                    result.put("CG_21_90_01_06",DocumentSelectionAction.generate);
+                    result.put("CG_21_67_12_04", DocumentSelectionAction.generate);
+                    // TODO: document is not provided
+                    // result.put("CG_21_90_01_06",DocumentSelectionAction.generate);
                     result.put("CG_21_96_03_05",DocumentSelectionAction.generate);
                     result.put("CG_40_04_12_19", DocumentSelectionAction.generate);
                     result.put("CG_40_32_05_23", DocumentSelectionAction.generate);

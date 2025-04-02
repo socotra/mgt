@@ -1,0 +1,49 @@
+extraExpense,coinsurance,riskType,factor
+Yes,"90%","Manufacturing & Mining",0.65
+No,"100%","Rental Properties",0.47
+No,No-Coinsurance,"Mercantile & Non-Manufacturing",1.94
+No,"60%","Rental Properties",0.64
+Yes,"125%","Mercantile & Non-Manufacturing",0.43
+No,"125%","Mercantile & Non-Manufacturing",0.47
+Yes,No-Coinsurance,"Mercantile & Non-Manufacturing",1.76
+No,"125%","Manufacturing & Mining",0.62
+No,"50%","Manufacturing & Mining",1
+No,"100%","Manufacturing & Mining",0.66
+Yes,"50%","Rental Properties",0.65
+No,"60%","Manufacturing & Mining",0.85
+No,"90%","Rental Properties",0.5
+Yes,"70%","Manufacturing & Mining",0.73
+Yes,"70%","Mercantile & Non-Manufacturing",0.58
+No,"60%","Mercantile & Non-Manufacturing",0.67
+Yes,No-Coinsurance,"Manufacturing & Mining",2.1
+No,No-Coinsurance,"Rental Properties",1.77
+Yes,"60%","Manufacturing & Mining",0.77
+Yes,"50%","Mercantile & Non-Manufacturing",0.69
+No,"70%","Manufacturing & Mining",0.81
+Yes,"90%","Mercantile & Non-Manufacturing",0.5
+Yes,"100%","Rental Properties",0.43
+Yes,"80%","Manufacturing & Mining",0.68
+Yes,"100%","Mercantile & Non-Manufacturing",0.46
+Yes,"70%","Rental Properties",0.54
+No,"50%","Mercantile & Non-Manufacturing",0.76
+No,No-Coinsurance,"Manufacturing & Mining",2.31
+Yes,"50%","Manufacturing & Mining",0.9
+Yes,"60%","Rental Properties",0.58
+No,"80%","Manufacturing & Mining",0.75
+Yes,"60%","Mercantile & Non-Manufacturing",0.61
+No,"125%","Rental Properties",0.43
+Yes,No-Coinsurance,"Rental Properties",1.61
+No,"90%","Manufacturing & Mining",0.71
+No,"80%","Rental Properties",0.55
+Yes,"80%","Rental Properties",0.5
+Yes,"90%","Rental Properties",0.46
+Yes,"80%","Mercantile & Non-Manufacturing",0.54
+No,"70%","Mercantile & Non-Manufacturing",0.64
+No,"50%","Rental Properties",0.72
+No,"80%","Mercantile & Non-Manufacturing",0.59
+No,"70%","Rental Properties",0.59
+Yes,"100%","Manufacturing & Mining",0.6
+Yes,"125%","Manufacturing & Mining",0.56
+No,"90%","Mercantile & Non-Manufacturing",0.55
+No,"100%","Mercantile & Non-Manufacturing",0.5
+Yes,"125%","Rental Properties",0.38

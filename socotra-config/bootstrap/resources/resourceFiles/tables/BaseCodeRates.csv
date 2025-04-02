@@ -1,0 +1,9 @@
+symbol,definition,rate
+s,"Gross Sales",1000
+o,"Total Operating Expenses",1000
+c,"Total Cost",1000
+p,Payroll,1000
+a,Area,1000
+u,Units,1
+t,Other,1
+m,Admissions,1000

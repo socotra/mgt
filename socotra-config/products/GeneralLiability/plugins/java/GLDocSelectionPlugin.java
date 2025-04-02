@@ -37,12 +37,7 @@ public class GLDocSelectionPlugin implements DocumentSelectionPlugin {
                 String currentState = loc.data().packageProductBasicInfo().locationAddress().state();
                 log.info("current state for document generation: {}", currentState);
                 if (currentState.equals("TX") || currentState.equals("IL") || currentState.equals("OH")) {
-                    // TODO: only applies to package
-//                    for (PropertyBuilding building : loc.propertyBuildings()) {
-//                        if (building.data().propertyBuildingInfo().hasMortgage().equals("Yes")) {
-//                            result.put("CG_20_18_12_19", DocumentSelectionAction.generate);
-//                        }
-//                    }
+
                     if ((loc.liabilityDeductible().value()).compareTo(zero) > 0) {
                         result.put("CG_03_00_01_96", DocumentSelectionAction.generate);
                     }
@@ -51,6 +46,7 @@ public class GLDocSelectionPlugin implements DocumentSelectionPlugin {
                     result.put("CG_21_06_12_23", DocumentSelectionAction.generate);
                     // NOTE cannot have the above with the document below...
                     // result.put("CG_21_09_06_15",DocumentSelectionAction.generate);
+                    
                     // filter by class-code
                     String classCode = loc.data().classCode();
                     String[] classCodeCG_21_35 = { "16670" , "40046", "41665", "41666", "43117", "44222", "45224", "45225", "47221", "48177", "48178", "48252", "48924" };

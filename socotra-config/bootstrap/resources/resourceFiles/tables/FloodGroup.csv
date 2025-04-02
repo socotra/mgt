@@ -1,0 +1,25 @@
+floodGroup,zone,coverage,factor
+"Fire Res",X,Building,0.059
+"Frame Non-Combust",A,Building,1.071
+"Joisted Masonry Mas Non-Comb",A,Building,0.793
+"Joisted Masonry Mas Non-Comb",X500,Contents,0.858
+"Joisted Masonry Mas Non-Comb",A,Contents,2.039
+"Frame Non-Combust",A,Contents,2.752
+"Joisted Masonry Mas Non-Comb",D,Contents,0.345
+"Frame Non-Combust",D,Contents,0.466
+"Fire Res",A,Building,0.595
+"Fire Res",X,Contents,0.209
+"Joisted Masonry Mas Non-Comb",X,Building,0.079
+"Joisted Masonry Mas Non-Comb",D,Building,0.121
+"Frame Non-Combust",X,Contents,0.376
+"Frame Non-Combust",X500,Contents,1.158
+"Joisted Masonry Mas Non-Comb",X500,Building,0.288
+"Frame Non-Combust",X500,Building,0.389
+"Fire Res",A,Contents,1.529
+"Frame Non-Combust",X,Building,0.106
+"Fire Res",X500,Building,0.216
+"Fire Res",X500,Contents,0.643
+"Joisted Masonry Mas Non-Comb",X,Contents,0.279
+"Fire Res",D,Building,0.091
+"Fire Res",D,Contents,0.259
+"Frame Non-Combust",D,Building,0.163

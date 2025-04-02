@@ -1,0 +1,2 @@
+scope,ruleId,field,condition,value,decision,message
+uwRule,1,"quote.data().glQuestions().hasMulticlassRisk()",=,Yes,block,"Refer to underwriter. Business entails services outside of what is listed."

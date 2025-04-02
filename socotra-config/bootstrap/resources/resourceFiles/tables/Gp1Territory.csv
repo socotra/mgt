@@ -1,0 +1,158 @@
+state,territory,structureFactor,contentFactor
+AL,"City of Mobile - Seacoast",0.482,0.482
+NY,"NYC - Terr 1",1.000,1.000
+RI,"BoS - Terr II",1.000,1.000
+MD,"BoS - Seacoast",0.835,0.835
+CA,"Balance of State / District I",0.524,0.520
+NC,Charlotte,1.000,1.000
+PA,"Zone 3",1.000,0.855
+DE,"Entire State - Med Wind Hazard",1.000,1.000
+MD,"Baltimore CO excluding baltimore - Inland",1.516,1.516
+OK,Tulsa,1.119,1.126
+MT,"Counties of Beaverhead, Broadwater, Deer Lodge, Flathead, Gallatin, Granite, Jefferson, Lake, Lewis and Clark, Lincoln, Madison, Mineral, Missoula, Powell, Ravalli, Sanders and Silver Bow.",1.000,1.000
+MD,"BoS - Inland",0.835,0.835
+NE,"Balance of State / East",1.056,1.056
+AK,"Entire State District 2",1.000,1.246
+IL,"Chicago - Cook County",1.000,1.000
+MD,"Anne Arundel CO - Inland",0.787,0.787
+IL,"Balance of State - Cook County",0.625,0.627
+MA,"Remainder of State (Terr II)",1.075,1.075
+CA,"City of Sacramento / District II",0.441,0.440
+MD,"Montgomery CO - Inland",0.708,0.708
+VA,"City of Richmond / Wind Hazard Med",1.000,1.000
+MO,"Saint Louis",1.465,1.461
+NV,"Entire State",1.000,1.000
+OK,"Balance of State",1.165,1.168
+OK,"Oklahoma City",1.000,1.000
+NH,"Balance of State",1.000,1.000
+DE,"Entire State - High Wind Hazard",1.000,1.000
+KY,Louisville,1.000,1.000
+AR,"Entire State",1.000,1.000
+AL,"Balance of State - Seacoast",0.607,0.607
+OH,Toledo,1.147,1.147
+ME,"BoS - Terr II",1.000,1.000
+WY,"Entire State (Eastern)",1.000,1.000
+MS,0,1.000,1.000
+OR,Portland,1.000,1.000
+VA,"Balance of State / Wind Hazard Med",0.700,0.700
+GA,"Dekalb County",0.995,0.994
+TX,"Houston (Seacoast 2)",1.187,1.189
+VA,"Virginia Beach / Wind Hazard Severe",0.503,0.503
+MD,"BoS - Beach",0.835,0.835
+NM,"Rest of State - Western",1.155,1.155
+OR,"Balance of State",2.000,1.958
+NJ,"BOS Territory III",0.658,0.658
+NE,"Balance of State / West",1.056,1.056
+OH,Akron,0.761,0.759
+MI,"BoS - Terr II",1.000,1.000
+NJ,"BOS Territory I",0.658,0.658
+TX,"Dallas (Central)",1.000,1.000
+RI,"BoS - Terr I",1.000,1.000
+OH,Cincinnati,0.454,0.453
+TN,Nashville,0.803,0.800
+CO,"Balance of State - West",0.681,0.690
+CA,"Oakland / District I",0.648,0.648
+CA,"City of San Diego / District I",0.379,0.384
+MA,"Remainder of State (Terr III)",1.075,1.075
+VA,"Norfolk / Wind Hazard High",0.675,0.675
+IN,"Balance of State",0.564,0.564
+TN,"Balance of State",0.708,0.713
+NY,"BOS - Terr 1",0.655,0.683
+MS,"Entire State - Med Wind Hazard",1.000,1.000
+SC,Inland,1.000,1.000
+NC,"Balance of State -  Terr III",0.757,0.754
+GA,"Balance of State - Inland",0.660,0.663
+NY,"Buffalo - Terr 1",0.596,0.625
+IL,"Balance of State - Balance of State",0.625,0.627
+MO,"Balance of State",0.787,0.783
+LA,"Balance of State - 5",0.818,1.295
+UT,"Entire State",1.000,1.000
+OH,Dayton,0.601,0.600
+MA,"Boston (Terr I)",1.000,1.000
+VA,"Norfolk / Wind Hazard Severe",0.675,0.675
+TX,"Balance Central",1.022,1.022
+LA,"Balance of State - 1",0.818,1.295
+PA,Philadelphia,1.182,1.000
+AL,"City of Mobile - Beach",0.482,0.482
+MT,"Counties of Cascade, Glacier, Liberty, Meagher, Park, Pondera, Teton and Toole.",1.000,1.000
+IN,Indianapolis,1.000,1.000
+OH,Cleveland,1.000,1.000
+AK,"Entire State District 1",1.000,1.000
+WV,"Entire State",1.000,1.000
+ME,"BoS - Terr I",1.000,1.000
+IA,"Entire State",1.000,1.000
+GA,"Balance of State - Seacoast",0.660,0.663
+WA,"Balance of State",1.000,1.000
+TN,Memphis,1.000,1.000
+KS,"Balance of State",1.000,1.000
+WI,"Balance of State",0.715,0.752
+GA,"Balance of State - Beach",0.660,0.663
+CA,"City of Los Angeles / District I",1.000,1.000
+CO,"Balance of State - East",0.681,0.690
+NM,"Albuquerque (Western)",1.000,1.000
+TX,"Balance Seacoast 1",1.022,1.022
+VA,"Balance of State / Wind Hazard High",0.700,0.700
+MN,Minneapolis,0.749,0.749
+VA,"Fairfax County / Wind Hazard Med",0.883,0.883
+TX,"Austin (Central)",1.033,1.033
+NC,"Balance of State -  Terr I",0.757,0.754
+MI,"BoS - Terr I",0.255,0.256
+AZ,"Balance of State",0.777,0.779
+NY,"BOS - Terr 2",0.655,0.683
+MT,"All Remaining Counties",1.000,1.000
+CA,"Balance of State / District II",0.524,0.520
+NH,Coast,1.000,1.163
+MD,"Prince George's CO - Inland",2.533,2.533
+NY,"NYC - Terr 3",1.000,1.000
+NC,"Balance of State -  Terr II",0.757,0.754
+PA,"Zone 2",0.667,0.566
+NY,"NYC - Terr 2",1.000,1.000
+ND,"Balance of State",1.000,1.000
+LA,"Balance of State - 4",0.818,1.295
+PA,Pittsburgh,0.879,0.755
+NM,"Rest of State - Eastern",1.155,1.155
+VA,"Balance of State / Wind Hazard Severe",0.700,0.700
+NY,"Rochester - Terr 1",0.725,0.760
+WI,Milwaukee,1.000,1.000
+KY,"Balance of State",1.460,1.460
+SC,Seacoast,1.000,1.000
+VT,"Entire State",1.000,1.000
+CO,"Denver - East",1.000,1.000
+CA,"Long Beach / District I",0.703,0.704
+CT,"BoS - Terr II",1.000,1.000
+MN,"Entire State",1.000,1.000
+MA,"Remainder of State (Terr I)",1.075,1.075
+OH,"Balance of State",0.644,0.647
+TX,"Balance Northern",1.022,1.022
+CA,"San Jose / District I",0.910,0.912
+AZ,Tuscon,0.723,0.733
+NJ,Newark,1.000,1.000
+PA,"Zone 1",0.803,0.692
+ID,"Entire State",1.000,1.000
+TX,"Balance Seacoast 2",1.022,1.022
+GA,Atlanta,1.000,1.000
+MD,"Baltimore City - Inland",1.000,1.000
+WY,"Entire State (Western)",1.000,1.000
+NY,"BOS - Terr 3",0.655,0.683
+MA,"Boston (Terr II)",1.000,1.000
+AL,"Birmingham - Inland",1.000,1.000
+NJ,"BOS Territory II",0.658,0.658
+LA,"Balance of State - 3",0.818,1.295
+SC,Beach,1.000,1.000
+AL,"Balance of State - Beach",0.607,0.607
+SD,"Entire State",1.000,1.000
+PA,"Allegheny County (Excluding Pittsburgh)",1.045,0.893
+CT,"BoS - Terr I",1.000,1.000
+LA,"New Orleans - 5",1.000,1.000
+TX,"San Antonio (Central)",0.978,0.978
+AZ,Phoenix,1.000,1.000
+NJ,"Jersey City",0.728,0.728
+MN,"St. Paul",0.718,0.718
+MO,"Kansas City",1.000,1.000
+KY,Lexington-Fayette,1.095,1.095
+NE,"Omaha / East",1.000,1.000
+OH,Columbus,0.387,0.382
+LA,"Balance of State - 2",0.818,1.295
+CA,"San Francisco / District I",0.628,0.624
+AL,"Balance of State - Inland",0.607,0.607
+MS,"Entire State - High Wind Hazard",1.000,1.000

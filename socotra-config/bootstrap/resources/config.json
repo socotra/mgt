@@ -1,0 +1,707 @@
+{
+    "resourceGroups": {
+        "initialGroup": {
+            "resourceNames": [
+                "AOI_Inc_Factor",
+                "AdvQuote",
+                "AgreedValue",
+                "BPPPropertyCoverage",
+                "BaseCodeRates",
+                "BaseLCv2",
+                "BuilderRenovations",
+                "Build_Age_Fctr",
+                "BuildingCode_Property",
+                "BuildingWeights",
+                "CG_00_01_04_13",
+                "CG_00_69_12_23",
+                "CG_01_03_06_06",
+                "CG_02_05_12_04",
+                "CG_03_00_01_96",
+                "CG_04_35_12_07",
+                "CG_04_41_12_19",
+                "CG_20_05_12_19",
+                "CG_20_11_12_19",
+                "CG_20_13_12_19",
+                "CG_20_18_12_19",
+                "CG_20_23_12_19",
+                "CG_20_24_12_19",
+                "CG_20_26_12_19",
+                "CG_20_27_12_19",
+                "CG_21_01_12_19",
+                "CG_21_06_12_23",
+                "CG_21_09_06_15",
+                "CG_21_35_10_01",
+                "CG_21_36_03_05",
+                "CG_21_38_11_85",
+                "CG_21_45_07_98",
+                "CG_21_47_12_07",
+                "CG_21_49_09_99",
+                "CG_21_52_04_13",
+                "CG_21_66_12_19",
+                "CG_21_67_12_04",
+                "CG_21_90_01_06",
+                "CG_21_96_03_05",
+                "CG_22_70_04_13",
+                "CG_24_04_12_19",
+                "CG_26_85_06_03",
+                "CG_40_04_12_19",
+                "CG_40_14_12_20",
+                "CG_40_28_09_22",
+                "CG_40_32_05_23",
+                "CG_40_35_12_23",
+                "CG_DS_01_10_01",
+                "CP_00_10_10_12",
+                "CP_00_30_10_12",
+                "CP_00_32_10_12",
+                "CP_00_90_07_88",
+                "CP_01_23_04_08",
+                "CP_01_40_07_06",
+                "CP_01_42_03_12",
+                "CP_02_02_08_24",
+                "CP_03_20_04_18",
+                "CP_03_21_10_12",
+                "CP_03_29_04_18",
+                "CP_04_05_09_17",
+                "CP_04_11_09_17",
+                "CP_04_38_09_17",
+                "CP_04_39_10_90",
+                "CP_04_60_10_12",
+                "CP_10_20_10_12",
+                "CP_10_30_09_17",
+                "CP_10_36_10_12",
+                "CP_10_46_10_12",
+                "CP_10_52_06_07",
+                "CP_10_54_06_07",
+                "CP_10_55_06_07",
+                "CP_10_56_06_07",
+                "CP_10_75_12_20",
+                "CP_12_11_09_17",
+                "CP_12_18_10_12",
+                "CP_14_15_07_88",
+                "CP_15_10_10_12",
+                "CP_15_20_06_95",
+                "CP_15_31_09_17",
+                "CP_15_56_06_07",
+                "CP_16_15_07_88",
+                "CP_99_03_12_19",
+                "ClaimsMade",
+                "ClassCodes",
+                "CoinsuranceFactor",
+                "CyberIncident53",
+                "CyberIncident54",
+                "CyberIncident62",
+                "DeductibleBI",
+                "DeductibleBIPD",
+                "DeductibleFactor",
+                "DeductiblePD",
+                "DiscountFactorsAffinity",
+                "DiscountFactorsTenure",
+                "DistanceToCoast",
+                "ElectronicFactors",
+                "ElectronicHazardFactors",
+                "ExposureBaseSymbols",
+                "ExtendedFactor",
+                "ExtraExpense",
+                "FireRisk",
+                "FireRiskLimits",
+                "FloodGroup",
+                "FormFactor",
+                "GLOccupancyClassCodes",
+                "GL_Dec_Page_1",
+                "Gp1Territory",
+                "Group2BR",
+                "Gp2Territory",
+                "HailWindTornadoScores",
+                "IFL14",
+                "IFL23",
+                "IFL26",
+                "ILFPO14",
+                "ILFPO17",
+                "IFLPO27",
+                "IFLRule23",
+                "IL_00_03_09_08",
+                "IL_00_17_11_98",
+                "IL_00_21_09_08",
+                "IL_01_47_09_11",
+                "IL_01_62_10_13",
+                "IL_01_68_03_12",
+                "IL_02_44_09_07",
+                "IL_02_75_11_13",
+                "IL_02_84_01_18",
+                "IL_09_17_11_85",
+                "IL_09_35_07_02",
+                "IL_09_52_01_15",
+                "IL_09_85_12_20",
+                "IL_12_01_11_85",
+                "IL_12_06_04_03",
+                "IL_N_178_03_13",
+                "IL_N_179_05_15",
+                "IL_P_001_01_04",
+                "LCM",
+                "LCM_Property",
+                "Limit_Ins_Table_Property",
+                "MGT_GL_1000_01_25",
+                "MGT_GL_1001_01_25",
+                "MGT_GL_1002_01_25",
+                "MGT_GL_1003_01_25",
+                "MGT_GL_1004_01_25",
+                "MGT_GL_1005_01_25",
+                "MGT_GL_1006_01_25",
+                "MGT_GL_1007_01_25",
+                "MortgageEO",
+                "Ordinance",
+                "PackageProductTable",
+                "Package_Dec_Page_1",
+                "PostOrdinance",
+                "PriorClaims",
+                "ProductWithdrawal",
+                "Prop_Dec_Page_1",
+                "PropertyOccupancyClassCodes",
+                "ProtectionClass",
+                "RoofACV",
+                "Roof_Age_Fct",
+                "Roof_Type_Fctr",
+                "Rule51B",
+                "Safety_Factors",
+                "SewerFctr",
+                "TaxFeesGL",
+                "TaxFeesProperty",
+                "Territory",
+                "TerritoryProperty",
+                "TerritoryRelativity",
+                "Terrorism",
+                "Tier_Factors",
+                "TobaccoRates",
+                "TreeShrubFctr",
+                "UWRules",
+                "WindHailDeductible",
+                "WindHailExc"
+            ],
+            "selectionStartTime": "2020-01-01T00:00:00Z"
+        }
+    },
+    "resourceInstances": {
+        "AOI_Inc_Factor": {
+            "staticName": "AOI_Inc_Factor"
+        },
+        "AdvQuote": {
+            "staticName": "AdvQuote"
+        },
+        "AgreedValue": {
+            "staticName": "AgreedValue"
+        },
+        "BPPPropertyCoverage": {
+            "staticName": "BPPPropertyCoverage"
+        },
+        "BaseCodeRates": {
+            "staticName": "BaseCodeRates"
+        },
+        "BaseLCv2": {
+            "staticName": "BaseLCv2"
+        },
+        "BuilderRenovations": {
+            "staticName": "BuilderRenovations"
+        },
+        "Build_Age_Fctr": {
+            "staticName": "Build_Age_Fctr"
+        },
+        "BuildingCode_Property": {
+            "staticName": "BuildingCode_Property"
+        },
+        "BuildingWeights": {
+            "staticName": "BuildingWeights"
+        },
+        "CG_00_01_04_13": {
+            "staticName": "CG_00_01_04_13"
+        },
+        "CG_00_69_12_23": {
+            "staticName": "CG_00_69_12_23"
+        },
+        "CG_01_03_06_06": {
+            "staticName": "CG_01_03_06_06"
+        },
+        "CG_02_05_12_04": {
+            "staticName": "CG_02_05_12_04"
+        },
+        "CG_03_00_01_96": {
+            "staticName": "CG_03_00_01_96"
+        },
+        "CG_04_35_12_07": {
+            "staticName": "CG_04_35_12_07"
+        },
+        "CG_04_41_12_19": {
+            "staticName": "CG_04_41_12_19"
+        },
+        "CG_20_05_12_19": {
+            "staticName": "CG_20_05_12_19"
+        },
+        "CG_20_11_12_19": {
+            "staticName": "CG_20_11_12_19"
+        },
+        "CG_20_13_12_19": {
+            "staticName": "CG_20_13_12_19"
+        },
+        "CG_20_18_12_19": {
+            "staticName": "CG_20_18_12_19"
+        },
+        "CG_20_23_12_19": {
+            "staticName": "CG_20_23_12_19"
+        },
+        "CG_20_24_12_19": {
+            "staticName": "CG_20_24_12_19"
+        },
+        "CG_20_26_12_19": {
+            "staticName": "CG_20_26_12_19"
+        },
+        "CG_20_27_12_19": {
+            "staticName": "CG_20_27_12_19"
+        },
+        "CG_21_01_12_19": {
+            "staticName": "CG_21_01_12_19"
+        },
+        "CG_21_06_12_23": {
+            "staticName": "CG_21_06_12_23"
+        },
+        "CG_21_09_06_15": {
+            "staticName": "CG_21_09_06_15"
+        },
+        "CG_21_35_10_01": {
+            "staticName": "CG_21_35_10_01"
+        },
+        "CG_21_36_03_05": {
+            "staticName": "CG_21_36_03_05"
+        },
+        "CG_21_38_11_85": {
+            "staticName": "CG_21_38_11_85"
+        },
+        "CG_21_45_07_98": {
+            "staticName": "CG_21_45_07_98"
+        },
+        "CG_21_47_12_07": {
+            "staticName": "CG_21_47_12_07"
+        },
+        "CG_21_49_09_99": {
+            "staticName": "CG_21_49_09_99"
+        },
+        "CG_21_52_04_13": {
+            "staticName": "CG_21_52_04_13"
+        },
+        "CG_21_66_12_19": {
+            "staticName": "CG_21_66_12_19"
+        },
+        "CG_21_67_12_04": {
+            "staticName": "CG_21_67_12_04"
+        },
+        "CG_21_90_01_06": {
+            "staticName": "CG_21_90_01_06"
+        },
+        "CG_21_96_03_05": {
+            "staticName": "CG_21_96_03_05"
+        },
+        "CG_22_70_04_13": {
+            "staticName": "CG_22_70_04_13"
+        },
+        "CG_24_04_12_19": {
+            "staticName": "CG_24_04_12_19"
+        },
+        "CG_26_85_06_03": {
+            "staticName": "CG_26_85_06_03"
+        },
+        "CG_40_04_12_19": {
+            "staticName": "CG_40_04_12_19"
+        },
+        "CG_40_14_12_20": {
+            "staticName": "CG_40_14_12_20"
+        },
+        "CG_40_28_09_22": {
+            "staticName": "CG_40_28_09_22"
+        },
+        "CG_40_32_05_23": {
+            "staticName": "CG_40_32_05_23"
+        },
+        "CG_40_35_12_23": {
+            "staticName": "CG_40_35_12_23"
+        },
+        "CG_DS_01_10_01": {
+            "staticName": "CG_DS_01_10_01"
+        },
+        "CP_00_10_10_12": {
+            "staticName": "CP_00_10_10_12"
+        },
+        "CP_00_30_10_12": {
+            "staticName": "CP_00_30_10_12"
+        },
+        "CP_00_32_10_12": {
+            "staticName": "CP_00_32_10_12"
+        },
+        "CP_00_90_07_88": {
+            "staticName": "CP_00_90_07_88"
+        },
+        "CP_01_23_04_08": {
+            "staticName": "CP_01_23_04_08"
+        },
+        "CP_01_40_07_06": {
+            "staticName": "CP_01_40_07_06"
+        },
+        "CP_01_42_03_12": {
+            "staticName": "CP_01_42_03_12"
+        },
+        "CP_02_02_08_24": {
+            "staticName": "CP_02_02_08_24"
+        },
+        "CP_03_20_04_18": {
+            "staticName": "CP_03_20_04_18"
+        },
+        "CP_03_21_10_12": {
+            "staticName": "CP_03_21_10_12"
+        },
+        "CP_03_29_04_18": {
+            "staticName": "CP_03_29_04_18"
+        },
+        "CP_04_05_09_17": {
+            "staticName": "CP_04_05_09_17"
+        },
+        "CP_04_11_09_17": {
+            "staticName": "CP_04_11_09_17"
+        },
+        "CP_04_38_09_17": {
+            "staticName": "CP_04_38_09_17"
+        },
+        "CP_04_39_10_90": {
+            "staticName": "CP_04_39_10_90"
+        },
+        "CP_04_60_10_12": {
+            "staticName": "CP_04_60_10_12"
+        },
+        "CP_10_20_10_12": {
+            "staticName": "CP_10_20_10_12"
+        },
+        "CP_10_30_09_17": {
+            "staticName": "CP_10_30_09_17"
+        },
+        "CP_10_36_10_12": {
+            "staticName": "CP_10_36_10_12"
+        },
+        "CP_10_46_10_12": {
+            "staticName": "CP_10_46_10_12"
+        },
+        "CP_10_52_06_07": {
+            "staticName": "CP_10_52_06_07"
+        },
+        "CP_10_54_06_07": {
+            "staticName": "CP_10_54_06_07"
+        },
+        "CP_10_55_06_07": {
+            "staticName": "CP_10_55_06_07"
+        },
+        "CP_10_56_06_07": {
+            "staticName": "CP_10_56_06_07"
+        },
+        "CP_10_75_12_20": {
+            "staticName": "CP_10_75_12_20"
+        },
+        "CP_12_11_09_17": {
+            "staticName": "CP_12_11_09_17"
+        },
+        "CP_12_18_10_12": {
+            "staticName": "CP_12_18_10_12"
+        },
+        "CP_14_15_07_88": {
+            "staticName": "CP_14_15_07_88"
+        },
+        "CP_15_10_10_12": {
+            "staticName": "CP_15_10_10_12"
+        },
+        "CP_15_20_06_95": {
+            "staticName": "CP_15_20_06_95"
+        },
+        "CP_15_31_09_17": {
+            "staticName": "CP_15_31_09_17"
+        },
+        "CP_15_56_06_07": {
+            "staticName": "CP_15_56_06_07"
+        },
+        "CP_16_15_07_88": {
+            "staticName": "CP_16_15_07_88"
+        },
+        "CP_99_03_12_19": {
+            "staticName": "CP_99_03_12_19"
+        },
+        "ClaimsMade": {
+            "staticName": "ClaimsMade"
+        },
+        "ClassCodes": {
+            "staticName": "ClassCodes"
+        },
+        "CoinsuranceFactor": {
+            "staticName": "CoinsuranceFactor"
+        },
+        "CyberIncident53": {
+            "staticName": "CyberIncident53"
+        },
+        "CyberIncident54": {
+            "staticName": "CyberIncident54"
+        },
+        "CyberIncident62": {
+            "staticName": "CyberIncident62"
+        },
+        "DeductibleBI": {
+            "staticName": "DeductibleBI"
+        },
+        "DeductibleBIPD": {
+            "staticName": "DeductibleBIPD"
+        },
+        "DeductibleFactor": {
+            "staticName": "DeductibleFactor"
+        },
+        "DeductiblePD": {
+            "staticName": "DeductiblePD"
+        },
+        "DiscountFactorsAffinity": {
+            "staticName": "DiscountFactorsAffinity"
+        },
+        "DiscountFactorsTenure": {
+            "staticName": "DiscountFactorsTenure"
+        },
+        "DistanceToCoast": {
+            "staticName": "DistanceToCoast"
+        },
+        "ElectronicFactors": {
+            "staticName": "ElectronicFactors"
+        },
+        "ElectronicHazardFactors": {
+            "staticName": "ElectronicHazardFactors"
+        },
+        "ExposureBaseSymbols": {
+            "staticName": "ExposureBaseSymbols"
+        },
+        "ExtendedFactor": {
+            "staticName": "ExtendedFactor"
+        },
+        "ExtraExpense": {
+            "staticName": "ExtraExpense"
+        },
+        "FireRisk": {
+            "staticName": "FireRisk"
+        },
+        "FireRiskLimits": {
+            "staticName": "FireRiskLimits"
+        },
+        "FloodGroup": {
+            "staticName": "FloodGroup"
+        },
+        "FormFactor": {
+            "staticName": "FormFactor"
+        },
+        "GLOccupancyClassCodes": {
+            "staticName": "GLOccupancyClassCodes"
+        },
+        "GL_Dec_Page_1": {
+            "staticName": "GL_Dec_Page_1"
+        },
+        "Gp1Territory": {
+            "staticName": "Gp1Territory"
+        },
+        "Group2BR": {
+            "staticName": "Group2BR"
+        },
+        "Gp2Territory": {
+            "staticName": "Gp2Territory"
+        },
+        "HailWindTornadoScores": {
+            "staticName": "HailWindTornadoScores"
+        },
+        "IFL14": {
+            "staticName": "IFL14"
+        },
+        "IFL23": {
+            "staticName": "IFL23"
+        },
+        "IFL26": {
+            "staticName": "IFL26"
+        },
+        "ILFPO14": {
+            "staticName": "ILFPO14"
+        },
+        "ILFPO17": {
+            "staticName": "ILFPO17"
+        },
+        "IFLPO27": {
+            "staticName": "IFLPO27"
+        },
+        "IFLRule23": {
+            "staticName": "IFLRule23"
+        },
+        "IL_00_03_09_08": {
+            "staticName": "IL_00_03_09_08"
+        },
+        "IL_00_17_11_98": {
+            "staticName": "IL_00_17_11_98"
+        },
+        "IL_00_21_09_08": {
+            "staticName": "IL_00_21_09_08"
+        },
+        "IL_01_47_09_11": {
+            "staticName": "IL_01_47_09_11"
+        },
+        "IL_01_62_10_13": {
+            "staticName": "IL_01_62_10_13"
+        },
+        "IL_01_68_03_12": {
+            "staticName": "IL_01_68_03_12"
+        },
+        "IL_02_44_09_07": {
+            "staticName": "IL_02_44_09_07"
+        },
+        "IL_02_75_11_13": {
+            "staticName": "IL_02_75_11_13"
+        },
+        "IL_02_84_01_18": {
+            "staticName": "IL_02_84_01_18"
+        },
+        "IL_09_17_11_85": {
+            "staticName": "IL_09_17_11_85"
+        },
+        "IL_09_35_07_02": {
+            "staticName": "IL_09_35_07_02"
+        },
+        "IL_09_52_01_15": {
+            "staticName": "IL_09_52_01_15"
+        },
+        "IL_09_85_12_20": {
+            "staticName": "IL_09_85_12_20"
+        },
+        "IL_12_01_11_85": {
+            "staticName": "IL_12_01_11_85"
+        },
+        "IL_12_06_04_03": {
+            "staticName": "IL_12_06_04_03"
+        },
+        "IL_N_178_03_13": {
+            "staticName": "IL_N_178_03_13"
+        },
+        "IL_N_179_05_15": {
+            "staticName": "IL_N_179_05_15"
+        },
+        "IL_P_001_01_04": {
+            "staticName": "IL_P_001_01_04"
+        },
+        "LCM": {
+            "staticName": "LCM"
+        },
+        "LCM_Property": {
+            "staticName": "LCM_Property"
+        },
+        "Limit_Ins_Table_Property": {
+            "staticName": "Limit_Ins_Table_Property"
+        },
+        "MGT_GL_1000_01_25": {
+            "staticName": "MGT_GL_1000_01_25"
+        },
+        "MGT_GL_1001_01_25": {
+            "staticName": "MGT_GL_1001_01_25"
+        },
+        "MGT_GL_1002_01_25": {
+            "staticName": "MGT_GL_1002_01_25"
+        },
+        "MGT_GL_1003_01_25": {
+            "staticName": "MGT_GL_1003_01_25"
+        },
+        "MGT_GL_1004_01_25": {
+            "staticName": "MGT_GL_1004_01_25"
+        },
+        "MGT_GL_1005_01_25": {
+            "staticName": "MGT_GL_1005_01_25"
+        },
+        "MGT_GL_1006_01_25": {
+            "staticName": "MGT_GL_1006_01_25"
+        },
+        "MGT_GL_1007_01_25": {
+            "staticName": "MGT_GL_1007_01_25"
+        },
+        "MortgageEO": {
+            "staticName": "MortgageEO"
+        },
+        "Ordinance": {
+            "staticName": "Ordinance"
+        },
+        "PackageProductTable": {
+            "staticName": "PackageProductTable"
+        },
+        "Package_Dec_Page_1": {
+            "staticName": "Package_Dec_Page_1"
+        },
+        "PostOrdinance": {
+            "staticName": "PostOrdinance"
+        },
+        "PriorClaims": {
+            "staticName": "PriorClaims"
+        },
+        "ProductWithdrawal": {
+            "staticName": "ProductWithdrawal"
+        },
+        "Prop_Dec_Page_1": {
+            "staticName": "Prop_Dec_Page_1"
+        },
+        "PropertyOccupancyClassCodes": {
+            "staticName": "PropertyOccupancyClassCodes"
+        },
+        "ProtectionClass": {
+            "staticName": "ProtectionClass"
+        },
+        "RoofACV": {
+            "staticName": "RoofACV"
+        },
+        "Roof_Age_Fct": {
+            "staticName": "Roof_Age_Fct"
+        },
+        "Roof_Type_Fctr": {
+            "staticName": "Roof_Type_Fctr"
+        },
+        "Rule51B": {
+            "staticName": "Rule51B"
+        },
+        "Safety_Factors": {
+            "staticName": "Safety_Factors"
+        },
+        "SewerFctr": {
+            "staticName": "SewerFctr"
+        },
+        "TaxFeesGL": {
+            "staticName": "TaxFeesGL"
+        },
+        "TaxFeesProperty": {
+            "staticName": "TaxFeesProperty"
+        },
+        "Territory": {
+            "staticName": "Territory"
+        },
+        "TerritoryProperty": {
+            "staticName": "TerritoryProperty"
+        },
+        "TerritoryRelativity": {
+            "staticName": "TerritoryRelativity"
+        },
+        "Terrorism": {
+            "staticName": "Terrorism"
+        },
+        "Tier_Factors": {
+            "staticName": "Tier_Factors"
+        },
+        "TobaccoRates": {
+            "staticName": "TobaccoRates"
+        },
+        "TreeShrubFctr": {
+            "staticName": "TreeShrubFctr"
+        },
+        "UWRules": {
+            "staticName": "UWRules"
+        },
+        "WindHailDeductible": {
+            "staticName": "WindHailDeductible"
+        },
+        "WindHailExc": {
+            "staticName": "WindHailExc"
+        }
+    }
+}

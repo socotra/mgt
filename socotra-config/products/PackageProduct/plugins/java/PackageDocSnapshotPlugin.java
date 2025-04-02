@@ -27,10 +27,8 @@ public class PackageDocSnapshotPlugin implements DocumentDataSnapshotPlugin {
         log.info("quote: {}", quote);
 
         String affinityDiscount = quote.data().affinityDiscount();
-        log.info("quote: {}", quote);
-        combinedData.put("hasAffinityDiscount", "□");
         if (!affinityDiscount.equalsIgnoreCase("None")) {
-            combinedData.put("hasAffinityDiscount", "X");
+            combinedData.put("hasAffinityDiscount", "Yes");
         }
         combinedData.put("isPackage", "Yes");
 
@@ -93,6 +91,9 @@ public class PackageDocSnapshotPlugin implements DocumentDataSnapshotPlugin {
                 locationData.put("medicalLimit", loc.limitOfInsuranceMedical().value().toString());
 
                 for (PropertyBuilding building : loc.propertyBuildings()) {
+                    if (building.data().propertySafeguards().hasSprinklers().equalsIgnoreCase("Yes")) {
+                        locationData.put("hasSprinklerDiscount", "Yes");
+                    }
                     locationData.put("yearBuilt", Integer.toString(building.data().propertyConstructionUpdates().yearBuilt()));
                     locationData.put("squareFoot", Integer.toString(building.data().propertyBuildingInfo().area()));
                     locationData.put("buildingValue", "$" + Integer.toString(building.data().buildingCoverageTerms().buildingValue()));
@@ -148,8 +149,14 @@ public class PackageDocSnapshotPlugin implements DocumentDataSnapshotPlugin {
 
                     // for ord law being attached
                     if (loc.data().ordLawTria().size() > 0 && loc.data().ordLawTria().contains("Ord Law")) {
-                        combinedData.put("CP04050917", "CP_04_05_09_17");
+                        if (loc.data().ordLawTria().contains("Ord Law")) {
+                            combinedData.put("CP04050917", "CP_04_05_09_17");
+                        }
+                        if (loc.data().ordLawTria().contains("TRIA")) {
+                            result.put("CG_21_90_01_06", DocumentSelectionAction.generate);
+                        }
                     }
+                    
 
                     combinedData.put("CG00010413", "CG_00_01_04_13");
                     combinedData.put("CG00691223", "CG_00_69_12_23");
@@ -177,7 +184,8 @@ public class PackageDocSnapshotPlugin implements DocumentDataSnapshotPlugin {
                     // result.put("CG_21_52_04_13",DocumentSelectionAction.generate);
 
                     combinedData.put("CG21671204", "CG_21_67_12_04");
-                    combinedData.put("CG21900106", "CG_21_90_01_06");
+                    // TODO
+                    // result.put("CG_21_90_01_06",DocumentSelectionAction.generate);
                     combinedData.put("CG21960305", "CG_21_96_03_05");
                     combinedData.put("CG40041219", "CG_40_04_12_19");
                     combinedData.put("CG40320523", "CG_40_32_05_23");
@@ -281,9 +289,9 @@ public class PackageDocSnapshotPlugin implements DocumentDataSnapshotPlugin {
 
 
                         if (currentState.equalsIgnoreCase("OH")) {
-                            if (causeOfLossForm.equalsIgnoreCase("Special")) {
-                                combinedData.put("CP10461012", "CP_10_46_10_12");
-                            }
+                            // if (causeOfLossForm.equalsIgnoreCase("Special")) {
+                            //     combinedData.put("CP10461012", "CP_10_46_10_12");
+                            // }
                             if (windHailDeductible.equalsIgnoreCase("Exclude Wind/Hail Coverage")) {
                                 combinedData.put("CP10540607", "CP_10_54_06_07");
                             }
@@ -295,9 +303,9 @@ public class PackageDocSnapshotPlugin implements DocumentDataSnapshotPlugin {
 
                             // NOTE: not in package
                             combinedData.put("CP02020824", "CP_02_02_08_24");
-                            if (causeOfLossForm.equalsIgnoreCase("Special")) {
-                                combinedData.put("CP10461012", "CP_10_46_10_12");
-                            }
+                            // if (causeOfLossForm.equalsIgnoreCase("Special")) {
+                            //     combinedData.put("CP10461012", "CP_10_46_10_12");
+                            // }
                             combinedData.put("IL02751113", "IL_02_75_11_13");
                             combinedData.put("IL02751113", "IL_02_75_11_13");
                             // TODO: document needs to be provided
@@ -357,18 +365,40 @@ public class PackageDocSnapshotPlugin implements DocumentDataSnapshotPlugin {
                 terrosimCertificate += item.rate().doubleValue();
             }
         }
-
-        pricingData.put("premium", "$" + Double.toString(premium));
-        pricingData.put("tax", "$" + Double.toString(taxes));
-        pricingData.put("premiumAndTaxes", "$" + Double.toString(premium + taxes));
-        pricingData.put("premiumAndTaxesAndTerrorism", "$" + Double.toString(premium + taxes + terrosimCertificate));
-        pricingData.put("stampingFee", "$" + Double.toString(stampingFee));
-        pricingData.put("carrierPolicyFee", "$" + Double.toString(carrierPolicyFee));
-        pricingData.put("installmentFee", "$" + Double.toString(installmentFee));
-        pricingData.put("brokerFee", "$" + Double.toString(brokerFee));
-        pricingData.put("terrosimCertificate", "$" + Double.toString(terrosimCertificate));
-        pricingData.put("premiumAndTaxesAndFees", "$" + Double.toString(
-                brokerFee + stampingFee + carrierPolicyFee + installmentFee + premium + taxes + terrosimCertificate));
+        
+        if (premium > 0.0) {
+            pricingData.put("premium", "$" + Double.toString(premium));
+        }
+        if (taxes > 0.0) {
+            pricingData.put("tax", "$" + Double.toString(taxes));
+        }
+        double premiumTaxes = premium + taxes;
+        if (premiumTaxes > 0.0) {
+            pricingData.put("premiumAndTaxes", "$" + Double.toString(premiumTaxes));
+        }
+        double premiumAndTaxesAndTerrorism = premium + taxes + terrosimCertificate;
+        if (premiumAndTaxesAndTerrorism > 0.0) {
+            pricingData.put("premiumAndTaxesAndTerrorism", "$" + Double.toString(premiumAndTaxesAndTerrorism));
+        }
+        if (stampingFee > 0.0) {
+            pricingData.put("stampingFee", "$" + Double.toString(stampingFee));
+        }
+        if (carrierPolicyFee > 0.0) {
+            pricingData.put("carrierPolicyFee", "$" + Double.toString(carrierPolicyFee));
+        }
+        if (installmentFee > 0.0) {
+            pricingData.put("installmentFee", "$" + Double.toString(installmentFee));
+        }
+        if (brokerFee > 0.0) {
+            pricingData.put("brokerFee", "$" + Double.toString(brokerFee));
+        }
+        if (terrosimCertificate > 0.0) {
+            pricingData.put("terrosimCertificate", "$" + Double.toString(terrosimCertificate));
+        }
+        double premiumAndTaxesAndFees = brokerFee + stampingFee + carrierPolicyFee + installmentFee + premium + taxes + terrosimCertificate; 
+        if (premiumAndTaxesAndFees > 0.0) {
+            pricingData.put("premiumAndTaxesAndFees", "$" + Double.toString(premiumAndTaxesAndFees));
+        }
         return pricingData;
     }
 

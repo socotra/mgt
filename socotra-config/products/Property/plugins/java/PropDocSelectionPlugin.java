@@ -51,9 +51,15 @@ public class PropDocSelectionPlugin implements DocumentSelectionPlugin {
                     result.put("CP_01_42_03_12", DocumentSelectionAction.generate);
 
                     // for ord law being attached
-                    if (loc.data().ordLawTria().size() > 0 && loc.data().ordLawTria().contains("Ord Law")) {
-                        result.put("CP_04_05_09_17", DocumentSelectionAction.generate);
+                    if (loc.data().ordLawTria().size() > 0) {
+                        if (loc.data().ordLawTria().contains("Ord Law")) {
+                            combinedData.put("CP04050917", "CP_04_05_09_17");
+                        }
+                        if (loc.data().ordLawTria().contains("TRIA")) {
+                            result.put("CG_21_90_01_06", DocumentSelectionAction.generate);
+                        }
                     }
+                    
                     // for safety questions add
                     for (PropertyBuilding building : loc.propertyBuildings()) {
                         String hasSprinklers = building.data().propertySafeguards().hasSprinklers();
@@ -95,9 +101,9 @@ public class PropDocSelectionPlugin implements DocumentSelectionPlugin {
                         result.put("IL_P_001_01_04", DocumentSelectionAction.generate);
 
                         if (currentState.equalsIgnoreCase("OH")) {
-                            if (causeOfLossForm.equalsIgnoreCase("Special")) {
-                                result.put("CP_10_46_10_12", DocumentSelectionAction.generate);
-                            }
+                            // if (causeOfLossForm.equalsIgnoreCase("Special")) {
+                            //     result.put("CP_10_46_10_12", DocumentSelectionAction.generate);
+                            // }
                             if (windHailDeductible.equalsIgnoreCase("Exclude Wind/Hail Coverage")) {
                                 result.put("CP_10_54_06_07", DocumentSelectionAction.generate);
                             }
@@ -109,9 +115,9 @@ public class PropDocSelectionPlugin implements DocumentSelectionPlugin {
 
                             // NOTE: not in package
                             result.put("CP_02_02_08_24", DocumentSelectionAction.generate);
-                            if (causeOfLossForm.equalsIgnoreCase("Special")) {
-                                result.put("CP_10_46_10_12", DocumentSelectionAction.generate);
-                            }
+                            // if (causeOfLossForm.equalsIgnoreCase("Special")) {
+                            //     result.put("CP_10_46_10_12", DocumentSelectionAction.generate);
+                            // }
                             result.put("IL_02_75_11_13", DocumentSelectionAction.generate);
                             // TODO: document needs to be provided
                             // combinedData.put("IL12041298", "IL_12_04_12_98");

@@ -29,10 +29,8 @@ public class GLDocSnapshotPlugin implements DocumentDataSnapshotPlugin {
         log.info("quote: {}", quote);
 
         String affinityDiscount = quote.data().affinityDiscount();
-        log.info("quote: {}", quote);
-        combinedData.put("hasAffinityDiscount", "□");
         if (!affinityDiscount.equalsIgnoreCase("None")) {
-            combinedData.put("hasAffinityDiscount", "X");
+            combinedData.put("hasAffinityDiscount", "Yes");
         }
         combinedData.put("isGeneralLiability", "Yes");
 
@@ -228,18 +226,40 @@ public class GLDocSnapshotPlugin implements DocumentDataSnapshotPlugin {
                 terrosimCertificate += item.rate().doubleValue();
             }
         }
-
-        pricingData.put("premium", "$" + Double.toString(premium));
-        pricingData.put("tax", "$" + Double.toString(taxes));
-        pricingData.put("premiumAndTaxes", "$" + Double.toString(premium + taxes));
-        pricingData.put("premiumAndTaxesAndTerrorism", "$" + Double.toString(premium + taxes + terrosimCertificate));
-        pricingData.put("stampingFee", "$" + Double.toString(stampingFee));
-        pricingData.put("carrierPolicyFee", "$" + Double.toString(carrierPolicyFee));
-        pricingData.put("installmentFee", "$" + Double.toString(installmentFee));
-        pricingData.put("brokerFee", "$" + Double.toString(brokerFee));
-        pricingData.put("terrosimCertificate", "$" + Double.toString(terrosimCertificate));
-        pricingData.put("premiumAndTaxesAndFees", "$" + Double.toString(
-                brokerFee + stampingFee + carrierPolicyFee + installmentFee + premium + taxes + terrosimCertificate));
+        
+        if (premium > 0.0) {
+            pricingData.put("premium", "$" + Double.toString(premium));
+        }
+        if (taxes > 0.0) {
+            pricingData.put("tax", "$" + Double.toString(taxes));
+        }
+        double premiumTaxes = premium + taxes;
+        if (premiumTaxes > 0.0) {
+            pricingData.put("premiumAndTaxes", "$" + Double.toString(premiumTaxes));
+        }
+        double premiumAndTaxesAndTerrorism = premium + taxes + terrosimCertificate;
+        if (premiumAndTaxesAndTerrorism > 0.0) {
+            pricingData.put("premiumAndTaxesAndTerrorism", "$" + Double.toString(premiumAndTaxesAndTerrorism));
+        }
+        if (stampingFee > 0.0) {
+            pricingData.put("stampingFee", "$" + Double.toString(stampingFee));
+        }
+        if (carrierPolicyFee > 0.0) {
+            pricingData.put("carrierPolicyFee", "$" + Double.toString(carrierPolicyFee));
+        }
+        if (installmentFee > 0.0) {
+            pricingData.put("installmentFee", "$" + Double.toString(installmentFee));
+        }
+        if (brokerFee > 0.0) {
+            pricingData.put("brokerFee", "$" + Double.toString(brokerFee));
+        }
+        if (terrosimCertificate > 0.0) {
+            pricingData.put("terrosimCertificate", "$" + Double.toString(terrosimCertificate));
+        }
+        double premiumAndTaxesAndFees = brokerFee + stampingFee + carrierPolicyFee + installmentFee + premium + taxes + terrosimCertificate; 
+        if (premiumAndTaxesAndFees > 0.0) {
+            pricingData.put("premiumAndTaxesAndFees", "$" + Double.toString(premiumAndTaxesAndFees));
+        }
         return pricingData;
     }
 
