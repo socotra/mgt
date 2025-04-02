@@ -153,7 +153,7 @@ public class PackageDocSnapshotPlugin implements DocumentDataSnapshotPlugin {
                             combinedData.put("CP04050917", "CP_04_05_09_17");
                         }
                         if (loc.data().ordLawTria().contains("TRIA")) {
-                            result.put("CG_21_90_01_06", DocumentSelectionAction.generate);
+                            combinedData.put("CG21900106", "CG_21_90_01_06");
                         }
                     }
                     

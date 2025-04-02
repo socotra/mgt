@@ -53,7 +53,7 @@ public class PropDocSelectionPlugin implements DocumentSelectionPlugin {
                     // for ord law being attached
                     if (loc.data().ordLawTria().size() > 0) {
                         if (loc.data().ordLawTria().contains("Ord Law")) {
-                            combinedData.put("CP04050917", "CP_04_05_09_17");
+                            result.put("CP_04_05_09_17", DocumentSelectionAction.generate);
                         }
                         if (loc.data().ordLawTria().contains("TRIA")) {
                             result.put("CG_21_90_01_06", DocumentSelectionAction.generate);
