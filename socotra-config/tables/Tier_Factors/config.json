@@ -1,9 +1,5 @@
 {
     "columns" : {
-      "tier" : {
-        "dataType" : "int",
-        "isKey" : true
-      },
       "scoreFrom" : {
         "dataType" : "string",
         "isKey" : false
@@ -11,6 +7,10 @@
       "to" : {
         "dataType" : "decimal",
         "isKey" : false
+      },
+      "tier" : {
+        "dataType" : "string",
+        "isKey" : true
       },
       "buildingGroup1": {
         "dataType" : "decimal",
@@ -28,11 +28,11 @@
         "dataType" : "decimal",
         "isKey" : false
       },
-      "abcGroup1": {
+      "aBCGroup1": {
         "dataType" : "decimal",
         "isKey" : false
       },
-      "abcGroup2": {
+      "aBCGroup2": {
         "dataType" : "decimal",
         "isKey" : false
       }

@@ -1,21 +1,47 @@
 {
-  "columns" : {
-    "state" : {
-      "dataType" : "string",
-      "isKey" : true
+    "columns" : {
+      "limit" : {
+        "dataType" : "string",
+        "isKey" : true
+      },
+      "form" : {
+        "dataType" : "decimal",
+        "isKey" : false
+      },
+      "coverage" : {
+        "dataType" : "string",
+        "isKey" : true
+      },
+      "constructionClass" : {
+        "dataType" : "decimal",
+        "isKey" : false
+      },
+      "buildingGroup1" : {
+        "dataType" : "decimal",
+        "isKey" : false
+      },
+      "buildingGroup2" : {
+        "dataType" : "decimal",
+        "isKey" : false
+      },
+      "contentsGroup1" : {
+        "dataType" : "decimal",
+        "isKey" : false
+      },
+      "contentsGroup2" : {
+        "dataType" : "decimal",
+        "isKey" : false
+      },
+      "aBCGroup1" : {
+        "dataType" : "decimal",
+        "isKey" : false
+      },
+      "aBCGroup2" : {
+        "dataType" : "decimal",
+        "isKey" : false
+      }
     },
-    "premOpsLCM" : {
-      "dataType" : "decimal",
-      "isKey" : false
-    },
-    "prodCOpsLCM" : {
-      "dataType" : "decimal",
-      "isKey" : false
-    },
-    "effectiveDate" : {
-      "dataType" : "string",
-      "isKey" : false
-    }
-  },
-  "selectionTimeBasis" : "policyStartTime"
-}
+    "selectionTimeBasis" : "policyStartTime"
+  }
+
+ 						

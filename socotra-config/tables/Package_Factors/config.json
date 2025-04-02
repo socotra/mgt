@@ -1,6 +1,6 @@
 {
     "columns" : {
-      "packageFactors" : {
+      "packagee" : {
         "dataType" : "string",
         "isKey" : true
       },
@@ -20,11 +20,11 @@
         "dataType" : "decimal",
         "isKey" : false
       },
-      "abcGroup1": {
+      "aBCGroup1": {
         "dataType" : "decimal",
         "isKey" : false
       },
-      "abcGroup2": {
+      "aBCGroup2": {
         "dataType" : "decimal",
         "isKey" : false
       }

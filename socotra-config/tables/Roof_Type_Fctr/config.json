@@ -1,6 +1,6 @@
 {
     "columns" : {
-      "roofType" : {
+      "foofType" : {
         "dataType" : "string",
         "isKey" : true
       },
@@ -20,11 +20,19 @@
         "dataType" : "decimal",
         "isKey" : false
       },
+<<<<<<< HEAD
       "abcGroup1": {
         "dataType" : "decimal",
         "isKey" : false
       },
       "abcGroup2": {
+=======
+      "aBCGroup1": {
+        "dataType" : "decimal",
+        "isKey" : false
+      },
+      "aBCGroup2": {
+>>>>>>> 882c4e8c70be07b22de722ebeba0a1dc93fd7b53
         "dataType" : "decimal",
         "isKey" : false
       }

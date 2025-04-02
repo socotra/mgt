@@ -21,7 +21,7 @@
         "isKey" : false
       },
       
-      "bppFactor": {
+      "bPPFactor": {
         "dataType" : "decimal",
         "isKey" : false
       },
@@ -33,11 +33,11 @@
         "dataType" : "decimal",
         "isKey" : false
       },
-      "abcGroup1": {
+      "aBCGroup1": {
         "dataType" : "decimal",
         "isKey" : false
       },
-      "abcGroup2": {
+      "aBCGroup2": {
         "dataType" : "decimal",
         "isKey" : false
       }

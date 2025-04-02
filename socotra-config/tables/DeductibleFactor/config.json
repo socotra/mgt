@@ -1,12 +1,12 @@
 {
     "columns" : {
-      "covAmtGroup" : {
+      "cov_Amt_Group" : {
         "dataType" : "string",
         "isKey" : true
       },
       "deductible" : {
-        "dataType" : "string",
-        "isKey" : true
+        "dataType" : "decimal",
+        "isKey" : false
       },
       "group" : {
         "dataType" : "string",
@@ -28,11 +28,11 @@
         "dataType" : "decimal",
         "isKey" : false
       },
-      "abcGroup1": {
+      "aBCGroup1": {
         "dataType" : "decimal",
         "isKey" : false
       },
-      "abcGroup2": {
+      "aBCGroup2": {
         "dataType" : "decimal",
         "isKey" : false
       }
